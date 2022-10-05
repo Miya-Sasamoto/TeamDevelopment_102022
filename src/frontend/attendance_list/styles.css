@@ -1,15 +1,9 @@
 body{
   font-family: "YuGothic","游ゴシック体";
-  width:1250px;
+  /* width:1250px; */
   background-color: #e6e6e6;
 }
 
-/* .box{
-  background-color: white;
-  width:80%;
-  text-align: center;
-  margin:auto;
-} */
 
 .content_box{
   background-color: white;
@@ -18,39 +12,26 @@ body{
   padding:20px;
 }
 
-h1{
-  color:#504946;
-  margin: auto;
-  text-align: center;
-  padding-top: 10px;
-}
-
 .list_parent{
-  /* border:solid 1px blue; */
   text-align: center;
 }
 
 .list{
-  /* background-color: white; */
-  /* padding:30px 50px; */
   font-size: 60px;
   color:#2d2d2d;
 }
 
 table{
-  border: 1px solid red;
+  border:solid .5px black;
   margin:auto;
   width:100%;
-  /* padding:30px; */
+  border-collapse: collapse;
 }
 
-tr,th{
-  border:solid 1px blue;
-}
 
 tr,td{
-  border:solid 1px yellow;
   text-align: center;
+  border:solid 0.5px black;
 }
 
 th{
@@ -58,24 +39,10 @@ th{
   background-color: #7a7a7a;
 }
 
-.attentance_detail{
-  border:solid 1px #504946;
-  padding:20px;
-  margin:10px;
-  list-style-type: none;
-}
+button{
+  background-color:#e6e6e6;
 
-.detail_center{
-  text-align: center;
-  width:100%;
 }
-
-#details{
-  /* border:solid 1px blue; */
-  padding:20px;
-  /* margin:10px */
-}
-
 
 .return_parent{
   /* border:solid 1px blue; */
@@ -85,7 +52,7 @@ th{
 .return{
   background-color:#504946;
   padding:10px 20px;
-  font-size: 30px;
+  font-size: 20px;
   color:white;
 
 }
