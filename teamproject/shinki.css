@@ -1,0 +1,38 @@
+body {
+
+    background: #e6e6e6;
+    font-family: "YuGthic","游ゴシック体";
+    text-align: center;
+    margin: 100px auto ;
+ }
+
+
+
+ .box {
+
+    background: #ffff;
+    width: 500px;
+    height: 600px;
+    margin: 0 auto ;
+ }
+
+input[type=submit]:hover{
+ border-bottom-width:0;
+ transform:translateY(4px)
+ }
+
+input[type=submit] {
+    margin: 100px auto ;
+         border: none;
+    outline: none;
+    display: block;
+    line-height: 30px;
+    width: 160px;
+    text-align: center;
+    font-size: 13px;
+    color: #fff;
+    background-color: #504956;
+     border-bottom: 4px solid #464;
+     cursor:pointer; 
+  
+    } 
