@@ -4,6 +4,8 @@ body {
     font-family: "YuGthic","游ゴシック体";
     text-align: center;
     margin: 100px auto ;
+    width: auto;    
+    height: auto;
  }
 
 
@@ -12,8 +14,14 @@ body {
 
     background: #ffff;
     width: 500px;
-    height: 600px;
-    margin: 0 auto ;
+    height: 450px;
+    margin: auto ;
+ }
+
+ h1{
+
+   margin: 0px 0px 100px 0px;
+
  }
 
 input[type=submit]:hover{
@@ -23,7 +31,7 @@ input[type=submit]:hover{
 
 input[type=submit] {
     margin: 100px auto ;
-         border: none;
+    border: none;
     outline: none;
     display: block;
     line-height: 30px;
@@ -32,7 +40,7 @@ input[type=submit] {
     font-size: 13px;
     color: #fff;
     background-color: #504956;
-     border-bottom: 4px solid #464;
+     border-bottom: 4px solid;
      cursor:pointer; 
   
     } 
