@@ -86,13 +86,24 @@ textarea{
 
 
 /* 下のボタン */
-.push_parent,
-.cancel_parent{
-  text-align: center;
+
+.buttons{
+  /* border:solid 1px blue; */
+  display:flex;
+
 }
 
-.push,
-.cancel{
+.button_box_correction{
+  text-align: center;
+  margin:0 20px 0 auto;
+}
+
+.button_box_cancel{
+  text-align: center;
+  margin:0 auto 0 20px;
+}
+
+button{
   background-color:#504946;
   padding:10px 20px;
   font-size: 15px;
