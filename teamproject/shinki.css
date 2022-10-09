@@ -8,8 +8,6 @@ body {
     height: auto;
  }
 
-
-
  .box {
 
     background: #ffff;
@@ -18,17 +16,44 @@ body {
     margin: auto ;
  }
 
+<<<<<<< Updated upstream
  h1{
 
    margin: 0px 0px 100px 0px;
 
  }
+=======
+.namae{
+   margin-top: -20px;
+   text-indent: -0.5em;
 
-input[type=submit]:hover{
- border-bottom-width:0;
- transform:translateY(4px)
  }
 
+ .namaekana{
+   margin-top: 30px;
+   text-indent: -2.5em;
+>>>>>>> Stashed changes
+
+ }
+
+ .email{
+   margin-top: 30px;
+   text-indent: -2.0em;
+
+ }
+
+ .password{
+   margin-top: 30px;
+   text-indent: -4.0em;
+}
+
+
+input[type="button"]{
+   background-color: #504946;
+   color: #e6e6e6;
+ }
+
+<<<<<<< Updated upstream
 input[type=submit] {
     margin: 100px auto ;
     border: none;
@@ -42,5 +67,19 @@ input[type=submit] {
     background-color: #504956;
      border-bottom: 4px solid;
      cursor:pointer; 
+=======
+.touroku {
+   margin-top: 60px;
+  margin-right: 80px;
+
+>>>>>>> Stashed changes
   
-    } 
+} 
+
+.cancel{
+
+   margin-top: -27px;
+   margin-left: 70px;
+    }
+
+   
