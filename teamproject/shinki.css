@@ -11,20 +11,20 @@ body {
  .box {
 
     background: #ffff;
-    width: 500px;
-    height: 450px;
+    width: 400px;
+    height: 400px;
     margin: auto ;
+    padding-top: 20px;
  }
 
-<<<<<<< Updated upstream
- h1{
-
-   margin: 0px 0px 100px 0px;
+ .shinki{
+margin-top: -40px;
+margin-bottom: 40px;
 
  }
-=======
+
 .namae{
-   margin-top: -20px;
+   margin-top: 60px;
    text-indent: -0.5em;
 
  }
@@ -32,7 +32,6 @@ body {
  .namaekana{
    margin-top: 30px;
    text-indent: -2.5em;
->>>>>>> Stashed changes
 
  }
 
@@ -53,26 +52,10 @@ input[type="button"]{
    color: #e6e6e6;
  }
 
-<<<<<<< Updated upstream
-input[type=submit] {
-    margin: 100px auto ;
-    border: none;
-    outline: none;
-    display: block;
-    line-height: 30px;
-    width: 160px;
-    text-align: center;
-    font-size: 13px;
-    color: #fff;
-    background-color: #504956;
-     border-bottom: 4px solid;
-     cursor:pointer; 
-=======
 .touroku {
    margin-top: 60px;
   margin-right: 80px;
 
->>>>>>> Stashed changes
   
 } 
 
