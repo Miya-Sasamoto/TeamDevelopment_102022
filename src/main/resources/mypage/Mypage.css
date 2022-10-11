@@ -25,6 +25,11 @@ body,p,form,label,input {
   .id,
   .name {
     margin-bottom: 20px;
+    width: 400px;
+  }
+
+  .el-input__inner {
+    width: 300px;
   }
  
   input[type="id"],
@@ -87,4 +92,5 @@ body,p,form,label,input {
     background: -webkit-gradient(linear, 0 0, 0 100%, from(#504946), to(#504946));
     background: -moz-linear-gradient(top, #61c7e0, #418da8);
     display: flex;
+    justify-content: space-around;
   }
