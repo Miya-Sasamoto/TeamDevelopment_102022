@@ -1,0 +1,111 @@
+html {
+  height: 100%;
+}
+
+body{
+  font-family: "YuGothic","游ゴシック体";
+  /* width:1250px; */
+  height: 100%;
+  background-color: #e6e6e6;
+}
+
+/* コンテンツボックス */
+.content_box{
+  background-color: white;
+  /* height: auto; */
+  /* min-height:100%; */
+  width:80%;
+  margin: 30px auto ;
+  padding:20px;
+}
+
+/*タイトル  */
+.correction_parent{
+  text-align: center;
+}
+
+.correction_title{
+  color:#2d2d2d;
+  font-size: 60px;
+  font-weight:545;
+}
+
+
+/* ステータスと理由 */
+.content_1{
+  /* border:solid 1px blue; */
+  padding:20px;
+  font-size: 40px;
+  /* display:flex; */
+  justify-content: space-evenly;
+}
+
+span{
+  background: linear-gradient(transparent 50%, #bdbdbd 50%);
+}
+
+select{
+  width:100px;
+  height:50px;
+  vertical-align: middle;
+}
+
+input{
+  height:50px;
+  vertical-align: middle;
+}
+
+
+/* 出勤系 */
+.content_2{
+  /* border:solid 1px green; */
+  /* margin:10px; */
+  padding:20px;
+  font-size: 40px;
+}
+
+.content2,label{
+  margin:15px;
+}
+
+/* 3列目 */
+.content_3{
+  /* border:solid 1px red; */
+  /* margin:10px; */
+  padding:20px;
+  font-size: 40px;
+  justify-content: space-evenly;
+}
+
+textarea{
+  height:50px;
+  vertical-align: middle;
+  width: 50%;
+}
+
+
+
+/* 下のボタン */
+
+.buttons{
+  /* border:solid 1px blue; */
+  display:flex;
+
+}
+
+.button_box_correction{
+  text-align: center;
+  margin:0 20px 0 auto;
+}
+
+.button_box_cancel{
+  text-align: center;
+  margin:0 auto 0 20px;
+}
+
+button{
+  background-color:#504946;
+  padding:10px 20px;
+  font-size: 15px;
+  color:white;
+}
