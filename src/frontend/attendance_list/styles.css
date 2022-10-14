@@ -1,0 +1,58 @@
+body{
+  font-family: "YuGothic","游ゴシック体";
+  /* width:1250px; */
+  background-color: #e6e6e6;
+}
+
+
+.content_box{
+  background-color: white;
+  width:80%;
+  margin: 30px auto ;
+  padding:20px;
+}
+
+.list_parent{
+  text-align: center;
+}
+
+.list{
+  font-size: 60px;
+  color:#2d2d2d;
+}
+
+table{
+  border:solid .5px black;
+  margin:auto;
+  width:100%;
+  border-collapse: collapse;
+}
+
+
+tr,td{
+  text-align: center;
+  border:solid 0.5px black;
+}
+
+th{
+  color: white;
+  background-color: #7a7a7a;
+}
+
+button{
+  background-color:#e6e6e6;
+
+}
+
+.return_parent{
+  /* border:solid 1px blue; */
+  text-align: center;
+}
+
+.return{
+  background-color:#504946;
+  padding:10px 20px;
+  font-size: 20px;
+  color:white;
+
+}
