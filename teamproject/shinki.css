@@ -1,0 +1,68 @@
+body {
+
+    background: #e6e6e6;
+    font-family: "YuGthic","游ゴシック体";
+    text-align: center;
+    margin: 100px auto ;
+    width: auto;    
+    height: auto;
+ }
+
+ .box {
+
+    background: #ffff;
+    width: 400px;
+    height: 400px;
+    margin: auto ;
+    padding-top: 20px;
+ }
+
+ .shinki{
+margin-top: -40px;
+margin-bottom: 40px;
+
+ }
+
+.namae{
+   margin-top: 60px;
+   text-indent: -0.5em;
+
+ }
+
+ .namaekana{
+   margin-top: 30px;
+   text-indent: -2.5em;
+
+ }
+
+ .email{
+   margin-top: 30px;
+   text-indent: -2.0em;
+
+ }
+
+ .password{
+   margin-top: 30px;
+   text-indent: -4.0em;
+}
+
+
+input[type="button"]{
+   background-color: #504946;
+   color: #e6e6e6;
+ }
+
+.cancel {
+   margin-top: 60px;
+  margin-right: 80px;
+
+  
+} 
+
+.touroku{
+
+   margin-top: -27px;
+   margin-left: 70px;
+    }
+
+   
