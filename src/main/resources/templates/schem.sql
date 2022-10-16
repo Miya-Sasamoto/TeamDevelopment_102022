@@ -1,0 +1,12 @@
+CREATE TABLE IF NOT EXISTS Employee ( 
+id SERIAL(8) PRIMARY KEY, 
+name VARCHAR(50), 
+name_kana VARCHAR(50),
+password VARCHAR(250),
+mail_address VARCHAR(50),
+);
+
+CREATE TABLE IF NOT EXISTS login (
+user_id VARCHAR(8) PRIMARY KEY,
+password VARCHAR(250)
+);
