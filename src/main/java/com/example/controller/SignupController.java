@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.domain.user.model.MUser;
 import com.example.domain.user.service.UserService;
@@ -16,6 +17,7 @@ import com.example.form.SignupForm;
 
 
 @Controller
+@RequestMapping("/user")
 public class SignupController{
 	
 	
@@ -26,10 +28,10 @@ public class SignupController{
 	private  ModelMapper modelMapper;
 	
 	/**出勤登録画面を表示*/
-	@GetMapping("/") 
+	@GetMapping("/signup") 
 	public String getSignup(Model model, Locale locale) { 
-		System.out.println("test");
-		return "attendance";
+		
+		return "/attendance";
 	} 
 	
 	
@@ -46,9 +48,9 @@ public class SignupController{
 		//出勤登録
 		userService. signup(attendance);
 		
-		//マイページor完了画面にリダイレクト
+		//マイページor完了画面に遷移
 		//完了画面作る
-		return "attendance";
+		return "/complete";
 		
 	}
 }
