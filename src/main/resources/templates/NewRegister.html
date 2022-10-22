@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新規登録</title>
+    <link rel="stylesheet" th:href="@{/NewRegister.css}">
+</head>
+<body>
+  
+  <div class="NewRegister"><h1>新規登録</h1></div> 
+  <div class="box">
+   
+    
+  <form  method="post" th:action="@{/NewRegister/db}">
+
+
+    <div class="name">
+      <label for="name"> 名前：</label>
+      <input id="name" type="text" name="name">
+    </div>
+    <div class="name_kana"> 
+      <label for="name_kana"> 名前カナ：</label>
+      <input id="name_kana" type="text" name="name_kana">
+    </div>
+    <div class="mail_address"> 
+      <label for="mail_address"> E-MAIL：</label>
+      <input id="mail_address" type="text" name="mail_address">
+    </div>
+    <div class="password">  
+      <label for="password">PASSWORD：</label>
+      <input id="password" type="password"  name="password">
+    </div>
+  
+    <div class="cancel"><span>
+    	<button type="submit">キャンセル</button></span>
+    </div> 
+    <div class="touroku">
+    	<button type="submit">登録</button>
+    	
+    	
+ </div> 
+ </form>
+ </div> 
+   
+</body>
+
+
+</html>

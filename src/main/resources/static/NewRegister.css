@@ -1,0 +1,66 @@
+body {
+
+    background: #e6e6e6;
+    font-family: "YuGthic","游ゴシック体";
+    text-align: center;
+    margin: 100px auto ;
+    width: auto;    
+    height: auto;
+ }
+
+ .box {
+
+    background: #ffff;
+    width: 400px;
+    height: 400px;
+    margin: auto ;
+    padding-top: 20px;
+ }
+
+ .NewRegister{
+margin-top: -40px;
+margin-bottom: 40px;
+
+ }
+
+.name{
+   margin-top: 60px;
+   text-indent: -0.5em;
+
+ }
+
+ .name_kana{
+   margin-top: 30px;
+   text-indent: -2.5em;
+
+ }
+
+ .mail_address{
+   margin-top: 30px;
+   text-indent: -2.0em;
+
+ }
+
+ .password{
+   margin-top: 30px;
+   text-indent: -4.0em;
+}
+
+
+button[type="submit"]{
+   background-color: #504946;
+   color: #e6e6e6;
+ }
+
+.cancel {
+   margin-top: 60px;
+  margin-right: 80px;
+
+  
+} 
+
+.touroku{
+
+   margin-top: -27px;
+   margin-left: 70px;
+    }
