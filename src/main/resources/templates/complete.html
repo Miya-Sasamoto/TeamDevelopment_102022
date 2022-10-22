@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>退勤報告</title>
+<link rel="stylesheet" href="style6.css"></head>
+<body>
+    <div class="wrapper">
+        
+        <div class="header">
+            <h1>完了画面</h1>
+            <div class="header2">
+                <p style="text-align: center">
+                <label for="name">登録完了しました。</label>
+            	</p>
+                <form th:action="@{/complete}" method="post">
+                <button type="submit">My page</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
