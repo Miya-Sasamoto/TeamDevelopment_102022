@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thyleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -56,11 +56,14 @@
             </p>
             <br>
 
+			<form th:action="@{/user/complete}" method="post">
             <button type="reset">キャンセル</button>
-            <button type="submit">送信</button>   
+            <button type="submit">送信</button> 
+            </form>  
         </div>
     </div>
  </div>
+ 
     
 </body>
 </html>
