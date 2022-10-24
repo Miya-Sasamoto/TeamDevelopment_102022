@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" xmlns:th="http://www.thyleaf.org">
   <head>
     <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>formsample</title>
-    <link rel="stylesheet" href="./login1.css">
+    <link rel="stylesheet" th:href="@{/login1.css}" >
   </head>
   <body>
     <div id="form">
-      <p class="form-title">ログイン</p>
+      <p style= "justify-content: center;"class="form-title">ログイン</p>
       <form action="post">
         <p>ユーザーID</p>
         <p class="id">
