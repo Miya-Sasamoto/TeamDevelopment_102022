@@ -22,4 +22,3 @@ reason_for_revision VARCHAR(100),
       FOREIGN KEY(user_id) 
 	  REFERENCES Employee(user_id)
 );
-
