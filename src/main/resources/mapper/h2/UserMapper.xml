@@ -5,7 +5,7 @@
 
 <!--ユーザー1件登録-->
 <insert id="insertOne">
-	insert into Attendanse(
+	insert into Attendance(
 		user_id,
 		start_date,
 		end_date,
@@ -16,13 +16,14 @@
 		note
 	)
 	values(
-		#{user_id},
-		#{start_date},
-		#{end_date},
+		#{userId},
+		#{startDate},
+		#{endDate},
 		#{status},
-		#{start_time},
-		#{end_time},
-		#{break_time},
+		#{startTime},
+		#{endTime},
+		#{breakTime},
 		#{note}
 	)
 	</insert>
+	</mapper>

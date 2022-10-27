@@ -1,29 +1,28 @@
 package com.example.form;
 
 import java.sql.Date;
-
-import org.springframework.format.annotation.DateTimeFormat;
+import java.sql.Time;
 
 import lombok.Data;
 
 @Data
 public class SignupForm {
 
-	private String userId;
+	private int userId;
 	
-	@DateTimeFormat(pattern="yyyy/MM/dd")
-	private Date start_date;
+	//@DateTimeFormat(pattern="yyyy/MM/dd")
+	private Date startDate;
 	
-	@DateTimeFormat(pattern="yyyy/MM/dd")
-	private Date end_date;
+	//@DateTimeFormat(pattern="yyyy/MM/dd")
+	private Date endDate;
 	
 	private String status;
 	
-	private String start_time;
+	private Time startTime;
 	
-	private String end_time;
+	private Time endTime;
 	
-	private String break_time;
+	private Time breakTime;
 	
 	private String note;
 }

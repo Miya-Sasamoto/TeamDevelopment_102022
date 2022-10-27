@@ -6,6 +6,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,17 +31,17 @@ public class SignupController{
 	/**出勤登録画面を表示*/
 	@GetMapping("/signup") 
 	public String getSignup(Model model, Locale locale) { 
-		System.out.println("ここを通っている");
+		model.addAttribute("userId",5);
 		return "/attendance";
 	} 
 	
 	
 	/**出勤登録処理*/
 	@PostMapping("/complete") 
-	public String postSignup(Model model,Locale locale,@ModelAttribute SignupForm form)
+	public String postSignup(Model model,Locale locale,@ModelAttribute SignupForm form, BindingResult bindingResult)
 		 { 
 		
-		System.out.println("ここを通っている２２");
+		System.out.println(form.getStartTime());
 		
 		//formをMUserクラスに変換
 		

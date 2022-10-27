@@ -7,17 +7,15 @@ mail_address VARCHAR(50)
 );
 
 /*出勤*/
-CREATE TABLE IF NOT EXISTS Attendance ( 
+CREATE TABLE IF NOT EXISTS attendance ( 
 user_id integer PRIMARY KEY ,
-start_date DATE, 
+start_date DATE PRIMARY KEY, 
 end_date DATE,
 status VARCHAR(2),
 start_time TIME(6),
 end_time TIME(6),
 break_time TIME(6),
 note VARCHAR(200),
-FOREIGN KEY (user_id)
-REFERENCES Employee (user_id)
-);
+ADD PRIMARY KEY(user_id,start_date);
 
 

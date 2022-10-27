@@ -9,6 +9,7 @@
     <div class="wrapper">
 
         <div class="header">
+        <form th:action="@{/user/complete}" method="post">
 
             <p style="text-align: center">
             <h1>出勤入力フォーム</h1>
@@ -25,38 +26,40 @@
             <p style="text-align: center">
             <label1 for="name">出勤報告</label1>
             </p>
+            
+            <input type="hidden" name="userId" th:value="*{userId}">
 
             <p style="text-align: left">
-            <label for="name">出勤ステータス :</label>
-            <select class="textlines">
-            <option value="サンプル1">出勤</option>
-            <option value="サンプル2">遅刻</option>            
-            <option value="サンプル3">欠勤</option>
-            <option value="サンプル4">代休</option>
-            <option value="サンプル5">休日</option>
-            <option value="サンプル6">有給</option>
-            <option value="サンプル7">その他</option>
-            <option value="サンプル8">その他(休日)</option>
+            <label  for="name">出勤ステータス :</label>
+            <select name="status" class="textlines">
+            <option value="1">出勤</option>
+            <option value="2">遅刻</option>            
+            <option value="3">欠勤</option>
+            <option value="4">代休</option>
+            <option value="5">休日</option>
+            <option value="6">有給</option>
+            <option value="7">その他</option>
+            <option value="8">その他(休日)</option>
             </select>
             </p>
 
             <p style="text-align: left">
             <label for="name">出勤日 :</label>
-            <input type="date" size="40" maxlength="40">
+            <input name="startDate" type="date" size="40" maxlength="40">
             </p>
 
             <p style="text-align: left">
             <label for="name">出勤時間 :</label>
-            <input id="appt-time" type="time" name="appt-time" value="09:00">
+            <input name="startTime" id="appt-time" type="time" value="09:00">
             </p>
 
             <p style="text-align: left">
             <label for="name">備考 :</label>
-            <input type="text" rows="2" cols="20" >
+            <input name="note" type="text" rows="2" cols="20" >
             </p>
             <br>
 
-			<form th:action="@{/user/complete}" method="post">
+			
             <button type="reset">キャンセル</button>
             <button type="submit">送信</button> 
             </form>  
