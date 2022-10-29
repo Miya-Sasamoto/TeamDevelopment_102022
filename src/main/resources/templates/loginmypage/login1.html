@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-<html lang="ja" xmlns:th="http://www.thyleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>formsample</title>
-    <link rel="stylesheet" th:href="@{/login1.css}" >
+    <title>login1</title>
+    <link rel="stylesheet" th:href="@{/css/login1.css}">
   </head>
   <body>
     <div id="form">
-      <p style= "justify-content: center;"class="form-title">ログイン</p>
-      <form action="post">
+      <p class="form-title">ログイン</p>
+       <p th:if="${session['SPRING_SECURITY_LAST_EXCEPTION']} != null"
+                 class="error">
+                  </p>
+      <form th:action"@{/login1}" method="post">
         <p>ユーザーID</p>
         <p class="id">
           <input type="id" name="id" />
@@ -24,7 +27,7 @@
       </form>
     </div>
          <div class="form-footer">
-          <a href="" class=" text-decoration-none">新規登録はこちら</a>
+          <a th:href="@{/shinki}" class=" text-decoration-none">新規登録はこちら</a>
          </div>
   </body>
 </html>
