@@ -1,4 +1,6 @@
-package com.example.domain.user.model;
+package com.example.domain.user.service;
+
+import com.example.domain.user.model.MUser;
 
 public interface UserService {
 	/**ユーザー登録*/
