@@ -14,11 +14,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.domain.user.model.MUser;
 import com.example.domain.user.service.UserService;
-import com.example.form.SignupForm; 
+import com.example.form.SignupForm;
+
+//import lombok.extern.slf4j.Slf4j; 
 
 
 @Controller
 @RequestMapping("/user")
+//@Slf4j
 public class SignupController{
 	
 	
@@ -27,6 +30,9 @@ public class SignupController{
 	
 	@Autowired
 	private  ModelMapper modelMapper;
+	
+	//@Autowired
+	//private MesssageSource messageSource;
 	
 	/**出勤登録画面を表示*/
 	@GetMapping("/signup") 

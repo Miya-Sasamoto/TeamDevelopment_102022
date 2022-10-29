@@ -5,15 +5,17 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>出勤報告</title>
 <link rel="stylesheet" th:href="@{/style4.css}"></head>
-<!-- JS読込 -->
+<!-- <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+<!-- JS読込
 <script th:src="@{/webjars/jquery/jquery.min.js}" defer></script>
 <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}" defer></script> 
-<title th:text="#{user.signup.title}"></title>
+<title th:text="#{user.signup.title}"></title> -->
 <body>
     <div class="wrapper">
 
         <div class="header">
-        <form th:action="@{/user/complete}" method="post">
+        <!--<form th:action="@{/user/complete}" method="post" class="form-signup" th:object="$(signupForm)">-->
+        
 		<h1 class="text-center" th:text="#{user.signup.title}"></h1>
             <p style="text-align: center">
             <h1>出勤入力フォーム</h1>
@@ -31,10 +33,10 @@
             <label1 for="name">出勤報告</label1>
             </p>
             
-            <input type="hidden" name="userId" th:value="*{userId}">
-
+             <input type="hidden" name="userId" th:value="*{userId}">
             <p style="text-align: left">
             <label for="status" th:text="#{status}"></label>
+            <!--<input type="text" class="from-control" th:field="*{status}">  -->
             <label  for="name">出勤ステータス :</label>
             <select name="status" class="textlines">
             <option value="1">出勤</option>
@@ -50,18 +52,21 @@
 
             <p style="text-align: left">
             <label for="startDate" th:text="#{startDate}"></label>
+            <!--<input type="text" class="from-control" placeholder="yyyy/MM/dd" th:field="*{startDate}">  -->
             <label for="name">出勤日 :</label>
             <input name="startDate" type="date" size="40" maxlength="40">
             </p>
 
             <p style="text-align: left">
             <label for="startTime" th:text="#{startTime}"></label>
+            <!--<input type="text" class="from-control" th:field="*{startTime}">  -->
             <label for="name">出勤時間 :</label>
             <input name="startTime" id="appt-time" type="time" value="09:00">
             </p>
 
             <p style="text-align: left">
             <label for="note" th:text="#{note}"></label>
+            <!--<input type="text" class="from-control" th:field="*{note}">  -->
             <label for="name">備考 :</label>
             <input name="note" type="text" rows="2" cols="20" >
             </p>
