@@ -38,7 +38,7 @@ public class SignupController{
 	@GetMapping("/signup") 
 	public String getSignup(Model model, Locale locale) { 
 		model.addAttribute("userId",5);
-		return "/attendance";
+		return "/clock_out";
 	} 
 	
 	
