@@ -1,5 +1,6 @@
 package com.example.config;
 
+<<<<<<< Updated upstream
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,3 +14,8 @@ public class JavaConfig {
 }
 
 
+=======
+public class JavaConfig {
+
+}
+>>>>>>> Stashed changes

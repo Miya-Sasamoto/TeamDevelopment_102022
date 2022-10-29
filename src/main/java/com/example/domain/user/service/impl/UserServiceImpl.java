@@ -1,5 +1,6 @@
 package com.example.domain.user.service.impl;
 
+<<<<<<< Updated upstream
 import org.springframework.beans.factory.annotation.Autowired;
 import org. springframework. stereotype.Service;
 
@@ -20,3 +21,8 @@ public class UserServiceImpl implements UserService {
 	mapper.insertOne(user);
 	}
 }
+=======
+public class UserServiceImpl {
+
+}
+>>>>>>> Stashed changes

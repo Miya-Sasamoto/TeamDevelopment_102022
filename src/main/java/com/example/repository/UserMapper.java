@@ -8,4 +8,8 @@ import com.example.domain.user.model.MUser;
 public interface UserMapper {
 	public int insertOne(MUser user);
 
+<<<<<<< Updated upstream
 }
+=======
+}
+>>>>>>> Stashed changes

@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <?xml version="1.0" encoding="UTF-8"?> 
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
@@ -6,6 +7,17 @@
 <!--ユーザー1件登録-->
 <insert id="insertOne">
 	insert into Attendance(
+=======
+<?xml version="l.O" encoding="UTF-8"?> 
+<!DOCTYPE mapper PUBLIC"-//mybatis.org//DTD Mapper3.0//EN""http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace= "com.example.repository.UserMapper">
+
+<!--ユーザー 件登録-->
+<insert id="insertOne">
+	insert into Attendanse(
+>>>>>>> Stashed changes
 		user_id,
 		start_date,
 		end_date,
@@ -16,6 +28,7 @@
 		note
 	)
 	values(
+<<<<<<< Updated upstream
 		#{userId},
 		#{startDate},
 		#{endDate},
@@ -27,3 +40,16 @@
 	)
 	</insert>
 	</mapper>
+=======
+		#{user_id},
+		#{start_date},
+		#{end_date},
+		#{status},
+		#{start_time},
+		#{end_time},
+		#{break_time},
+		#{note}
+	)
+	</insert>
+</mapper>
+>>>>>>> Stashed changes
