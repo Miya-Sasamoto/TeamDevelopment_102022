@@ -1,5 +1,5 @@
 INSERT INTO Employee (name, name_kana, password, mail_address) 
-VALUES('ｔａｒｏｕ', 'タロウ','00000001','tarou@example.com');
+VALUES('tarou', 'タロウ'，'00000001','tarou@example.com');
 
 INSERT INTO Attendance(
 user_id,

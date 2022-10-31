@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org.//DTD Mapper3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace= "com.example.repository.AttendanceMapper">
+
+<insert id="insertOne">
+
+	insert into Attendance(
+		user_id,
+		start_date,
+		end_date,
+		status,
+		start_time,
+		end_time,
+		break_time,
+		note
+	) 
+	VALUES(
+		#{userId},
+		#{startDate},
+		#{endDate},
+		#{status},
+		#{startTime},
+		#{endTime},
+		#{breakTime},
+	 	#{note},
+	
+	)
+
+</insert>
+
+<select id="findMany" resultType="MAttendance">
+	select *
+	from attendance
+
+
+</select>
+
+
+</mapper>
