@@ -101,13 +101,20 @@ button[type="reset"]:focus {
 label {
 	display: inline-block;
 	width: 6em;
-	margin-left: 200px;
+	margin-left: 50px;
 }
 
 label2 {
 	display: inline-block;
 	width: 6em;
-	margin-left: 200px;
+	margin-left: 50px;
+}
+
+lablel4{
+	display: inline-block;
+	width: 1em;
+	margin-left: 25px;
+	font-size: 100px;
 }
 
 .textlines:focus {
