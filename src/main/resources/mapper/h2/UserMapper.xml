@@ -5,7 +5,7 @@
 
 <!--ユーザー 件登録-->
 <update id="insertOne">
-	insert into Attendanse(
+	insert into Attendance(
 		user_id,
 		start_date,
 		end_date,
