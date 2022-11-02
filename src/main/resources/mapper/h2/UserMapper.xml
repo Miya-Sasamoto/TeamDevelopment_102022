@@ -3,6 +3,8 @@
 
 <mapper namespace= "com.example.repository.UserMapper">
 
+
+
 <!--ユーザー1件登録-->
 <insert id="insertOne">
 	insert into Attendance(
@@ -25,5 +27,5 @@
 		#{breakTime},
 		#{note}
 	)
-	</insert>
-	</mapper>
+</insert>
+</mapper>

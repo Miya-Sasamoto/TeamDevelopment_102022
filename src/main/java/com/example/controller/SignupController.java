@@ -31,8 +31,7 @@ public class SignupController{
 	@Autowired
 	private  ModelMapper modelMapper;
 	
-	//@Autowired
-	//private MesssageSource messageSource;
+	
 	
 	/**出勤登録画面を表示*/
 	@GetMapping("/signup") 
