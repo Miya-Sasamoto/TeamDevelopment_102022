@@ -14,9 +14,9 @@
     <div class="wrapper">
 
         <div class="header">
-        <!--<form th:action="@{/user/complete}" method="post" class="form-signup" th:object="$(signupForm)">-->
+        <form th:action="@{/user/complete}" method="post" > 
         
-		<h1 class="text-center" th:text="#{user.signup.title}"></h1>
+
             <p style="text-align: center">
             <h1>出勤入力フォーム</h1>
             </p>
@@ -34,8 +34,9 @@
             </p>
             
              <input type="hidden" name="userId" th:value="*{userId}">
+             
             <p style="text-align: left">
-            <label for="status" th:text="#{status}"></label>
+              <!--<label for="status" th:text="#{status}"></label>  -->
             <!--<input type="text" class="from-control" th:field="*{status}">  -->
             <label  for="name">出勤ステータス :</label>
             <select name="status" class="textlines">
@@ -51,35 +52,35 @@
             </p>
 
             <p style="text-align: left">
-            <label for="startDate" th:text="#{startDate}"></label>
+           <!-- <label for="startDate" th:text="#{startDate}"></label>  -->
             <!--<input type="text" class="from-control" placeholder="yyyy/MM/dd" th:field="*{startDate}">  -->
             <label for="name">出勤日 :</label>
             <input name="startDate" type="date" size="40" maxlength="40">
             </p>
 
             <p style="text-align: left">
-            <label for="startTime" th:text="#{startTime}"></label>
+           <!--  <label for="startTime" th:text="#{startTime}"></label>  -->
             <!--<input type="text" class="from-control" th:field="*{startTime}">  -->
             <label for="name">出勤時間 :</label>
             <input name="startTime" id="appt-time" type="time" value="09:00">
             </p>
 
             <p style="text-align: left">
-            <label for="note" th:text="#{note}"></label>
+            <!-- <label for="note" th:text="#{note}"></label>  -->
             <!--<input type="text" class="from-control" th:field="*{note}">  -->
             <label for="name">備考 :</label>
-            <input name="note" type="text" rows="2" cols="20" >
+            <input name="note" type="text" >
             </p>
             <br>
 
 			
             <button type="reset">キャンセル</button>
-            <button type="submit">送信</button> 
-            </form>  
+            <button type="submit">送信</button>  
+            </div>
+          </form>  
         </div>
     </div>
- </div>
- 
+
     
 </body>
 </html>
