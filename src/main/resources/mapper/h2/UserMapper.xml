@@ -17,7 +17,7 @@
 
 <!--ユーザー 件登録-->
 <update id="insertOne">
-	insert into Attendance(
+	update into Attendance(
 		user_id,
 		start_date,
 		end_date,
@@ -26,6 +26,7 @@
 		end_time,
 		break_time,
 		note
+		attendance_id
 	)
 	values(
 		#{userId},
@@ -35,7 +36,8 @@
 		#{startTime},
 		#{endTime},
 		#{breakTime},
-		#{note}
+		#{note},
+		#{attendance}
 	)
 	</update>
 </mapper>

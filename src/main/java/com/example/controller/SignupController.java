@@ -35,7 +35,7 @@ public class SignupController{
 	private  ModelMapper modelMapper;
 	
 	//退勤登録画面を表示
-	@GetMapping("/detail/{userId}/{startDate}") 
+	@GetMapping("/detail/{attendanceId}") 
 	public String getUser(UserDetailForm form, Model model,
 	@PathVariable("startDate") Date stratDate,
 	@PathVariable("userld") Integer userld) {

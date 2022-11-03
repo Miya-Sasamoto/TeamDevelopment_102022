@@ -25,4 +25,6 @@ public class SignupForm {
 	private Time breakTime;
 	
 	private String note;
+	
+	private int attendanceId;
 }
