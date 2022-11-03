@@ -25,36 +25,35 @@
             	<label4 for="name">ユーザー名 :かまきりお</label4>
             	</p>
 
-                <input type="hidden" name="userId" th:value="*{userId}">
+                <input type="hidden" name="userId" th:value="*{userId}" th:field="*{userId}">
 
                 <p style="text-align: left">
                 <span style="line-height:22px">
-                    <label for="startDate" th:text="*{startDate}"></label>
+                <label for="startDate" th:text="*{startDate}"></label>
                 <label for="name">出勤日 :</label>
-                <input type="textbox" valie=""
-                readonly="readonly" id="textbox">
+                <input type="text" th:field="*{stratDate}" readonly="readonly"><br>
+
                 </span>
                 </p>
 
                 <p style="text-align: left">
                     <label for="startTime" th:text="*{startTime}"></label>
                 <label2 for="name">出勤時間 :</label2>
-                <input type="textbox" valie="" 
-                       readonly="readonly" id="text">
+                <input type="text" th:field="*{startTime}" readonly="readonly"><br>
                 </p>
 
                 <p style="text-align: left">
                     <label for="status" th:text="*{status}"></label>
                 <label for="name">退勤ステータス :</label>
                 <select class="textlines">
-                <option value="1">退勤</option>
-                <option value="2">早退</option>
-                <option value="3">その他</option>
+                	<option value="1">退勤</option>
+                	<option value="2">早退</option>
+                	<option value="3">その他</option>
                 </select>
                 </p>
 
                 <p style="text-align: left">
-                    <label for="endDate" th:text="*{endDate}"></label>
+                <label for="endDate" th:text="*{endDate}"></label>
                 <label for="name">退勤日 :</label>
                 <input type="date" size="30" maxlength="40">
                 </p>

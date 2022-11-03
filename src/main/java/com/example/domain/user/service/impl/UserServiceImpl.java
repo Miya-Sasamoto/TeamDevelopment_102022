@@ -20,4 +20,9 @@ public class UserServiceImpl implements UserService {
 		
 	mapper.insertOne(user);
 	}
+	//ユーザー取得(1 件）
+		@Override 
+		public MUser getUserOne(String userld) { 
+			return mapper.findOne(userld);
+		}
 }
