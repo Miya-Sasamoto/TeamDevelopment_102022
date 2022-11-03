@@ -18,7 +18,7 @@ public class SignupForm {
 	
 	private String status;
 	
-	private Time startTime;
+	private String startTime;
 	
 	private Time endTime;
 	

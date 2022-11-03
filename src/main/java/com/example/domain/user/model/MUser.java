@@ -1,6 +1,6 @@
 package com.example.domain.user.model;
 
-import java.sql.Time;
+
 import java.util.Date;
 
 import lombok.Data;
@@ -11,8 +11,8 @@ public class MUser {
 	private Date startDate;
 	private Date endDate;
 	private String status;
-	private Time startTime;
-	private Time endTime;
+	private String startTime;
+	private String endTime;
 	private String breakTime;
 	private String note;
 	
