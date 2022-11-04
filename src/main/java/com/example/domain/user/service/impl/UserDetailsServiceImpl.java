@@ -2,7 +2,6 @@ package com.example.domain.user.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -14,20 +13,21 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.example.entity.Employeelogin;
-import com.example.repository.LoginRepository;
+import com.example.repository.UserMapper;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService{
 
     //DBからユーザ情報を検索するメソッドを実装したクラス
     @Autowired
-    private LoginRepository loginRepository ;
+    private UserMapper userMapper ;
 
     @Override
     public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
-
-        Optional<Employeelogin> user = loginRepository.findById(userName);
-
+    	
+    	int userId = Integer.parseInt(userName);
+        Employeelogin user = userMapper.findloginUser(userId);
+        System.out.println(user);
         
         if (user == null) {
             throw new UsernameNotFoundException("User" + userName + "was not found in the database");
@@ -40,8 +40,8 @@ public class UserDetailsServiceImpl implements UserDetailsService{
         grantList.add(authority);
 
         //UserDetailsはインタフェースなのでUserクラスのコンストラクタで生成したユーザオブジェクトをキャスト
-        UserDetails userDetails = (UserDetails)new User(user.orElse(new Employeelogin()).getName(),
-        		(user.orElse(new Employeelogin()).getPassword()),grantList);
+        UserDetails userDetails = (UserDetails)new User(user.getUser_id(),
+        		(user.getPassword()),grantList);
 
         return userDetails;
     }

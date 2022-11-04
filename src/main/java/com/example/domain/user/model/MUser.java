@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Data
 public class MUser {
-	private String userId;
+	private String id;
 	private Date start_date;
 	private Date end_date;
 	private String status;
