@@ -1,11 +1,11 @@
 package com.example.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+import org.apache.ibatis.annotations.Mapper;
 
 import com.example.entity.Employeelogin;
 
 
-@Repository
-public interface LoginRepository extends JpaRepository<Employeelogin , String> {  
+@Mapper
+public interface LoginRepository { 
+	public Employeelogin identifyUser (String user_id);
 }

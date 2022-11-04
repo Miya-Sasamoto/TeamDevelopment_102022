@@ -1,24 +1,13 @@
 package com.example.entity;
 
-import java.util.Date;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-import org.springframework.format.annotation.DateTimeFormat;
+/*import org.springframework.format.annotation.DateTimeFormat;*/
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.ui.Model;
 
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
-@Entity
 @Data
-@Table(name = "employee")
 public class Employeelogin {
  private static void  init(Model model) {
  
@@ -30,32 +19,28 @@ public class Employeelogin {
  /**
   * ID
   */
- @Id
- @Column(name = "user_id")
 // @GeneratedValue(strategy = GenerationType.IDENTITY)
  private String user_id;
  /**
   * 名前
   */
- @Column(name = "name")
+
  private String name;
  /**
   * カナ
   */
- @Column(name = "name_kana")
+ 
  private String name_kana;
  /**
   * パスワード
   */
- @Column(name = "password")
- @Getter
- @Setter
+ 
  private String password;
  /**
   * メールアドレス
   */
- @Column(name = "upn")
- private String upn;
+ 
+ private String mail_address;
  /**
   * 生年月日
   */
@@ -65,7 +50,7 @@ public class Employeelogin {
  /**
   * 性別
   */
- @Column(name = "gender")
+/* @Column(name = "gender")
  private Integer gender;
  
  @Column(name = "prefecture_code")
@@ -77,5 +62,5 @@ public class Employeelogin {
 
  @Column(name = "entry_date")
  @DateTimeFormat(pattern = "yyyy-MM-dd")
- private  Date entry_date;
+ private  Date entry_date;*/
 	}
