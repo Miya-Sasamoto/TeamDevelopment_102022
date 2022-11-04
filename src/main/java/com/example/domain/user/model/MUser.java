@@ -16,6 +16,6 @@ public class MUser {
 	private Time endTime;
 	private String breakTime;
 	private String note;
-	
+	private int attendanceId;
 
 }

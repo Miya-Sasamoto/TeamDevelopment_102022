@@ -8,5 +8,5 @@ import com.example.domain.user.model.MUser;
 public interface UserMapper {
 	public int insertOne(MUser user);
 	//ユーザー取得(1件)
-		public MUser findOne(Integer userId);
+		public MUser findOne(Integer attendanceId);
 }
