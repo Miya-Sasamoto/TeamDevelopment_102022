@@ -9,7 +9,7 @@
     <div class="wrapper">
         
         <div class="header">
-         <form th:action="@{/user/complete}" method="post" > 
+         <form th:action="@{/user/complete}" method="post" th:object="${form}"> 
             <h1>退勤入力フォーム</h1>
             <div class="header2">
                 <p style="text-align: center">

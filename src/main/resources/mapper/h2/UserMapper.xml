@@ -12,6 +12,7 @@
 <result column="end_time" property="endTime" /> 
 <result column="break_time" property="breakTime" /> 
 <result column="note" property="note" /> 
+<result column="attendance_id" property="attendanceId"/>
 </resultMap>
 
 
@@ -37,7 +38,17 @@
 		#{endTime},
 		#{breakTime},
 		#{note},
-		#{attendance}
+		#{attendanceId}
 	)
 	</update>
+	
+	<select id="findOne" resultMap="user">
+		select 
+				attendance_id
+		from
+				attendance
+	</select>
 </mapper>
+
+
+

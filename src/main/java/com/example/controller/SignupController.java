@@ -1,6 +1,5 @@
 package com.example.controller;
 
-import java.util.Date;
 import java. util.Locale;
 
 import org.modelmapper.ModelMapper;
@@ -37,10 +36,18 @@ public class SignupController{
 	//退勤登録画面を表示
 	@GetMapping("/detail/{attendanceId}") 
 	public String getUser(UserDetailForm form, Model model,
-	@PathVariable("startDate") Date stratDate,
-	@PathVariable("userld") Integer userld) {
-		model.addAttribute("userId",5);
-		return "/clock_out";
+	@PathVariable("attendanceId") Integer attendanceId) {
+		model.addAttribute("attendanceId", attendanceId);
+		
+		MUser user= userService.getUserOne(attendanceId); 
+		
+		//MUserをformに変換
+		form= modelMapper.map(user,UserDetailForm.class);
+		
+		//Modelに登録
+		model.addAttribute("userDetailForm",form);
+		
+		return "clock_out";
 	}
 
 

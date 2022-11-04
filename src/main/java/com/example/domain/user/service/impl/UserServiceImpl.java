@@ -22,7 +22,7 @@ public class UserServiceImpl implements UserService {
 	}
 	//ユーザー取得(1 件）
 		@Override 
-		public MUser getUserOne(String userld) { 
-			return mapper.findOne(userld);
+		public MUser getUserOne(Integer userId) { 
+			return mapper.findOne(userId);
 		}
 }

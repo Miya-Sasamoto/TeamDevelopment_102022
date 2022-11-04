@@ -25,5 +25,5 @@ public class UserDetailForm {
 	
 	private String note;
 	
-
+	private int attendanceId;
 }
