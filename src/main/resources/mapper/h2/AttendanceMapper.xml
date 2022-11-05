@@ -19,17 +19,19 @@
 	<insert id="insertOne">
 	
 		insert into Attendance(
-			attendance_id,
+			user_id,
 			start_date,
 			end_date,
 			status,
 			start_time,
 			end_time,
 			break_time,
-			note
+			note,
+			reason_for_revision,
+			attendance_id
 		) 
 		VALUES(
-			#{attendanceId},
+			#{userId},
 			#{startDate},
 			#{endDate},
 			#{status},
@@ -37,17 +39,18 @@
 			#{endTime},
 			#{breakTime},
 		 	#{note},
+		 	#{reasonForRevision},
+		 	#{attendanceId}
 		
 		)
 	
 	</insert>
 
-	<select id="findMany" resultType="attendanceList">
-		select attendance_id, name, start_date,end_date,status,start_time,end_time,
-		end_time - start_time - break_time as work_time,
-		break_time,note
-		from Attendance 
-		left join Employee on Attendance.user_id = Employee.user_id
+	<select id="findMany" resultType="MAttendanceList">
+		select user_id, name, start_date,end_date,status,start_time,end_time,
+		(end_time - start_time - break_time as work_time),
+		break_time,note,reason_for_revision,attendance_id
+		from Attendance;
 	</select>
 
 

@@ -7,7 +7,7 @@ import lombok.Data;
 
 @Data
 public class MAttendanceList {
-	private Integer attendanceId;
+	private Integer userId;
 	private String name;
 	private Date startDate;
 	private Date endDate;
@@ -17,4 +17,6 @@ public class MAttendanceList {
 	private Time workTime;
 	private Time breakTime;
 	private String note;
+	private String reasonForRevision;
+	private Integer attendanceId;
 }

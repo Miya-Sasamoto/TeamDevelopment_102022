@@ -16,7 +16,6 @@ public class AttendanceServiceImpl implements AttendanceService{
 	@Autowired 
 	public AttendanceMapper attendanceMapper;
 	
-	@Override
 	public List<MAttendanceList> getAttendanceIndex(MAttendanceList attendance) {
 		return attendanceMapper.findMany(attendance);
 	}
