@@ -16,31 +16,16 @@
 </resultMap>
 
 
-<!--ユーザー 件登録-->
-<update id="insertOne">
-	update into Attendance(
-		user_id,
-		start_date,
-		end_date,
-		status,
-		start_time,
-		end_time,
-		break_time,
-		note
-		attendance_id
-	)
-	values(
-		#{userId},
-		#{startDate},
-		#{endDate},
-		#{status},
-		#{startTime},
-		#{endTime},
-		#{breakTime},
-		#{note},
-		#{attendanceId}
-	)
-	</update>
+<!--ユーザー1件登録-->
+	<update id="insertOne">
+  update Attendance set
+    end_date = #{endDate},
+    status = #{status},
+    end_time = #{endTime},
+    break_time = #{breakTime},
+  	note = #{note}
+</update>
+	
 	
 	<select id="findOne" resultMap="user">
 		select 

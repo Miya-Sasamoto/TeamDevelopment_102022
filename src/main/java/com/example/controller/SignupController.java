@@ -33,6 +33,7 @@ public class SignupController{
 	@Autowired
 	private  ModelMapper modelMapper;
 	
+	
 	//退勤登録画面を表示
 	@GetMapping("/detail/{attendanceId}") 
 	public String getUser(UserDetailForm form, Model model,
@@ -46,6 +47,7 @@ public class SignupController{
 		
 		//Modelに登録
 		model.addAttribute("userDetailForm",form);
+		
 		
 		return "clock_out";
 	}
