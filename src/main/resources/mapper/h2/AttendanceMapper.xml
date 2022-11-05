@@ -4,7 +4,7 @@
 <mapper namespace= "com.example.repository.AttendanceMapper">
 
 	<resultMap type="com.example.domain.model.MAttendanceList" id="attendanceList">
-		<id column="attendance_id" property="userId"></id>
+		<id column="attendance_id" property="attendanceId"></id>
 		<result column="name" property="name"></result>
 		<result column="start_date" property="startTime"></result>
 		<result column="end_date" property="endDate"></result>
@@ -44,11 +44,10 @@
 
 	<select id="findMany" resultType="attendanceList">
 		select attendance_id, name, start_date,end_date,status,start_time,end_time,
-		Timediff(HH, Timediff(HH, end_time, start_time), break_time) as work_time,
+		end_time - start_time - break_time as work_time,
 		break_time,note
 		from Attendance 
 		left join Employee on Attendance.user_id = Employee.user_id
-	
 	</select>
 
 
