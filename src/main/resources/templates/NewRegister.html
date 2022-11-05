@@ -14,8 +14,8 @@
   <div class="box">
    
     
-  <form  method="post" th:action="@{/NewRegister/db}">
-
+   <form  method="post" th:action="@{/user/NewRegister}"> 
+ <!--  <form th:action="@{/user/NewRegister/CompleteNewRegister}" th:object="${NewRegisterForm}" th:method="post"> -->
 
     <div class="name">
       <label for="name"> 名前：</label>
@@ -38,8 +38,7 @@
     	<button type="submit">キャンセル</button></span>
     </div> 
     <div class="touroku">
-    	<button type="submit">登録</button>
-    	
+    	<button th:action="@{/NewRegister}" type="submit">登録</button>
     	
  </div> 
  </form>

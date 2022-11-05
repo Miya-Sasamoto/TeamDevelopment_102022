@@ -14,6 +14,4 @@ public class MUser {
 	private String end_time;
 	private String break_time;
 	private String note;
-	
-
 }
