@@ -1,4 +1,4 @@
-package com.example.domain.user.model;
+package com.example.domain.model;
 
 import java.sql.Time;
 import java.util.Date;

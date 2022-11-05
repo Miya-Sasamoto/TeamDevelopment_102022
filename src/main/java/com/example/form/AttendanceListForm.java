@@ -7,7 +7,7 @@ import lombok.Data;
 
 @Data
 public class AttendanceListForm {
-	private String userId;
+	private Integer attendanceId;
 	private Date startDate;
 	private Date endDate;
 	private String status;

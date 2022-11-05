@@ -8,7 +8,7 @@ mail_address VARCHAR(50)
 
 /*出勤*/
 CREATE TABLE IF NOT EXISTS Attendance ( 
-user_id integer PRIMARY KEY ,
+attendance_id integer PRIMARY KEY ,
 start_date DATE,
 end_date DATE,
 status VARCGAR(2),

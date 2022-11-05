@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.example.domain.user.AttendanceService;
-import com.example.domain.user.model.MAttendance;
+import com.example.domain.AttendanceService;
+import com.example.domain.model.MAttendanceList;
 import com.example.form.AttendanceListForm;
 
 @Controller
@@ -26,11 +26,11 @@ public class AttendanceListController{
 	
 	@GetMapping("/list")
 	public String getAttendanceIndex(@ModelAttribute AttendanceListForm form, Model model){
-		MAttendance attendance = mapper.map(form, MAttendance.class);
+		MAttendanceList attendance = mapper.map(form, MAttendanceList.class);
 		
 		
 		
-		List<MAttendance> attendanceIndex = attendanceService.getAttendanceIndex(attendance);
+		List<MAttendanceList> attendanceIndex = attendanceService.getAttendanceIndex(attendance);
 		
 		model.addAttribute("attendanceIndex",attendanceIndex);
 	
