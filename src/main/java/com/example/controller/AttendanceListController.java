@@ -24,7 +24,7 @@ public class AttendanceListController{
 	@Autowired
 	private ModelMapper mapper;
 	
-	@GetMapping("/index")
+	@GetMapping("/list")
 	public String getAttendanceIndex(@ModelAttribute AttendanceListForm form, Model model){
 		MAttendance attendance = mapper.map(form, MAttendance.class);
 		

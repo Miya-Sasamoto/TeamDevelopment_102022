@@ -3,38 +3,53 @@
 
 <mapper namespace= "com.example.repository.AttendanceMapper">
 
-<insert id="insertOne">
+	<resultMap type="com.example.domain.model.MAttendanceList" id="AttendanceList">
+		<id column="attendance_id" property="userId"></id>
+		<result column="name" property="name"></result>
+		<result column="start_date" property="startTime"></result>
+		<result column="end_date" property="endDate"></result>
+		<result column="status" property="status"></result>
+		<result column="start_time" property="startTime"></result>
+		<result column="end_time" property="endTime"></result>
+		<result column="work_time" property="workTime"></result>
+		<result column="break_time" property="breakTime"></result>
+		<result column="note" property="note"></result>
+	</resultMap>
 
-	insert into Attendance(
-		user_id,
-		start_date,
-		end_date,
-		status,
-		start_time,
-		end_time,
-		break_time,
-		note
-	) 
-	VALUES(
-		#{userId},
-		#{startDate},
-		#{endDate},
-		#{status},
-		#{startTime},
-		#{endTime},
-		#{breakTime},
-	 	#{note},
+	<insert id="insertOne">
 	
-	)
+		insert into Attendance(
+			attendance_id,
+			start_date,
+			end_date,
+			status,
+			start_time,
+			end_time,
+			break_time,
+			note
+		) 
+		VALUES(
+			#{attendanceId},
+			#{startDate},
+			#{endDate},
+			#{status},
+			#{startTime},
+			#{endTime},
+			#{breakTime},
+		 	#{note},
+		
+		)
+	
+	</insert>
 
-</insert>
-
-<select id="findMany" resultType="MAttendance">
-	select *
-	from attendance
-
-
-</select>
+	<select id="findMany" resultType="MAttendanceList">
+		select attendance_id, name, start_date,end_date,status,start_time,end_time,
+		Timediff(HH, Timediff(HH, end_time, start_time), break_time) as work_time,
+		break_time,note
+		from Attendance 
+		left join Employee on Attendance.user_id = Employee.user_id
+	
+	</select>
 
 
 </mapper>

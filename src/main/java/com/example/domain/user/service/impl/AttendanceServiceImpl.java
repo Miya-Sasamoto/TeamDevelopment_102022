@@ -14,11 +14,11 @@ public class AttendanceServiceImpl implements AttendanceService{
 
 	
 	@Autowired 
-	public AttendanceMapper mapper;
+	public AttendanceMapper attendanceMapper;
 	
 	@Override
 	public List<MAttendance> getAttendanceIndex(MAttendance attendance) {
-		return mapper.findMany(attendance);
+		return attendanceMapper.findMany(attendance);
 	
 }
 }

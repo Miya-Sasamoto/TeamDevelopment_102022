@@ -31,15 +31,15 @@
 	    <th>編集</th>
 	  </tr>
 	<tbody>
-  		<tr th:each="item:${AttendanceIndex}">
-		    <td th:text="${item.}"></td>
+  		<tr th:each="item:${attendanceIndex}">
+		    <td th:text="${item.name}"></td>
 		    <td th:text="${item.status}"></td>
 		    <td th:text="${item.startDate}"></td>
 		    <td th:text="${item.startTime}"></td>
 		    <td th:text="${item.endDate}"></td>
 		    <td th:text="${item.endTime}"></td>
 		    <td th:text="${item.breakTime}"></td>
-		    <td>8:00</td>
+		    <td th:text="${item.workTime}"></td>
 		    <td th:text="${item.note}"></td>
 		    <td><button>編集</button></td>
 
