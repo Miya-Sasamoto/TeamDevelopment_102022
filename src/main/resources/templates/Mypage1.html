@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" xmlns:th="http://www.thyleaf.org">
   <head>
     <meta charset="utf-8" />
-    <title>formsample</title>
-    <link rel="stylesheet" href="./Mypage.css">
+    <title>mypage</title>
+    <link rel="stylesheet" href="/css/Mypage.css">
   </head>
   <body>
     <div id="form">
@@ -11,18 +11,18 @@
       <form action="post">
         <label>ユーザーID</label>
         <p class="id">
-          <input type="text" disabled="disabled" autocomplete="off" placeholder="" class="el-input__inner">
+          <input type="text" disabled="disabled" autocomplete="off" placeholder="" class="el-input__inner" th:value="${user_id}">
         </p>
           <label>ユーザー名</label>
         <p class="name">
-          <input type="text" disabled="disabled" autocomplete="off" placeholder="" class="el-input__inner">
+          <input type="text" disabled="disabled" autocomplete="off" placeholder="" class="el-input__inner" th:value="${name}">
         </p>
        <ui>
         <p class="sub">
-          <button type="submit">編集</button>
-          <button type="submit">出勤報告</button>
-          <button type="submit">退勤報告</button>
-          <button type="submit">勤怠一覧</button>
+          <button th:href="@{'/edit'}" type="submit">編集</button>
+          <button th:href="@{'/attendance'}"type="submit">出勤報告</button>
+          <button th:href="@{'/complete'}"type="submit">退勤報告</button>
+          <button th:href="@{'/attendance_index'}"type="submit">勤怠一覧</button>
         </p>
        </ui>
       </form>
