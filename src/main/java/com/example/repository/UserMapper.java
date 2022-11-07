@@ -9,7 +9,7 @@ import com.example.domain.user.model.MUser;
 @Mapper
 public interface UserMapper {
 	
-	public int insertOne(MUser user);
+	public int updateOne(MUser user);
 	
 	//ユーザー取得(1件)
 		public MUser findOne(Integer attendanceId);

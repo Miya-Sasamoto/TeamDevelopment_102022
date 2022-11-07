@@ -17,7 +17,7 @@
 
 
 <!--ユーザー1件登録-->
-<update id="insertOne">
+<update id="updateOne">
   update Attendance set
     user_id = #{userId},
     end_date = #{endDate},
@@ -35,6 +35,3 @@
 				attendance
 	</select>
 </mapper>
-
-
-

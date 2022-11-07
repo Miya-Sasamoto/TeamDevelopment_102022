@@ -4,6 +4,7 @@ name VARCHAR(50),
 name_kana VARCHAR(50),
 password VARCHAR(250),
 mail_address VARCHAR(50)
+
 );
 
 /*退勤*/
@@ -16,7 +17,7 @@ start_time TIME(6),
 end_time TIME(6),
 break_time TIME(6),
 note VARCHAR(200),
-attendance_id serial,
+attendance_id serial,s
 ADD PRIMARY KEY(user_id,start_date);
 
 CREATE TABLE [ IF NOT EXISTS ] attendance (

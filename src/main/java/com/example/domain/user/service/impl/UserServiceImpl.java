@@ -16,12 +16,12 @@ public class UserServiceImpl implements UserService {
 	
 	/**ユーザー登録*/
 	@Override 
-	public void insertOne(MUser user) { 
+	public void updateOne(MUser user) { 
 		System.out.println("ここまで来てる");
 //		
 //		user.setUserId(5);
 //		user.setNote("更新されました");
-	mapper.insertOne(user);
+	mapper.updateOne(user);
 	}
 	//ユーザー取得(1 件）
 		@Override 

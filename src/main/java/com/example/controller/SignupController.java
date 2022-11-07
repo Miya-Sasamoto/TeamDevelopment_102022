@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.example.domain.user.model.MUser;
 import com.example.domain.user.service.UserService;
 import com.example.form.SignupForm;
-import com.example.form.UserDetailForm;
 
 //import lombok.extern.slf4j.Slf4j; 
 
@@ -36,20 +35,20 @@ public class SignupController{
 	
 	//退勤登録画面を表示
 	@GetMapping("/detail/{attendanceId}") 
-	public String getUser(UserDetailForm form, Model model,
+	public String getUser(SignupForm form, Model model,
 	@PathVariable("attendanceId") Integer attendanceId) {
 		model.addAttribute("attendanceId", attendanceId);
 		
 		MUser user= userService.findOne(attendanceId); 
 		
 		//MUserをformに変換
-		form= modelMapper.map(user,UserDetailForm.class);
+		form= modelMapper.map(user,SignupForm.class);
 		
 		//Modelに登録
 		model.addAttribute("userDetailForm",form);
 		
 		
-		return "clock_out";
+		return "/clock_out";
 	}
 
 
@@ -66,28 +65,10 @@ public class SignupController{
 		MUser complete = modelMapper.map(form,MUser.class); 
 		
 		//退勤登録
-		userService.insertOne(complete);
+		userService.updateOne(complete);
 		
 		//完了画面に遷移
 		return "/complete";
 		
 	}
 }
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

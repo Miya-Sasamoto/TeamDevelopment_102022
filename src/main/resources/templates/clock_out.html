@@ -25,7 +25,7 @@
             	<label for="name">ユーザー名 :かまきりお</label>
             	</p>
 
-                <!--<input type="hidden" name="attendanceId" th:value="*{attendanceId}" th:field="*{attendanceId}">-->
+                <!--<input type="hidden" th:field="*{userId}">  -->
 
                 <!--  <p style="text-align: left">
                 <span style="line-height:22px">
@@ -40,15 +40,15 @@
                 <input type="text" th:field="*{startTime}" readonly="readonly"><br>
                 </p>-->
 
-                <!--<p style="text-align: left">
-                    <label for="status" th:text="*{status}"></label>
+               <p style="text-align: left">
+                     <!--<label for="status" th:text="*{status}"></label>-->
                 <label for="name">退勤ステータス :</label>
-                <select class="textlines">
+                <select class="textlines" name="status">
                 	<option value="1">退勤</option>
                 	<option value="2">早退</option>
                 	<option value="3">その他</option>
                 </select>
-                </p>-->
+                </p>
 
                 <p style="text-align: left">
                 <!--<label for="endDate" th:text="*{endDate}"></label>-->
