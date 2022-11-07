@@ -7,6 +7,21 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class MypageController {
+	
+	
+	/*@RequestMapping(value="/searchList",method = RequestMethod.POST)
+	public String login(Model model,@ModelAttribute Employeelogin employeelogin){
+		model.addAttribute("user_id", Employeelogin.getUserId());
+		model.addAttribute("name",Employeelogin.getUserName());
+		
+	}*/
+	
+	@GetMapping("/Mypage1")
+	public String Mypage() {
+
+		return "/Mypage1";
+	}
+
 
 
 	@GetMapping("/edit")//編集
