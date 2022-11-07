@@ -17,8 +17,9 @@
 
 
 <!--ユーザー1件登録-->
-	<update id="insertOne">
+<update id="insertOne">
   update Attendance set
+    user_id = #{userId},
     end_date = #{endDate},
     status = #{status},
     end_time = #{endTime},

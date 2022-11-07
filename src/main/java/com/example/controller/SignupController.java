@@ -40,7 +40,7 @@ public class SignupController{
 	@PathVariable("attendanceId") Integer attendanceId) {
 		model.addAttribute("attendanceId", attendanceId);
 		
-		MUser user= userService.getUserOne(attendanceId); 
+		MUser user= userService.findOne(attendanceId); 
 		
 		//MUserをformに変換
 		form= modelMapper.map(user,UserDetailForm.class);
@@ -59,14 +59,14 @@ public class SignupController{
 	public String postSignup(Model model,Locale locale,@ModelAttribute SignupForm form, BindingResult bindingResult)
 		 { 
 		
-		System.out.println(form.getStartTime());
+		//System.out.println(form.getStartTime());
 		
 		//formをMUserクラスに変換
 		
 		MUser complete = modelMapper.map(form,MUser.class); 
 		
 		//退勤登録
-		userService. signup(complete);
+		userService.insertOne(complete);
 		
 		//完了画面に遷移
 		return "/complete";
