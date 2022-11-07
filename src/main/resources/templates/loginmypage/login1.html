@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>login1</title>
     <link rel="stylesheet" th:href="@{/css/login1.css}"></link>
-    <style>
-    /* layout */
+   </head>
+   <style>
+   /* layout */
 body,p,form,input {
     font-family: "游ゴシック体","YuGothic","游ゴシック","Yu Gothic",sans-serif;
     margin: 0;
@@ -92,8 +93,7 @@ body {
     text-align: center;
     color: #504946;
   }
-    </style>
-  </head>
+   </style>
   <body>
     <div id="form">
       <p class="form-title">ログイン</p>
@@ -101,16 +101,16 @@ body {
                  class="error">
                   </p>
       <form th:action="@{/login1}" method="post">
-        <p>ユーザーID</p>
+        <label>ユーザーID</label>
         <p class="id">
-          <input type="id" name="id" />
+          <input type="id" name="id">
         </p>
-        <p>パスワード</p>
+        <label>パスワード</label>
         <p class="pass">
-          <input type="password" name="pass" />
+          <input type="password" name="pass" >
         </p>
         <p class="submit">
-          <input type="submit" value="サインイン" />
+          <input type="submit" value="サインイン" >
         </p>
       </form>
     </div>
