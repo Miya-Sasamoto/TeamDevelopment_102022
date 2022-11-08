@@ -36,7 +36,7 @@ public class SignupController{
 	/**出勤登録画面を表示*/
 	@GetMapping("/signup") 
 	public String getSignup(Model model, Locale locale) { 
-		model.addAttribute("userId",5);
+		model.addAttribute("userId",6);
 		return "/attendance";
 	} 
 	
