@@ -20,7 +20,7 @@ public class SignupForm {
 	
 	private Time startTime;
 	
-	private Time endTime;
+	private String endTime;
 	
 	private Time breakTime;
 	

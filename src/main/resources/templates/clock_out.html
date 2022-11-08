@@ -25,22 +25,20 @@
             	<label for="name">ユーザー名 :かまきりお</label>
             	</p>
 
-                <!--<input type="hidden" th:field="*{userId}">  -->
+                <input type="hidden" name="userId" >
+                <input type="hidden" name="attndanceId">
 
-                <!--  <p style="text-align: left">
-                <span style="line-height:22px">
-                <label for="startDate" th:text="#{startDate}">出勤日 :</label>
-                <input type="text" th:field="*{stratDate}" readonly="readonly"><br>
-                </span>
-                </p>-->
+                 <p style="text-align: left">
+                <label for="name">出勤日 :</label>
+                <input type="text" name="startDate" readonly="readonly"><br>
+                </p>
 
-                <!--<p style="text-align: left">
-                    <label for="startTime" th:text="*{startTime}"></label>
+                <p style="text-align: left">
                 <label for="name">出勤時間 :</label>
-                <input type="text" th:field="*{startTime}" readonly="readonly"><br>
-                </p>-->
+                <input type="text" name="startTime" readonly="readonly"><br>
+                </p>
 
-               <p style="text-align: left">
+                <p style="text-align: left">
                      <!--<label for="status" th:text="*{status}"></label>-->
                 <label for="name">退勤ステータス :</label>
                 <select class="textlines" name="status">
@@ -72,7 +70,7 @@
                 <p style="text-align: left">
                     <!--<label for="note" th:text="*{note}"></label>-->
                 <label for="name">備考 :</label>
-                <input type="text" rows="2" cols="20" name="note">
+                <input type="text" name="note">
                 </p>
                 
 

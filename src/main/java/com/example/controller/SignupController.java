@@ -37,6 +37,7 @@ public class SignupController{
 	@GetMapping("/detail/{attendanceId}") 
 	public String getUser(SignupForm form, Model model,
 	@PathVariable("attendanceId") Integer attendanceId) {
+		
 		model.addAttribute("attendanceId", attendanceId);
 		
 		MUser user= userService.findOne(attendanceId); 
@@ -64,6 +65,7 @@ public class SignupController{
 		
 		MUser complete = modelMapper.map(form,MUser.class); 
 		
+		complete.setAttendanceId(9);
 		//退勤登録
 		userService.updateOne(complete);
 		

@@ -9,16 +9,16 @@ mail_address VARCHAR(50)
 
 /*退勤*/
 CREATE TABLE IF NOT EXISTS attendance ( 
-user_id integer PRIMARY KEY ,
-start_date DATE PRIMARY KEY, 
+user_id integer 
+start_date DATE 
 end_date DATE,
 status VARCHAR(2),
 start_time TIME(6),
 end_time TIME(6),
 break_time TIME(6),
 note VARCHAR(200),
-attendance_id serial,s
-ADD PRIMARY KEY(user_id,start_date);
+attendance_id serial, PRIMARY KEY ,
+ADD PRIMARY KEY(attendance_id);
 
 CREATE TABLE [ IF NOT EXISTS ] attendance (
   attendance_id serial UNIQUE

@@ -4,7 +4,7 @@
 <mapper namespace= "com.example.repository.UserMapper">
 <!--マッピング定義（ユーザー）-->
 <resultMap type="com.example.domain.user.model.MUser" id="user"> 
-<id column="user_id" property="userld" /> 
+<id column="user_id" property="userId" /> 
 <result column="start_date" property="startDate" />
 <result column="end_date" property="endDate" /> 
 <result column="status" property="status" /> 
@@ -18,20 +18,25 @@
 
 <!--ユーザー1件登録-->
 <update id="updateOne">
-  update Attendance set
-    user_id = #{userId},
+  update 
+  	Attendance 
+  set
     end_date = #{endDate},
     status = #{status},
     end_time = #{endTime},
     break_time = #{breakTime},
   	note = #{note}
+  where
+  	attendance_id = #{attendanceId}
 </update>
 	
 	
 	<select id="findOne" resultMap="user">
 		select 
-				attendance_id
+				user_id
 		from
 				attendance
+		where
+				attendance_id = #{attendanceId}
 	</select>
 </mapper>

@@ -13,7 +13,7 @@ public class MUser {
 	private Date endDate;
 	private String status;
 	private Time startTime;
-	private Time endTime;
+	private String endTime;
 	private String breakTime;
 	private String note;
 	private int attendanceId;
