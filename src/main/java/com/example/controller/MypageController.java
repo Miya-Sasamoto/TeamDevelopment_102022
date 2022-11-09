@@ -39,18 +39,18 @@ public class MypageController {
 		return "/attendance";
 	}
 	
-	@GetMapping("/complete")//退勤
-	public String Complete() {
+	@GetMapping("/clock_out")//退勤
+	public String Clock_out() {
 
 
-		return "/complete";
+		return "/clock_out";
 	}
 	
-	@GetMapping("/attendance_index")//勤怠一覧
+	@GetMapping("/attendance/attendance_index")//勤怠一覧
 	public String Attendance_index() {
 
 
-		return "/attendance_index";
+		return "/attendance/attendance_index";
 	}
 	
 	

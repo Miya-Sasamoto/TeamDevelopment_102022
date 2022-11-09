@@ -1,8 +1,18 @@
-<?xml version="l.O" encoding="UTF-8"?> 
-<!DOCTYPE mapper PUBLIC"-//mybatis.org//DTD Mapper3.0//EN""http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 
 <mapper namespace= "com.example.repository.UserMapper">
+
+<select id="findloginUser" resultType="Employeelogin">
+	select 
+		user_id,
+		password
+	from Employee
+	where user_id=#{user_id};
+	
+		
+</select>
 
 <!--ユーザー1件登録-->
 <insert id="insertOne">
