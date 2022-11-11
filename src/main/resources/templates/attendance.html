@@ -33,7 +33,7 @@
             <label for="name">出勤報告</label>
             </p>
             
-             <input type="hidden" name="userId" value="*{userId}">
+             <input type="text" name="userId" id="userId" th:value="${userId}">
              
             <p style="text-align: left">
             <label  for="name">出勤ステータス :</label>
@@ -53,8 +53,8 @@
             <p style="text-align: left">
             <label for="name">出勤日 :</label>
             <input type="date" name="startDate"  >
-<!--              <span th:if="${#fields.hasErrors('startDate')}" th:errors="*{startDate}" th:value= "*{startDate}"></span>
- -->             </p>
+            <span style="color: red;" th:if="${#fields.hasErrors('startDate')}" th:errors="*{startDate}" th:value= "*{startDate}"></span>
+              </p>
 
             <p style="text-align: left">
             <label for="name">出勤時間 :</label>
