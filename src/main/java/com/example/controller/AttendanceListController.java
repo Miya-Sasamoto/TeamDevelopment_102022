@@ -18,22 +18,35 @@ import com.example.form.AttendanceListForm;
 @RequestMapping("/attendance")
 public class AttendanceListController{
 	
+//	出退勤情報サービス
 	@Autowired
 	private AttendanceService attendanceService;
 	
 	@Autowired
-	private ModelMapper mapper;
+	private ModelMapper modelMapper;
 	
+///　出退勤情報一覧画面の表示
 	@GetMapping("/list")
-	public String getAttendanceIndex(@ModelAttribute AttendanceListForm form, Model model){
-		MAttendanceList attendance = mapper.map(form, MAttendanceList.class);
+	public String getAttendanceList(@ModelAttribute AttendanceListForm form, Model model){
+		MAttendanceList attendance = modelMapper.map(form, MAttendanceList.class);
 		
+		List<MAttendanceList> attendanceList = attendanceService.getAttendanceList(attendance);
 		
-		
-		List<MAttendanceList> attendanceIndex = attendanceService.getAttendanceIndex(attendance);
-		
-		model.addAttribute("attendanceIndex",attendanceIndex);
+		model.addAttribute("attendanceList",attendanceList);
 	
 		return "attendance/attendance_index";
 	}
+	
+	
+//	@PostMapping("/list")
+//	public String postAttendanceList(@ModelAttribute AttendanceListForm form, Model model){
+//		
+//		MAttendanceList attendance = modelMapper.map(form, MAttendanceList.class);
+//		
+//		List<MAttendanceList> attendanceList = attendanceService.getAttendanceList(attendance);
+//		
+//		model.addAttribute("attendanceList",attendanceList);
+//	
+//		return "attendance/attendance_index";
+//	}
 }

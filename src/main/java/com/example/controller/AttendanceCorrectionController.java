@@ -17,17 +17,17 @@ public class AttendanceCorrectionController {
 	@Autowired
 	private ModelMapper mapper;
 	
-//	@GetMapping("/{attendanceId:.+}")
-//	public String getAttendance(@ModelAttribute AttendanceListForm form, Model model){
+//	@GetMapping("/edit/{attendanceId:.+}")
+//	public String getAttendance(@ModelAttribute AttendanceListForm form, Model model,@PathVariable("attendanceId") String attendanceId){
 //		MAttendance attendance = mapper.map(form, MAttendance.class);
 //		
 //		
 //		
-//		List<MAttendance> attendanceIndex = attendanceService.getAttendanceIndex(attendance);
+//		List<MAttendance> attendanceIndex = attendanceService.getAttendanceList(attendance);
 //		
 //		model.addAttribute("attendanceIndex",attendanceIndex);
 //	
-//		return "attendance/attendance_index";
+//		return "attendance/attendance_edit";
 //	}
 
 }

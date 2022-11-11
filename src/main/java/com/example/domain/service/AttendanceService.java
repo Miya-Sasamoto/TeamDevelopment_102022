@@ -6,5 +6,6 @@ import com.example.domain.model.MAttendanceList;
 
 public interface AttendanceService {
 
-	public List<MAttendanceList> getAttendanceIndex(MAttendanceList attendance);
+//	ユーザー情報取得
+	public List<MAttendanceList> getAttendanceList(MAttendanceList attendance);
 }

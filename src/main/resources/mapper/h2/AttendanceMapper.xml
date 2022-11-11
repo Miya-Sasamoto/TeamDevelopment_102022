@@ -46,10 +46,11 @@
 	
 	</insert>
 
-	<select id="findMany" resultType="MAttendanceList">
+	<select id="findMany" resultMap="attendanceList">
 		select user_id, name, start_date,end_date,status,start_time,end_time,
 		(end_time - start_time - break_time as work_time),
 		break_time,note,reason_for_revision,attendance_id
+		
 		from Attendance;
 	</select>
 

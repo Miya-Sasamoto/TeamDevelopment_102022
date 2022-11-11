@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>  attendance_list</title>
+  <title>attendance_list</title>
    <link rel="stylesheet" href="../../static/attendance/attendance_list_styles.css">
    <!-- <link rel="stylesheet " href="smartStyle1.css"> -->
 
@@ -31,7 +31,7 @@
 	    <th>編集</th>
 	  </tr>
 	<tbody>
-  		<tr th:each="item:${attendanceIndex}">
+  		<tr th:each="item:${attendanceList}">
 		    <td th:text="${item.name}"></td>
 		    <td th:text="${item.status}"></td>
 		    <td th:text="${item.startDate}"></td>
