@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -37,15 +38,25 @@ public class SignupController{
 	@GetMapping("/signup") 
 	public String getSignup(Model model, Locale locale) { 
 		model.addAttribute("userId",6);
+//		model.addAttribute("SignupForm",new SignupForm());
 		return "/attendance";
 	} 
 	
 	
 	/**出勤登録処理*/
 	@PostMapping("/complete") 
-	public String postSignup(Model model,Locale locale,@ModelAttribute SignupForm form, BindingResult bindingResult)
-		 { 
-		
+	public String postSignup(Model model,Locale locale,@ModelAttribute @Validated SignupForm form,BindingResult bindingResult){ 
+//		if(bindingResult.hasErrors()) {
+//			// 入力チェックエラーの場合
+//		      List<String> errorList = new ArrayList<String>();
+//		      
+//		      for (ObjectError error : bindingResult.getAllErrors()) {
+//		    	  errorList.add(error.getDefaultMessage());
+//		      	}
+//		      model.addAttribute("SignupForm",form);
+//		      model.addAttribute("validationError", errorList);
+//			return "/attendance";
+//		}
 		System.out.println(form.getStartTime());
 		
 		//formをMUserクラスに変換

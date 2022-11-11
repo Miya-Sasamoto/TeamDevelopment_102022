@@ -9,12 +9,12 @@
 <!-- JS読込-->
 <script th:src="@{/webjars/jquery/jquery.min.js}" defer></script>
 <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}" defer></script> 
-<title th:text="#{user.signup.title}"></title> -->
+<title th:text="#{user.signup.title}"></title>
 <body>
     <div class="wrapper">
 
         <div class="header">
-        <form th:action="@{/user/complete}" method="post" > 
+        <form th:action="@{/user/complete}"  th:object="${SignupForm}" method="post"> 
         
         
             <p style="text-align: center">
@@ -33,7 +33,7 @@
             <label for="name">出勤報告</label>
             </p>
             
-             <input type="hidden" name="userId" th:value="*{userId}">
+             <input type="hidden" name="userId" value="*{userId}">
              
             <p style="text-align: left">
             <label  for="name">出勤ステータス :</label>
@@ -52,8 +52,9 @@
 
             <p style="text-align: left">
             <label for="name">出勤日 :</label>
-            <input name="startDate" type="date" size="40" maxlength="40">
-            </p>
+            <input type="date" name="startDate"  >
+<!--              <span th:if="${#fields.hasErrors('startDate')}" th:errors="*{startDate}" th:value= "*{startDate}"></span>
+ -->             </p>
 
             <p style="text-align: left">
             <label for="name">出勤時間 :</label>
@@ -64,7 +65,6 @@
             <label for="name">備考 :</label>
             <input name="note" type="text" >
             </p>
-            <br>
 
 			
             <button type="reset">キャンセル</button>

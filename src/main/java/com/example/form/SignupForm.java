@@ -3,8 +3,6 @@ package com.example.form;
 import java.sql.Date;
 import java.sql.Time;
 
-import javax.validation.constraints.NotNull;
-
 import lombok.Data;
 
 @Data
@@ -13,8 +11,8 @@ public class SignupForm {
 	
 	private int userId;
 	
-	//@DateTimeFormat(pattern="yyyy/MM/dd")
-	@NotNull
+//	@DateTimeFormat(pattern="yyyy-MM-dd")
+//	@NotNull(message = "生年月日を入力してください")
 	private Date startDate;
 	
 	//@DateTimeFormat(pattern="yyyy/MM/dd")
