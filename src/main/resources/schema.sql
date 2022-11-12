@@ -1,9 +1,9 @@
-CREATE TABLE IF NOT EXISTS Employee ( 
+CREATE TABLE IF NOT EXISTS employee ( 
 user_id SERIAL PRIMARY KEY, 
 name VARCHAR(50), 
-name_kana VARCHAR(50),
-password VARCHAR(250),
-mail_address VARCHAR(50)
+nameKana VARCHAR(50),
+mailAddress VARCHAR(50),
+passWord VARCHAR(250)
 );
 
 /*出勤*/

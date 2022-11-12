@@ -4,9 +4,9 @@ import lombok.Data;
 
 @Data
 public class NewRegisterForm{
-
+    private String userId;
     private String name;
-    private String name_kana;
-    private String mail_address;
-    private String password;
+    private String nameKana;
+    private String mailAddress;
+    private String passWord;
 }

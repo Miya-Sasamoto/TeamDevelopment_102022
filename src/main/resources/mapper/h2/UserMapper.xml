@@ -3,9 +3,48 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 	<mapper namespace="com.example.repository.UserMapper">
 	
-	<insert id="insertOne">
-	INSERT INTO employee(name,name_kana,mail_address,password)
+	<!-- <resultMap type="com.example.repository.UserMapper" id="user">
+		<id column="user_id" property="userId"/>
+		<result column="name" property="name"/>
+		<result column="name_kana" property="name_kana"/>
+		<result column="mail_address" property="mail_address"/>
+		<result column="password" property="password"/>
+	</resultMap> -->
 	
-	VALUES( #{name},#{name_kana},#{mail_address},#{password})
+	
+	<insert id="insertOne">
+	
+	insert into employee (
+	name,
+	nameKana,
+	mailAddress,
+	passWord
+	)
+	
+	values( 
+	#{name},
+	#{nameKana},
+	#{mailAddress},
+	#{passWord})
 </insert>
 </mapper>
+
+
+<!-- <!ユーザー1件更新>
+<updateid="updateOne"> 
+update 
+m_user   
+set    
+password=#{password}
+,user_name=#{userName} 
+where 
+user_id=#{name}
+</update>
+
+<!ユーザー1件削除>
+<delete id="deleteOne">   delete from
+m_user where 
+user_id=#{user_Id}
+</delete>
+
+</mapper> -->
