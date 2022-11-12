@@ -14,7 +14,7 @@
     <div class="wrapper">
 
         <div class="header">
-        <form th:action="@{/user/complete}"  th:object="${SignupForm}" method="post"> 
+        <form th:action="@{/user/complete}"  th:object="${signupForm}" method="post"> 
         
         
             <p style="text-align: center">
@@ -66,12 +66,6 @@
             <input name="note" type="text" >
             </p>
 
-			<ul>
-			<li th:each="error : ${#fields.detailedErrors()}">
-				<span th:text="${error.message}"></span>
-			</li>
-			</ul>
-			
             <button type="reset">キャンセル</button>
             <button type="submit">送信</button>  
             </div>

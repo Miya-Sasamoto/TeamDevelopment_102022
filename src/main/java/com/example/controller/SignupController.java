@@ -41,7 +41,7 @@ public class SignupController{
 	@GetMapping("/signup") 
 	public String getSignup(Model model, Locale locale) { 
 		model.addAttribute("userId",11);
-		model.addAttribute("SignupForm",new SignupForm());
+		model.addAttribute("signupForm",new SignupForm());
 		return "/attendance";
 	} 
 	
@@ -55,9 +55,9 @@ public class SignupController{
 		      
 		      for (ObjectError error : bindingResult.getAllErrors()) {
 		    	  errorList.add(error.getDefaultMessage());
+		    	  
 		      	}
-		      model.addAttribute("SignupForm",form);
-		      model.addAttribute("validationError", errorList);
+
 			return "/attendance";
 		}
 		System.out.println(form.getStartTime());
