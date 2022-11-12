@@ -6,7 +6,7 @@
 	<resultMap type="com.example.domain.model.MAttendanceList" id="attendanceList">
 		<id column="attendance_id" property="attendanceId"></id>
 		<result column="name" property="name"></result>
-		<result column="start_date" property="startTime"></result>
+		<result column="start_date" property="startDate"></result>
 		<result column="end_date" property="endDate"></result>
 		<result column="status" property="status"></result>
 		<result column="start_time" property="startTime"></result>
@@ -27,8 +27,7 @@
 			end_time,
 			break_time,
 			note,
-			reason_for_revision,
-			attendance_id
+			reason_for_revision
 		) 
 		VALUES(
 			#{userId},
@@ -39,19 +38,18 @@
 			#{endTime},
 			#{breakTime},
 		 	#{note},
-		 	#{reasonForRevision},
-		 	#{attendanceId}
+		 	#{reasonForRevision}
 		
 		)
 	
 	</insert>
 
 	<select id="findMany" resultMap="attendanceList">
-		select user_id, name, start_date,end_date,status,start_time,end_time,
-		(end_time - start_time - break_time as work_time),
+		select Employee.user_id, name, start_date,end_date,status,start_time,end_time,
+		(end_time - start_time - break_time) as work_time,
 		break_time,note,reason_for_revision,attendance_id
-		
-		from Attendance;
+		from Attendance
+		join Employee on Employee.user_id = Attendance.user_id
 	</select>
 
 

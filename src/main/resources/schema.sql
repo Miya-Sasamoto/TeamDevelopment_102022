@@ -8,7 +8,8 @@ mail_address VARCHAR(50)
 
 /*出勤*/
 CREATE TABLE IF NOT EXISTS Attendance ( 
-user_id INTEGER(8),
+attendance_id SERIAL PRIMARY KEY,
+user_id INTEGER,
 start_date DATE,
 end_date DATE,
 status VARCHAR(3),
@@ -17,8 +18,8 @@ end_time TIME(6),
 break_time TIME(6),
 note VARCHAR(200),
 reason_for_revision VARCHAR(100),
-attendance_id SERIAL PRIMARY KEY,
-FOREIGN KEY (user_id)
-REFERENCES employee (user_id)
+   CONSTRAINT fk_employee
+      FOREIGN KEY(user_id) 
+	  REFERENCES Employee(user_id)
 );
 

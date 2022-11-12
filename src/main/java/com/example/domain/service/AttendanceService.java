@@ -8,4 +8,5 @@ public interface AttendanceService {
 
 //	ユーザー情報取得
 	public List<MAttendanceList> getAttendanceList(MAttendanceList attendance);
+	
 }

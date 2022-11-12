@@ -7,12 +7,16 @@ import lombok.Data;
 
 @Data
 public class AttendanceListForm {
-	private Integer attendanceId;
+	private Integer userId;
+	private String name;
 	private Date startDate;
 	private Date endDate;
 	private String status;
 	private Time startTime;
 	private Time endTime;
-	private String breakTime;
+	private Time workTime;
+	private Time breakTime;
 	private String note;
+	private String reasonForRevision;
+	private Integer attendanceId;
 }
