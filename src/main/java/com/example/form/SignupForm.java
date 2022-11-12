@@ -7,6 +7,7 @@ import javax.validation.constraints.NotNull;
 
 import lombok.Data;
 
+
 @Data
 public class SignupForm {
 
@@ -14,7 +15,7 @@ public class SignupForm {
 	private int userId;
 	
 //	@DateTimeFormat(pattern="yyyy-MM-dd")
-	@NotNull
+	@NotNull(message = "日付入れてね^^")
 	private Date startDate;
 	
 	//@DateTimeFormat(pattern="yyyy/MM/dd")

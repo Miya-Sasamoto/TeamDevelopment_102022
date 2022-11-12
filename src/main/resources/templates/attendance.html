@@ -52,9 +52,9 @@
 
             <p style="text-align: left">
             <label for="name">出勤日 :</label>
-            <input type="date" name="startDate"  >
-            <span style="color: red;" th:if="${#fields.hasErrors('startDate')}" th:errors="*{startDate}" th:value= "*{startDate}"></span>
-              </p>
+            <input type="date" name="startDate"  th:field="*{startDate}">
+            <span style="color: red;" th:if="${#fields.hasErrors('startDate')}" th:errors="*{startDate}" ></span>
+            </p>
 
             <p style="text-align: left">
             <label for="name">出勤時間 :</label>
@@ -66,10 +66,16 @@
             <input name="note" type="text" >
             </p>
 
+			<ul>
+			<li th:each="error : ${#fields.detailedErrors()}">
+				<span th:text="${error.message}"></span>
+			</li>
+			</ul>
 			
             <button type="reset">キャンセル</button>
             <button type="submit">送信</button>  
             </div>
+            
           </form>  
         </div>
     </div>
