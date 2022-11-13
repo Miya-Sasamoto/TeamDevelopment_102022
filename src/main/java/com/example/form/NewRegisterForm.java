@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class NewRegisterForm{
-    private String userId;
+    private int userId;
     private String name;
     private String nameKana;
     private String mailAddress;

@@ -1,5 +1,4 @@
 package com.example.controller;
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,14 +21,9 @@ public class NewRegisterController{
     @Autowired
     private NewRegisterService service;
     
-//   @Autowired
-    private  ModelMapper modelMapper;
-    
-    
-    
-    
-     @GetMapping("/NewRegister")
+    @GetMapping("/NewRegister")
     public String getNewRegister(Model model) {
+         model.addAttribute("newRegisterForm",new NewRegisterForm());
         // hello.htmlに画面遷移 
         return "NewRegister";
          }
@@ -41,6 +35,8 @@ public class NewRegisterController{
         newRegisterForm .setNameKana(form.getNameKana());
         newRegisterForm .setMailAddress(form.getMailAddress());
         newRegisterForm .setPassWord(form.getPassWord());
+        
+//        NewRegisterForm complete = modelMapper.map(newRegisterForm,NewRegisterForm.class);
         service.insert(newRegisterForm);
         return "/CompleteNewRegister";
     }   
