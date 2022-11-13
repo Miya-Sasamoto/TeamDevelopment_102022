@@ -3,12 +3,19 @@ package com.example.form;
 import java.sql.Time;
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import lombok.Data;
 
 @Data
-public class UpdateAttendanceDateForm {
+public class AttendanceUpdate {
 	
+	private Integer attendanceId;
+	
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date startDate;
+	
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date endDate;
 	
 	private String status;

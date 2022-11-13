@@ -51,6 +51,39 @@
 		from Attendance
 		join Employee on Employee.user_id = Attendance.user_id
 	</select>
+	
+	<select id="selectOne" resultMap="attendanceList">
+		select Employee.user_id, name, start_date,end_date,status,start_time,end_time,
+		(end_time - start_time - break_time) as work_time,
+		break_time,note,reason_for_revision,attendance_id
+		from Attendance
+		join Employee on Employee.user_id = Attendance.user_id
+		where attendance_id = #{attendanceId}
+	</select>
 
 
+
+		<update id="updateOne">
+	 update
+	  	Attendance
+	 set
+	 	
+	  	start_date = #{startDate},
+	  	start_time = #{startTime},
+	  	end_date = #{endDate},
+	  	end_time = #{endTime},
+	  	break_time = #{breakTime},
+	  	reason_for_revision = #{reasonForRevision}
+	  	
+	  	where
+	 	 attendance_id = #{attendanceId}
+	</update>
+	
 </mapper>
+
+
+
+
+
+
+

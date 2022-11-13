@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>  attendance_correction</title>
-     <link rel="stylesheet" href="../../static/attendance/attendance_correction_styles.css">
+    <title>attendance_correction</title>
+     <link rel="stylesheet" th:href="@{/attendance/attendance_correction_styles.css}">
      <!-- <link rel="stylesheet " href="smartStyle1.css"> -->
 
   </head>
@@ -17,7 +17,7 @@
           <hr>
 
           <br>
-
+		<form  id="attendance_update" method="post" th:action="@{/attendance/edit}" th:object="${attendanceUpdateForm}">
           <div  class="content_1">
             <label> <span>ステータス</span>
               <select name="attendance_status">
@@ -32,10 +32,10 @@
             </label>
 
             <label><span>出勤日</span>
-              <input type="date">
+              <input type="date" th:field="*{startDate}">
             </label>
             <label><span>出勤時間</span>
-              <input type="time" step="1">
+              <input type="time" step="1" th:field="*{startTime}">
             </label>
           </div>
 
@@ -43,15 +43,15 @@
 
           <div class="content_2">
             <label><span>退勤日</span>
-              <input type="date">
+              <input type="date" th:field="*{endDate}">
             </label>
 
             <label><span>退勤時間</span>
-              <input type="time" step="1">
+              <input type="time" step="1" th:field="*{endTime}"> 
             </label>
 
             <label><span>休憩時間</span>
-              <input type="time" step="1">
+              <input type="time" step="1" th:field="*{breakTime}">
             </label>
           </div>
 
@@ -59,7 +59,7 @@
 
           <div class="content_3">
             <label> <span>修正理由</span>
-              <textarea></textarea>
+              <textarea th:field="*{reasonForRevision}"></textarea>
             </label>
           </div>
 
@@ -69,13 +69,14 @@
 
         <div class="buttons">
           <div class="button_box_correction">
-            <button> 修正 </button>
+            <button type="submit" name="update"> 修正 </button>
           </div>
 
           <div class="button_box_cancel">
-            <button> キャンセル </button>
+            <button type="submit"> キャンセル </button>
           </div>
         </div>
+        </form>
     </div>
 
   </body>

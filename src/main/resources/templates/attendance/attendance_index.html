@@ -41,7 +41,7 @@
 		    <td th:text="${item.breakTime}"></td>
 		    <td th:text="${item.workTime}"></td>
 		    <td th:text="${item.note}"></td>
-		    <td><button>編集</button></td>
+		    <td><button><a th:href="@{'/attendance/edit/' + ${item.attendanceId}}">編集</a></button></td>
 
   		</tr>
 
