@@ -30,13 +30,13 @@
 	    <th>備考</th>
 	    <th>編集</th>
 	  </tr>
-	<tbody>
+	<tbody> 
   		<tr th:each="item:${attendanceList}">
 		    <td th:text="${item.name}"></td>
 		    <td th:text="${item.status}"></td>
-		    <td th:text="${item.startDate}"></td>
+		    <td th:text="${#dates.format(item.startDate,'yyyy-MM-dd')}"></td>
 		    <td th:text="${item.startTime}"></td>
-		    <td th:text="${item.endDate}"></td>
+		    <td th:text="${#dates.format(item.endDate,'yyyy-MM-dd')}"></td>
 		    <td th:text="${item.endTime}"></td>
 		    <td th:text="${item.breakTime}"></td>
 		    <td th:text="${item.workTime}"></td>

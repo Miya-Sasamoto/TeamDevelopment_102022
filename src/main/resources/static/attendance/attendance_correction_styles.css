@@ -83,7 +83,10 @@ textarea{
   width: 50%;
 }
 
-
+.validation_error{
+	color:red;
+	font-size: 20px;
+}
 
 /* 下のボタン */
 

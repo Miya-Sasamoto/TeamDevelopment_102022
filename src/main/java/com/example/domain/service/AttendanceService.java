@@ -15,6 +15,7 @@ public interface AttendanceService {
 	
 	public void updateAttendanceOne(
 			Integer attendanceId,
+			String status,
 			Date startDate,
 			Time startTime,
 			Date endDate,

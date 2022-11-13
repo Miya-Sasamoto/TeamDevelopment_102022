@@ -67,7 +67,7 @@
 	 update
 	  	Attendance
 	 set
-	 	
+	 	status     = #{status},
 	  	start_date = #{startDate},
 	  	start_time = #{startTime},
 	  	end_date = #{endDate},

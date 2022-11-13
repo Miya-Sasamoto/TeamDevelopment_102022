@@ -20,6 +20,7 @@ public interface AttendanceMapper {
 	
 	public void updateOne(
 			@Param("attendanceId")Integer attendanceId,
+			@Param("status")String status,
 			@Param("startDate")Date startDate,
 			@Param("startTime")Time startTime,
 			@Param("endDate")Date endDate,

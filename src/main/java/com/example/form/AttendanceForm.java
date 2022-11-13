@@ -3,14 +3,17 @@ package com.example.form;
 import java.sql.Time;
 import java.util.Date;
 
+import javax.validation.constraints.NotBlank;
+
 import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.Data;
 
 @Data
-public class AttendanceUpdate {
+public class AttendanceForm {
 	
 	private Integer attendanceId;
+	private Integer userId;
 	
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date startDate;
@@ -25,6 +28,8 @@ public class AttendanceUpdate {
 	private Time breakTime;
 	
 	private String note;
+	
+	@NotBlank
 	private String reasonForRevision;
 
 }

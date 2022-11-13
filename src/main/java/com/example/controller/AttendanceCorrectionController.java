@@ -4,6 +4,8 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,8 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.domain.model.MAttendanceList;
 import com.example.domain.service.AttendanceService;
-import com.example.form.AttendanceListForm;
-import com.example.form.AttendanceUpdate;
+import com.example.form.AttendanceForm;
 
 @Controller
 @RequestMapping("/attendance")
@@ -26,12 +27,12 @@ public class AttendanceCorrectionController {
 	private ModelMapper modelMapper;
 	
 	@GetMapping("/edit/{attendanceId:.+}")
-	public String getAttendance(@ModelAttribute AttendanceListForm form, Model model,@PathVariable("attendanceId") Integer attendanceId){
+	public String getAttendance(@ModelAttribute AttendanceForm form, Model model,@PathVariable("attendanceId") Integer attendanceId){
 		MAttendanceList attendanceCorrection = attendanceService.getAttendanceOne(attendanceId);
 		
-		form = modelMapper.map(attendanceCorrection, AttendanceListForm.class);
+		form = modelMapper.map(attendanceCorrection, AttendanceForm.class);
 		
-		model.addAttribute("attendanceUpdateForm",form);
+		model.addAttribute("attendanceForm",form);
 		
 		//model.addAttribute("attendanceCorrection",attendanceCorrection);
 	
@@ -39,10 +40,15 @@ public class AttendanceCorrectionController {
 	}
 	
 	@PostMapping(value = "/edit" , params = "update")
-	public String updateAttendance(@ModelAttribute AttendanceUpdate form, Model model) {
+	public String updateAttendance(@ModelAttribute @Validated AttendanceForm form, BindingResult bindingResult, Model model) {
+		
+		 if (bindingResult.hasErrors()) {
+			 return "attendance/attendance_edit";
+		 }
 		
 		attendanceService.updateAttendanceOne(
 				form.getAttendanceId(),
+				form.getStatus(),
 				form.getStartDate(),
 				form.getStartTime(),
 				form.getEndDate(),
@@ -52,7 +58,7 @@ public class AttendanceCorrectionController {
 				);
 		
 		
-		model.addAttribute("attendanceUpdateForm",form);
+		model.addAttribute("attendanceForm",form);
 		
 //		return "redirect:list";
 		return "redirect:attendanceCorrectionDone";

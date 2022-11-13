@@ -33,6 +33,7 @@ public class AttendanceServiceImpl implements AttendanceService{
 	@Override
 	public void updateAttendanceOne(
 			Integer attendanceId,
+			String status,
 			Date startDate,
 			Time startTime,
 			Date endDate,
@@ -40,7 +41,9 @@ public class AttendanceServiceImpl implements AttendanceService{
 			Time breakTime,
 			String reasonForRevision
 			) {
-		attendanceMapper.updateOne(attendanceId,startDate,startTime,endDate,endTime,breakTime,reasonForRevision);
+		
+		System.out.println("data:" + attendanceId  + reasonForRevision);
+		attendanceMapper.updateOne(attendanceId,status,startDate,startTime,endDate,endTime,breakTime,reasonForRevision);
 	}
 	
 }
