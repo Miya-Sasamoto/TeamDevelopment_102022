@@ -2,20 +2,22 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org.//DTD Mapper3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 
-<mapper namespace= "com.example.repository.UserMapper">
+<mapper namespace="com.example.repository.UserMapper">
 
-<select id="findloginUser" resultType="Employeelogin">
-	select 
+	<select id="findloginUser" parameterType="int"
+		resultType="com.example.entity.Employeelogin">
+		select
 		user_id,
+		name,
+		name_kana,
 		password
 	from Employee
-	where user_id=#{user_id};
-	
-		
-</select>
-<!--ユーザー1件登録-->
-<insert id="insertOne">
-	insert into Attendanse(
+	where user_id=#{user_id};	
+	</select>
+
+	<!--ユーザー1件登録 -->
+	<insert id="insertOne">
+		insert into Attendanse(
 		user_id,
 		start_date,
 		end_date,
@@ -24,8 +26,8 @@
 		end_time,
 		break_time,
 		note
-	)
-	values(
+		)
+		values(
 		#{user_id},
 		#{start_date},
 		#{end_date},
@@ -34,6 +36,6 @@
 		#{end_time},
 		#{break_time},
 		#{note}
-	)
+		)
 	</insert>
 </mapper>

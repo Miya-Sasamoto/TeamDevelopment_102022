@@ -14,24 +14,30 @@ public class LoginController {
 	@GetMapping("/login1")
 	public String Login() {
 		
-		String password = "123456";
+	    String password = "123456";
 	    PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 	    String hashedPassword = passwordEncoder.encode(password);
-	    
+	    System.out.println("hasyyuka");
 	    System.out.println(hashedPassword);
 
 
-		return "loginmypage/login1";
+		return  "/loginmypage/login1";
 	}
 	
-	
+	@GetMapping("/shinki")
+	public String Shinki() {
+
+		return "/shinki";
+	}
 
 	
+//	
 	
-	//ログイン成功時のマイページ画面への遷移
-   /* @PostMapping
-      String postLogin() {
-        return "redirect:/Mypage1";
-    }*/
+	
+//	//ログイン成功時のマイページ画面への遷移
+//   @PostMapping("/login1")
+//   public String postLogin() {
+//        return "redirect:/loginmypage/Mypage1";
+//   
 
 }

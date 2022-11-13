@@ -16,34 +16,36 @@ import com.example.entity.Employeelogin;
 import com.example.repository.UserMapper;
 
 @Service
-public class UserDetailsServiceImpl implements UserDetailsService{
+public class UserDetailsServiceImpl implements UserDetailsService {
 
-    //DBからユーザ情報を検索するメソッドを実装したクラス
-    @Autowired
-    private UserMapper userMapper ;
+	//DBからユーザ情報を検索するメソッドを実装したクラス
+	@Autowired
+	private UserMapper userMapper;
 
-    @Override
-    public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
-    	
-    	int userId = Integer.parseInt(userName);
-        Employeelogin user = userMapper.findloginUser(userId);
-        System.out.println(user);
-        
-        if (user == null) {
-            throw new UsernameNotFoundException("User" + userName + "was not found in the database");
-        }
-        //権限のリスト
-        //AdminやUserなどが存在するが、今回は利用しないのでUSERのみを仮で設定
-        //権限を利用する場合は、DB上で権限テーブル、ユーザ権限テーブルを作成し管理が必要
-        List<GrantedAuthority> grantList = new ArrayList<GrantedAuthority>();
-        GrantedAuthority authority = new SimpleGrantedAuthority("USER");
-        grantList.add(authority);
+	@Override
+	public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
 
-        //UserDetailsはインタフェースなのでUserクラスのコンストラクタで生成したユーザオブジェクトをキャスト
-        UserDetails userDetails = (UserDetails)new User(user.getUser_id(),
-        		(user.getPassword()),grantList);
+		int userId = Integer.parseInt(userName);
+		Employeelogin user = userMapper.findloginUser(userId);
+		System.out.println(user);
 
-        return userDetails;
-    }
+		if (user == null) {
+			throw new UsernameNotFoundException("User" + userName + "was not found in the database");
+		}
+		//        return new org.springframework.security.core.userdetails.User(user.getName(), new BCryptPasswordEncoder().encode(user.getPassword()), getGrantedAuth(user));
+
+		//権限のリスト
+		//AdminやUserなどが存在するが、今回は利用しないのでUSERのみを仮で設定
+		//権限を利用する場合は、DB上で権限テーブル、ユーザ権限テーブルを作成し管理が必要
+		List<GrantedAuthority> grantList = new ArrayList<GrantedAuthority>();
+		GrantedAuthority authority = new SimpleGrantedAuthority("USER");
+		grantList.add(authority);
+
+		//UserDetailsはインタフェースなのでUserクラスのコンストラクタで生成したユーザオブジェクトをキャスト
+		UserDetails userDetails = (UserDetails) new User(user.getUser_id(),
+				(user.getPassword()), grantList);
+
+		return userDetails;
+	}
 
 }
