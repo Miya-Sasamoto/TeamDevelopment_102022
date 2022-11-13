@@ -9,14 +9,14 @@ import com.example.repository. UserMapper;
 
 @Service
 public class UserServiceImpl implements UserService {
-	
+
 	@Autowired 
 	private UserMapper mapper;
-	
+
 	/**ユーザー登録*/
 	@Override 
 	public void signup(MUser user) { 
-		
+
 	mapper.insertOne(user);
 	}
 }
