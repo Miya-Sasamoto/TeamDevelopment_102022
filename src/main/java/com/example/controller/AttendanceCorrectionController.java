@@ -33,8 +33,6 @@ public class AttendanceCorrectionController {
 		form = modelMapper.map(attendanceCorrection, AttendanceForm.class);
 		
 		model.addAttribute("attendanceForm",form);
-		
-		//model.addAttribute("attendanceCorrection",attendanceCorrection);
 	
 		return "attendance/attendance_edit";
 	}
@@ -60,7 +58,6 @@ public class AttendanceCorrectionController {
 		
 		model.addAttribute("attendanceForm",form);
 		
-//		return "redirect:list";
 		return "redirect:attendanceCorrectionDone";
 	}
 	

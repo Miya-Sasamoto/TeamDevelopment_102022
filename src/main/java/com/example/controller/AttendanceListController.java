@@ -36,17 +36,4 @@ public class AttendanceListController{
 	
 		return "attendance/attendance_index";
 	}
-	
-	
-//	@PostMapping("/list")
-//	public String postAttendanceList(@ModelAttribute AttendanceListForm form, Model model){
-//		
-//		MAttendanceList attendance = modelMapper.map(form, MAttendanceList.class);
-//		
-//		List<MAttendanceList> attendanceList = attendanceService.getAttendanceList(attendance);
-//		
-//		model.addAttribute("attendanceList",attendanceList);
-//	
-//		return "attendance/attendance_index";
-//	}
 }
