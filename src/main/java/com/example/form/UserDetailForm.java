@@ -3,6 +3,8 @@ package com.example.form;
 import java.sql.Time;
 import java.util.Date;
 
+import javax.validation.constraints.NotNull;
+
 import lombok.Data;
 
 @Data
@@ -13,7 +15,8 @@ public class UserDetailForm {
 	private Date startDate;
 	
 	//@DateTimeFormat(pattern="yyyy/MM/dd")
-	private Date endDate;
+	@NotNull
+	private String endDate;
 	
 	private String status;
 	
@@ -21,7 +24,7 @@ public class UserDetailForm {
 	
 	private Time endTime;
 	
-	private Time breakTime;
+	private String breakTime;
 	
 	private String note;
 	

@@ -5,11 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>退勤報告</title>
 <link rel="stylesheet" th:href="@{/style5.css}"></head>
+<script th:src="@{/webjars/jquery/jquery.min.js}" defer></script>
+<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}" defer></script> 
+<title th:text="#{user.signup.title}"></title>
 <body>
     <div class="wrapper">
         
         <div class="header">
-         <form th:action="@{/user/complete}" method="post" th:object="${form}"> 
+         <form th:action="@{/user/complete}" method="post" th:object="${signupform}"> 
             <h1>退勤入力フォーム</h1>
             <div class="header2">
                 <p style="text-align: center">
@@ -25,17 +28,19 @@
             	<label for="name">ユーザー名 :かまきりお</label>
             	</p>
 
+
                 <input type="hidden" name="userId" >
+                
                 <input type="hidden" name="attndanceId">
 
                  <p style="text-align: left">
-                <label for="name">出勤日 :</label>
-                <input type="text" name="startDate" readonly="readonly"><br>
+                <!--<label for="name">出勤日 :</label>
+                <input type="text" name="startDate" readonly="readonly" id="startDate" th:field="*{startDate}"><br>-->
                 </p>
 
                 <p style="text-align: left">
-                <label for="name">出勤時間 :</label>
-                <input type="text" name="startTime" readonly="readonly"><br>
+                <!--<label for="name">出勤時間 :</label>
+                <input type="text" name="startTime" readonly="readonly" id="startTime" th:field="*{startDate}"><br>-->
                 </p>
 
                 <p style="text-align: left">
@@ -49,15 +54,15 @@
                 </p>
 
                 <p style="text-align: left">
-                <!--<label for="endDate" th:text="*{endDate}"></label>-->
                 <label for="name">退勤日 :</label>
-                <input type="date" size="30" maxlength="40" name="endDate" >
+                <input type="date" name="endDate" >
+            	<!--<span th:if="${#fields.hasErrors('endDate')}" th:errors="*{endDate}" ></span>-->
                 </p>
                 
                 <p style="text-align: left">
                     <!--<label for="endTime" th:text="*{endTime}"></label>-->
                 <label for="name">退勤時間 :</label>
-                <input type="time" value="18:00" name="endTime">
+                <input type="time" value="18:00" name="endTime" >
                 </p>
 
                 

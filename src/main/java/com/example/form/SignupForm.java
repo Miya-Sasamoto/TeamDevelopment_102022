@@ -3,6 +3,8 @@ package com.example.form;
 import java.sql.Date;
 import java.sql.Time;
 
+import javax.validation.constraints.NotEmpty;
+
 import lombok.Data;
 
 @Data
@@ -13,8 +15,9 @@ public class SignupForm {
 	//@DateTimeFormat(pattern="yyyy/MM/dd")
 	private Date startDate;
 	
-	//@DateTimeFormat(pattern="yyyy/MM/dd")
-	private Date endDate;
+	//@DateTimeFormat(pattern="yyyy-MM-dd")
+	@NotEmpty(message = "日付入れてね^^")
+	private String endDate;
 	
 	private String status;
 	
@@ -22,7 +25,7 @@ public class SignupForm {
 	
 	private String endTime;
 	
-	private Time breakTime;
+	private String breakTime;
 	
 	private String note;
 	
