@@ -77,10 +77,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 				.formLogin()
 				.loginProcessingUrl("/login1")//ログイン処理のパス
 				.loginPage("/login1")//ログインページの指定
+				.defaultSuccessUrl("/Mypage1", true)//成功後の遷移先
 				.failureUrl("/login?error")//ログイン失敗時の遷移先
 				.usernameParameter("id")//ログインページのユーザーID
 				.passwordParameter("pass")//ログインページのパスワード
-				.defaultSuccessUrl("/Mypage1", true);//成功後の遷移先
+				.permitAll();
 
 		//CSRF対策を無効に設定(一時的)
 		/*http.csrf().disable();*/

@@ -24,12 +24,46 @@ public class LoginController {
 		return  "/loginmypage/login1";
 	}
 	
+	@GetMapping("/Mypage1")
+	public String Mypage1() {
+		return "/loginmypage/Mypage1";
+	}
+	
 	@GetMapping("/shinki")
 	public String Shinki() {
 
 		return "/shinki";
 	}
 
+
+	@GetMapping("/edit")//編集
+	public String Edit() {
+
+
+		return "/edit";
+	}
+	
+	
+	@GetMapping("/attendance")//出勤
+	public String Attendance() {
+
+
+		return "/attendance";
+	}
+	
+	@GetMapping("/clock_out")//退勤
+	public String Clock_out() {
+
+
+		return "/clock_out";
+	}
+	
+	@GetMapping("/attendance/attendance_index")//勤怠一覧
+	public String Attendance_index() {
+
+
+		return "/attendance/attendance_index";
+	}
 	
 //	
 	
