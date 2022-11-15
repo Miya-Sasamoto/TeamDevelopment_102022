@@ -92,6 +92,6 @@ public class Clock_outController{
 	
 	 @RequestMapping("/top")
 	    public String home() {
-	        return "/mypage";
+	        return "/Mypage1";
 	    }
 }
