@@ -27,7 +27,7 @@ import com.example.form.SignupForm;
 @Controller
 @RequestMapping("/user")
 //@Slf4j
-public class SignupController{
+public class Clock_outController{
 	
 	
 	@Autowired
@@ -89,4 +89,9 @@ public class SignupController{
 		return "/complete";
 		
 	}
+	
+	 @RequestMapping("/top")
+	    public String home() {
+	        return "/mypage";
+	    }
 }

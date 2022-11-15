@@ -89,6 +89,7 @@ button[type="submit"]:focus {
 }
 
 label {
+	white-space: nowrap;
 	display: inline-block;
 	width: 6em;
 	text-align:center;

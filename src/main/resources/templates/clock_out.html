@@ -17,69 +17,65 @@
             <div class="header2">
             
             	<div class="clock_out">退勤報告</div>
-                
-                
-            
-            	<!-- <label for="name">ユーザーID :123456</label>
-            	<br>
-            	<label for="name">ユーザー名 :かまきりお</label>
-            	</p> -->
-
-
+          
                 <input type="hidden" name="userId" value=1>
-                
                 <input type="hidden" name="attndanceId" value=50>
                 <!-- th:value="${attndanceId}"th:value="${userId}" -->
 
-                 <p style="text-align: left">
-                <!--<label for="name">出勤日 :</label>
-                <input type="text" name="startDate" readonly="readonly" id="startDate" th:field="*{startDate}"><br>-->
-                </p>
+                <!-- <p style="text-align: left">
+                <label for="name">出勤日 :</label>
+                <input type="text" name="startDate" readonly="readonly" id="startDate" th:field="*{startDate}"><br>
+                </p> -->
 
-                <p style="text-align: left">
-                <!--<label for="name">出勤時間 :</label>
-                <input type="text" name="startTime" readonly="readonly" id="startTime" th:field="*{startDate}"><br>-->
-                </p>
+                <!-- <p style="text-align: left">
+                <label for="name">出勤時間 :</label>
+                <input type="text" name="startTime" readonly="readonly" id="startTime" th:field="*{startDate}"><br>
+                </p> -->
 
-                <p style="text-align: left">
-                     <!--<label for="status" th:text="*{status}"></label>-->
-                <label for="name">退勤ステータス :</label>
-                <select class="textlines" name="status">
-                	<option value="1">退勤</option>
-                	<option value="2">早退</option>
-                	<option value="3">その他</option>
-                </select>
-                </p>
+				<div class="status">
+                	<p style="text-align: left">
+                	<label for="name">退勤ステータス :</label>
+                	<select class="textlines" name="status">
+                		<option value="1">退勤</option>
+                		<option value="2">早退</option>
+                		<option value="3">その他</option>
+               		</select>
+                	</p>
+                </div>
+                
+				<div class="endDate">
+                	<p style="text-align: left">
+                	<label for="name">退勤日 :</label>
+                	<input type="date" name="endDate" th:object="${signupForm}">
+            		<span style="color: red" th:if="${#fields.hasErrors('endDate')}" th:errors="*{endDate}" ></span>
+                	</p>
+                </div>
+                
+                <div class="endTime">
+                	<p style="text-align: left">
+                	<label for="name">退勤時間 :</label>
+                	<input type="time" value="18:00" name="endTime" >
+                	</p>
+                </div>
 
-                <p style="text-align: left">
-                <label for="name">退勤日 :</label>
-                <input type="date" name="endDate" th:object="${signupForm}">
-            	<span style="color: red" th:if="${#fields.hasErrors('endDate')}" th:errors="*{endDate}" ></span>
+                <div class="breakTime">
+                	<p style="text-align: left">
+                	<label for="name">休憩時間 :</label>
+                	<input type="number" value="1" min="0" step="0.25" name="breakTime">
                 </p>
                 
-                <p style="text-align: left">
-                    <!--<label for="endTime" th:text="*{endTime}"></label>-->
-                <label for="name">退勤時間 :</label>
-                <input type="time" value="18:00" name="endTime" >
-                </p>
-
-                
-                <p style="text-align: left">
-                    <!--<label for="breakTime" th:text="*{breakTime}"></label>-->
-                <label for="name">休憩時間 :</label>
-                <input type="number" value="1" min="0" step="0.25" name="breakTime">
-                </p>
-                
-                <p style="text-align: left">
-                    <!--<label for="note" th:text="*{note}"></label>-->
-               <label for="name">備考 :</label>
-                <input type="text" name="note">
-                </p>
+                <div class="note">
+                	<p style="text-align: left">
+               		<label for="name">備考 :</label>
+                	<input type="text" name="note">
+                	</p>
+                </div>
                 
 
                 <button type="reset">キャンセル</button>
                 <button type="submit">送信</button>
-            </div>
+                </div>
+              </div>
             </form>
         </div>
     </div>
