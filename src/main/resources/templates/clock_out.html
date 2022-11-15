@@ -12,7 +12,7 @@
     <div class="wrapper">
         
         <div class="header">
-         <form th:action="@{/user/complete}" method="post" th:object="${signupform}"> 
+         <form th:action="@{/user/complete}" method="post" th:object="${signupForm}"> 
             <h1>退勤入力フォーム</h1>
             <div class="header2">
                 <p style="text-align: center">
@@ -29,9 +29,10 @@
             	</p>
 
 
-                <input type="hidden" name="userId" >
+                <input type="hidden" name="userId" value=1>
                 
-                <input type="hidden" name="attndanceId">
+                <input type="hidden" name="attndanceId" value=50>
+                <!-- th:value="${attndanceId}"th:value="${userId}" -->
 
                  <p style="text-align: left">
                 <!--<label for="name">出勤日 :</label>
@@ -55,8 +56,8 @@
 
                 <p style="text-align: left">
                 <label for="name">退勤日 :</label>
-                <input type="date" name="endDate" >
-            	<!--<span th:if="${#fields.hasErrors('endDate')}" th:errors="*{endDate}" ></span>-->
+                <input type="date" name="endDate" th:object="${signupForm}">
+            	<span style="color: red" th:if="${#fields.hasErrors('endDate')}" th:errors="*{endDate}" ></span>
                 </p>
                 
                 <p style="text-align: left">

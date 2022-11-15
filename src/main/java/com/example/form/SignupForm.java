@@ -1,6 +1,5 @@
 package com.example.form;
 
-import java.sql.Date;
 import java.sql.Time;
 
 import javax.validation.constraints.NotEmpty;
@@ -13,7 +12,7 @@ public class SignupForm {
 	private int userId;
 	
 	//@DateTimeFormat(pattern="yyyy/MM/dd")
-	private Date startDate;
+	private String startDate;
 	
 	//@DateTimeFormat(pattern="yyyy-MM-dd")
 	@NotEmpty(message = "日付入れてね^^")

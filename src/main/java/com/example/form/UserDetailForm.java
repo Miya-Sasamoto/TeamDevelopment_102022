@@ -1,9 +1,6 @@
 package com.example.form;
 
 import java.sql.Time;
-import java.util.Date;
-
-import javax.validation.constraints.NotNull;
 
 import lombok.Data;
 
@@ -12,10 +9,10 @@ public class UserDetailForm {
 	private int userId;
 	
 	//@DateTimeFormat(pattern="yyyy/MM/dd")
-	private Date startDate;
+	private String startDate;
 	
 	//@DateTimeFormat(pattern="yyyy/MM/dd")
-	@NotNull
+//	@NotNull
 	private String endDate;
 	
 	private String status;
