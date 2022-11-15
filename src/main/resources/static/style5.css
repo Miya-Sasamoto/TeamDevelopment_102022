@@ -92,7 +92,7 @@ button[type="submit"]:focus {
 	color: white;
 }
 
-button[type="reset"]:focus {
+button[type="button"]:focus {
 	background-color: #504946;
 	border-color: #504946;
 	color: white;
@@ -100,14 +100,11 @@ button[type="reset"]:focus {
 
 label {
 	display: inline-block;
-	width: 6em;
-	text-align:center;
-	text-align:center;
-	padding:10px 0;
-}
+	width: 8em;
 
-label {
-text-align:center;
+	padding:10px 0px 0px 200px;
+	font-size: 30px;
+	white-space: nowrap;
 }
 
 
