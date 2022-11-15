@@ -64,7 +64,7 @@ input[type="textbox"]:focus {
 	outline: 0;
 }
 
-.btn--orange, label1 {
+.btn--orange, clock_out {
 	border-bottom: 2px solid #000;
 }
 
@@ -101,22 +101,15 @@ button[type="reset"]:focus {
 label {
 	display: inline-block;
 	width: 6em;
-	margin-left: 50px;
+	text-align:center;
+	text-align:center;
+	padding:10px 0;
 }
 
-label2 {
-	display: inline-block;
-	width: 6em;
-	margin-left: 50px;
+label {
+text-align:center;
 }
 
-lablel4{
-	display: inline-block;
-	width: 1em;
-	margin-left: 25px;
-	font-size: 100px;
-}
 
-.textlines:focus {
-	border: solid 2px #6495ed;
-}
+
+

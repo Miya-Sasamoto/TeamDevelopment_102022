@@ -15,18 +15,15 @@
          <form th:action="@{/user/complete}" method="post" th:object="${signupForm}"> 
             <h1>退勤入力フォーム</h1>
             <div class="header2">
-                <p style="text-align: center">
-                <span style="line-height:10px">
-                <label for="name">退勤報告</label>
-                </span>
-                </p>
-                
-                <p style="text-align: left">
             
-            	<label for="name">ユーザーID :123456</label>
+            	<div class="clock_out">退勤報告</div>
+                
+                
+            
+            	<!-- <label for="name">ユーザーID :123456</label>
             	<br>
             	<label for="name">ユーザー名 :かまきりお</label>
-            	</p>
+            	</p> -->
 
 
                 <input type="hidden" name="userId" value=1>
