@@ -13,4 +13,6 @@ public interface UserMapper {
 	
 	//ユーザー取得(1件)
 		public MUser findOne(Integer attendanceId);
+
+		public void insertOne(MUser user);
 }
