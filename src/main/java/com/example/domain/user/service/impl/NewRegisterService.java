@@ -9,5 +9,4 @@ public interface NewRegisterService {
     public void insert(NewRegisterForm newRegisterForm); 
 //    userMapper.insertOne(newRegisterForm);
     
-
-}
+ }
