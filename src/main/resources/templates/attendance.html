@@ -1,66 +1,79 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thyleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>出勤報告</title>
 <link rel="stylesheet" th:href="@{/style4.css}"></head>
+<!-- <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">-->
+<!-- JS読込-->
+<script th:src="@{/webjars/jquery/jquery.min.js}" defer></script>
+<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}" defer></script> 
+<title th:text="#{user.signup.title}"></title>
 <body>
     <div class="wrapper">
 
         <div class="header">
-
+        <form th:action="@{/user/complete}"  th:object="${signupForm}" method="post"> 
+        
+        
             <p style="text-align: center">
             <h1>出勤入力フォーム</h1>
-            </p>
+          
             
             <div class="header2">
                 
             <p style="text-align: left">
-            <label2 for="name">ユーザーID :123456</label2>
+            <!-- <label for="name">ユーザーID :123456</label>
             <br>
-            <label4 for="name">ユーザー名 :かまきりお</label4>
-            </p>
+            <label for="name">ユーザー名 :かまきりお</label>
+            </p> -->
 
-            <p style="text-align: center">
-            <label1 for="name">出勤報告</label1>
-            </p>
-
+			<div class="attendance">出勤報告</div>
+            
+            <div class="attendance">ユーザーID
+             <input type="text" name="userId" id="userId" th:value="${userId}">
+             </div>
+             
             <p style="text-align: left">
-            <label for="name">出勤ステータス :</label>
-            <select class="textlines">
-            <option value="サンプル1">出勤</option>
-            <option value="サンプル2">遅刻</option>            
-            <option value="サンプル3">欠勤</option>
-            <option value="サンプル4">代休</option>
-            <option value="サンプル5">休日</option>
-            <option value="サンプル6">有給</option>
-            <option value="サンプル7">その他</option>
-            <option value="サンプル8">その他(休日)</option>
+            <label  for="name">出勤ステータス :</label>
+            <select name="status" class="textlines">
+            <option value="1">出勤</option>
+            <option value="2">遅刻</option>            
+            <option value="3">欠勤</option>
+            <option value="4">代休</option>
+            <option value="5">休日</option>
+            <option value="6">有給</option>
+            <option value="7">その他</option>
+            <option value="8">その他(休日)</option>
+            
             </select>
             </p>
 
             <p style="text-align: left">
             <label for="name">出勤日 :</label>
-            <input type="date" size="40" maxlength="40">
+            <input type="date" name="startDate"  th:field="*{startDate}">
+            <span style="color: red;" th:if="${#fields.hasErrors('startDate')}" th:errors="*{startDate}" ></span>
             </p>
 
             <p style="text-align: left">
             <label for="name">出勤時間 :</label>
-            <input id="appt-time" type="time" name="appt-time" value="09:00">
+            <input name="startTime" type="time" value="09:00">
             </p>
 
             <p style="text-align: left">
             <label for="name">備考 :</label>
-            <input type="text" rows="2" cols="20" >
+            <input name="note" type="text" >
             </p>
-            <br>
 
-            <button type="reset">キャンセル</button>
-            <button type="submit">送信</button>   
+            <button type="button" onclick="location.href='URL'">キャンセル</button>
+            <button type="submit">送信</button>  
+            </div>
+            
+          </form>  
         </div>
     </div>
- </div>
+
     
 </body>
 </html>

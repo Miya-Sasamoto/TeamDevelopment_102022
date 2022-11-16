@@ -1,18 +1,19 @@
 package com.example.domain.user.model;
 
+
 import java.util.Date;
 
 import lombok.Data;
 
 @Data
 public class MUser {
-	private String userId;
-	private Date start_date;
-	private Date end_date;
+	private int userId;
+	private Date startDate;
+	private Date endDate;
 	private String status;
-	private String start_time;
-	private String end_time;
-	private String break_time;
+	private String startTime;
+	private String endTime;
+	private String breakTime;
 	private String note;
 	
 

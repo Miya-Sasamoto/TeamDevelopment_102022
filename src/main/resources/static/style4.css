@@ -72,20 +72,18 @@ h2 {
 }
 .btn--orange,
 h1{
-    font-size: 38px;
+    font-size: 40px;
     border-bottom: 6px double #000;
 }
 button[type="submit"]:focus{
     background-color:#504946; border-color:#504946; color:white;
 }
-button[type="reset"]:focus{
+button[type="button"]:focus{
     background-color:#504946; border-color:#504946; color:white;
 }
 label {
     display: inline-block;
     width: 8em;
     margin-left: 200px;
+    font-size: 30px;
 }
-.textlines:focus {
-    border: solid 2px #6495ed;
-  }
