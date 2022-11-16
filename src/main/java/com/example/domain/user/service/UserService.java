@@ -6,4 +6,5 @@ public interface UserService {
 	public void updateOne(MUser user); 
 	//ユーザー取得(1件)
 		public MUser findOne(Integer attendanceId);
+		public void signup(MUser complete);
 }
