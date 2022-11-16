@@ -6,16 +6,22 @@ password VARCHAR(250),
 mail_address VARCHAR(50)
 );
 
-/*出勤*/
-CREATE TABLE IF NOT EXISTS attendance ( 
-user_id integer PRIMARY KEY ,
-start_date DATE PRIMARY KEY, 
+
+CREATE TABLE IF NOT EXISTS Attendance ( 
+attendance_id SERIAL PRIMARY KEY,
+user_id INTEGER,
+start_date DATE,
 end_date DATE,
-status VARCHAR(2),
+status VARCHAR(3),
 start_time TIME(6),
 end_time TIME(6),
 break_time TIME(6),
 note VARCHAR(200),
-ADD PRIMARY KEY(user_id,start_date);
+
+reason_for_revision VARCHAR(100),
+   CONSTRAINT fk_employee
+      FOREIGN KEY(user_id) 
+	  REFERENCES Employee(user_id)
+);
 
 
