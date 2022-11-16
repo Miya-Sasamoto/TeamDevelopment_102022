@@ -1,6 +1,7 @@
 package com.example.domain.user.model;
 
 
+
 import java.util.Date;
 
 import lombok.Data;
@@ -15,6 +16,6 @@ public class MUser {
 	private String endTime;
 	private String breakTime;
 	private String note;
-	
+	private int attendanceId;
 
 }

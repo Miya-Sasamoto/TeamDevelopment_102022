@@ -13,6 +13,7 @@ import org.springframework.validation.ObjectError;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -26,7 +27,7 @@ import com.example.form.SignupForm;
 @Controller
 @RequestMapping("/user")
 //@Slf4j
-public class SignupController{
+public class Clock_outController{
 	
 	
 	@Autowired
@@ -36,44 +37,61 @@ public class SignupController{
 	private  ModelMapper modelMapper;
 	
 	
-	
-	/**出勤登録画面を表示*/
-	@GetMapping("/signup") 
-	public String getSignup(Model model, Locale locale) { 
-		model.addAttribute("userId",11);
+	//退勤登録画面を表示
+	@GetMapping("/detail/{attendanceId}") 
+	public String getUser(Model model, @ModelAttribute SignupForm form, 
+	@PathVariable("attendanceId") Integer attendanceId) {
+		
+		
+//		model.addAttribute("signupForm", form);
+		
+		MUser user= userService.findOne(attendanceId); 
+		
+		//MUserをformに変換
+		form= modelMapper.map(user,SignupForm.class);
+		
+		//Modelに登録
 		model.addAttribute("signupForm",new SignupForm());
-		return "/attendance";
-	} 
-	
-	
-	/**出勤登録処理*/
-	@PostMapping("/complete") 
-	public String postSignup(Model model,Locale locale,@ModelAttribute @Validated SignupForm form,BindingResult bindingResult){ 
-		if(bindingResult.hasErrors()) {
-			// 入力チェックエラーの場合
-		      List<String> errorList = new ArrayList<String>();
-		      
-		      for (ObjectError error : bindingResult.getAllErrors()) {
-		    	  errorList.add(error.getDefaultMessage());
-		    	  
-		      	}
+		
+		
+		
+		return "/clock_out";
+	}
 
-			return "/attendance";
-		}
-		System.out.println(form.getStartTime());
+
+	
+	/**退勤登録処理*/
+	@PostMapping("/complete") 
+	public String postSignup(Model model,Locale locale,@ModelAttribute @Validated SignupForm form, BindingResult bindingResult) {
+	if(bindingResult.hasErrors()) {
+		// 入力チェックエラーの場合
+	      List<String> errorList = new ArrayList<String>();
+	      
+	      for (ObjectError error : bindingResult.getAllErrors()) {
+	    	  errorList.add(error.getDefaultMessage());
+	    	  
+	      	}
+
+		return "/clock_out";
+	}
+		
+//		System.out.println(form.getStartTime());
 		
 		//formをMUserクラスに変換
 		
 		MUser complete = modelMapper.map(form,MUser.class); 
 		
-		//出勤登録
-		userService. signup(complete);
+		complete.setAttendanceId(50);
+		//退勤登録
+		userService.updateOne(complete);
 		
 		//完了画面に遷移
-		//完了画面作る
 		return "/complete";
 		
 	}
-}
 	
-
+	 @RequestMapping("/top")
+	    public String home() {
+	        return "/Mypage1";
+	    }
+}

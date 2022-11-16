@@ -3,30 +3,43 @@
 
 
 <mapper namespace= "com.example.repository.UserMapper">
+<!--マッピング定義（ユーザー）-->
+<resultMap type="com.example.domain.user.model.MUser" id="user"> 
+<id column="user_id" property="userId" /> 
+<result column="start_date" property="startDate" />
+<result column="end_date" property="endDate" /> 
+<result column="status" property="status" /> 
+<result column="start_time" property="startTime" /> 
+<result column="end_time" property="endTime" /> 
+<result column="break_time" property="breakTime" /> 
+<result column="note" property="note" /> 
+<result column="attendance_id" property="attendanceId"/>
+</resultMap>
+
 
 
 
 <!--ユーザー1件登録-->
-<insert id="insertOne">
-	insert into Attendance(
-		user_id,
-		start_date,
-		end_date,
-		status,
-		start_time,
-		end_time,
-		break_time,
-		note
-	)
-	values(
-		#{userId},
-		#{startDate},
-		#{endDate},
-		#{status},
-		#{startTime},
-		#{endTime},
-		#{breakTime},
-		#{note}
-	)
-</insert>
+<update id="updateOne">
+  update 
+  	Attendance 
+  set
+    end_date = #{endDate},
+    status = #{status},
+    end_time = #{endTime},
+    break_time = #{breakTime},
+  	note = #{note}
+  where
+  	attendance_id = #{attendanceId}
+</update>
+	
+	
+	<select id="findOne" resultMap="user">
+		select 
+				user_id
+		from
+				attendance
+		where
+				attendance_id = #{attendanceId}
+	</select>
 </mapper>
