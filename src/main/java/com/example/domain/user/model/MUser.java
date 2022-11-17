@@ -2,6 +2,7 @@ package com.example.domain.user.model;
 
 
 
+
 import java.util.Date;
 
 import lombok.Data;

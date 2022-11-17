@@ -18,18 +18,21 @@
             
             	<div class="clock_out">退勤報告</div>
           
-                <input type="hidden" name="userId" value=1>
-                <input type="hidden" name="attndanceId" value=50>
+                <input type="hidden" name="userId" value=11>
+                <input type="hidden" name="attendanceId" th:value=${attendanceId}>
+                <!-- <input type="hidden" name="startDate" th:value="${startDate}"> -->
+                <!-- <input type="hidden" name="startTime" th:value="${startTime}"> -->
+                
                 <!-- th:value="${attndanceId}"th:value="${userId}" -->
 
                 <!-- <p style="text-align: left">
                 <label for="name">出勤日 :</label>
                 <input type="text" name="startDate" readonly="readonly" id="startDate" th:field="*{startDate}"><br>
-                </p> -->
+                </p> --> 
 
                 <!-- <p style="text-align: left">
                 <label for="name">出勤時間 :</label>
-                <input type="text" name="startTime" readonly="readonly" id="startTime" th:field="*{startDate}"><br>
+                <input type="text" name="startTime" readonly="readonly" id="startTime" th:field="*{startTime}"><br>
                 </p> -->
 
 				<div class="status">

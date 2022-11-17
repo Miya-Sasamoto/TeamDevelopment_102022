@@ -1,5 +1,6 @@
 package com.example.controller;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 import java. util.Locale;
@@ -30,6 +31,7 @@ import com.example.form.SignupForm;
 public class Clock_outController{
 	
 	
+
 	@Autowired
 	private UserService userService;
 	
@@ -43,7 +45,7 @@ public class Clock_outController{
 	@PathVariable("attendanceId") Integer attendanceId) {
 		
 		
-//		model.addAttribute("signupForm", form);
+		model.addAttribute("attendanceId", form.getAttendanceId());
 		
 		MUser user= userService.findOne(attendanceId); 
 		
@@ -51,7 +53,7 @@ public class Clock_outController{
 		form= modelMapper.map(user,SignupForm.class);
 		
 		//Modelに登録
-		model.addAttribute("signupForm",new SignupForm());
+		model.addAttribute("signupForm", form);
 		
 		
 		
@@ -60,10 +62,15 @@ public class Clock_outController{
 
 
 	
-	/**退勤登録処理*/
+	/**退勤登録処理
+	 * @throws ParseException */
 	@PostMapping("/complete") 
-	public String postSignup(Model model,Locale locale,@ModelAttribute @Validated SignupForm form, BindingResult bindingResult) {
-	if(bindingResult.hasErrors()) {
+	public String postSignup(Model model,Locale locale,@ModelAttribute @Validated SignupForm form, BindingResult bindingResult) throws ParseException {
+		
+		System.out.println(form.getUserId());
+		System.out.println(form.getAttendanceId());
+		
+		if(bindingResult.hasErrors()) {
 		// 入力チェックエラーの場合
 	      List<String> errorList = new ArrayList<String>();
 	      
@@ -75,16 +82,17 @@ public class Clock_outController{
 		return "/clock_out";
 	}
 		
-//		System.out.println(form.getStartTime());
+
 		
 		//formをMUserクラスに変換
 		
 		MUser complete = modelMapper.map(form,MUser.class); 
+
 		
-		complete.setAttendanceId(50);
+		
 		//退勤登録
 		userService.updateOne(complete);
-		
+
 		//完了画面に遷移
 		return "/complete";
 		
