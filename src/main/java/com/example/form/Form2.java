@@ -11,17 +11,17 @@ import lombok.Data;
 
 
 @Data
-public class SignupForm {
+public class Form2 {
 
 	
 	private int userId;
 	
 
 	@DateTimeFormat(pattern="yyyy-MM-dd")
+	@NotEmpty(message = "日付入れてね^^")
 	private String startDate;
 	
 	@DateTimeFormat(pattern="yyyy-MM-dd")
-	@NotEmpty(message = "日付入れてね^^")
 	private String endDate;
 	
 	private String status;
