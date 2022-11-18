@@ -2,7 +2,8 @@ package com.example.repository;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.example.domain.user.model.MUser; 
+import com.example.domain.user.model.MUser;
+import com.example.form.NewRegisterForm; 
 
 
 
@@ -15,4 +16,5 @@ public interface UserMapper {
 		public MUser findOne(Integer attendanceId);
 
 		public void insertOne(MUser user);
+
 }
