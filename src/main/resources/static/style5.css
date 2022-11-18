@@ -64,12 +64,12 @@ input[type="textbox"]:focus {
 	outline: 0;
 }
 
-.btn--orange, label1 {
+.btn--orange, clock_out {
 	border-bottom: 2px solid #000;
 }
 
 h1 {
-	font-size: 40px;
+	font-size: 38px;
 	border-bottom: 6px double #000;
 }
 
@@ -77,6 +77,10 @@ input[type="number"] {
 	border: 1px solid #999;
 }
 
+input[type="number"]:focus {
+	border: 2px solid #6495ed;
+	outline: 0;
+}
 
 .header2 {
 	line-height: 30px;
@@ -88,11 +92,21 @@ button[type="submit"]:focus {
 	color: white;
 }
 
-label {
-	white-space: nowrap;
-	display: inline-block;
-	width: 6em;
-	text-align:center;
-	text-align:center;
-	padding:20px 0;
+button[type="button"]:focus {
+	background-color: #504946;
+	border-color: #504946;
+	color: white;
 }
+
+label {
+	display: inline-block;
+	width: 8em;
+
+	padding:10px 0px 0px 200px;
+	font-size: 30px;
+	white-space: nowrap;
+}
+
+
+
+
