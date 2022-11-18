@@ -8,7 +8,7 @@ import com.example.domain.user.model.service.EditService;
 import com.example.repository. UserMapper;
 
 @Service
-public class UserServiceImpl implements EditService{
+public class EditServiceImpl implements EditService{
     
     @Autowired 
     private UserMapper mapper;

@@ -7,7 +7,5 @@ private String userId;
 private String name;
 private String nameKana;
 private String mailAddress;
-private String passWord; 
-
-
+private String passWord;
 }
