@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org.//DTD Mapper3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace= "com.example.repository.AttendanceMapper">
+
+	<resultMap type="com.example.domain.model.MAttendanceList" id="attendanceList">
+		<id column="attendance_id" property="attendanceId"></id>
+		<result column="name" property="name"></result>
+		<result column="start_date" property="startDate"></result>
+		<result column="end_date" property="endDate"></result>
+		<result column="status" property="status"></result>
+		<result column="start_time" property="startTime"></result>
+		<result column="end_time" property="endTime"></result>
+		<result column="work_time" property="workTime"></result>
+		<result column="break_time" property="breakTime"></result>
+		<result column="note" property="note"></result>
+	</resultMap>
+
+	<insert id="insertOne">
+	
+		insert into Attendance(
+			user_id,
+			start_date,
+			end_date,
+			status,
+			start_time,
+			end_time,
+			break_time,
+			note,
+			reason_for_revision
+		) 
+		VALUES(
+			#{userId},
+			#{startDate},
+			#{endDate},
+			#{status},
+			#{startTime},
+			#{endTime},
+			#{breakTime},
+		 	#{note},
+		 	#{reasonForRevision}
+		
+		)
+	
+	</insert>
+
+	<select id="findMany" resultMap="attendanceList">
+		select Employee.user_id, name, start_date,end_date,status,start_time,end_time,
+		(end_time - start_time - break_time) as work_time,
+		break_time,note,reason_for_revision,attendance_id
+		from Attendance
+		join Employee on Employee.user_id = Attendance.user_id
+	</select>
+	
+	<select id="selectOne" resultMap="attendanceList">
+		select Employee.user_id, name, start_date,end_date,status,start_time,end_time,
+		(end_time - start_time - break_time) as work_time,
+		break_time,note,reason_for_revision,attendance_id
+		from Attendance
+		join Employee on Employee.user_id = Attendance.user_id
+		where attendance_id = #{attendanceId}
+	</select>
+
+
+
+		<update id="updateOne">
+	 update
+	  	Attendance
+	 set
+	 	status     = #{status},
+	  	start_date = #{startDate},
+	  	start_time = #{startTime},
+	  	end_date = #{endDate},
+	  	end_time = #{endTime},
+	  	break_time = #{breakTime},
+	  	reason_for_revision = #{reasonForRevision}
+	  	
+	  	where
+	 	 attendance_id = #{attendanceId}
+	</update>
+	
+</mapper>
+
+
+
+
+
+
+

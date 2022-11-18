@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>attendance_correction</title>
+     <link rel="stylesheet" th:href="@{/attendance/attendance_correction_styles.css}">
+     <!-- <link rel="stylesheet " href="smartStyle1.css"> -->
+
+  </head>
+
+  <body>
+    <div class="content_box">
+        <div class="correction_parent">
+          <label class="correction_title">勤怠修正</label>
+
+          <hr>
+
+          <br>
+		<form  id="attendance_update" method="post" th:action="@{/attendance/edit}" th:object="${attendanceForm}">
+          <div  class="content_1">
+          <input type="hidden" th:field="*{attendanceId}"/>
+            <label> <span>ステータス</span>
+              <select name="attendance_status" th:field="*{status}">
+                <option th:value="出勤" th:text="出勤">出勤</option>
+                <option th:value="退勤" th:text="退勤">退勤</option>
+                <option th:value="遅刻" th:text="遅刻">遅刻</option>
+                <option th:value="欠席" th:text="欠席">欠席</option>
+                <option th:value="早退" th:text="早退">早退</option>
+                <option th:value="代休" th:text="代休">代休</option>
+                <option th:value="その他" th:text="その他">その他</option>
+              </select>
+            </label>
+            	
+            
+
+            <label><span>出勤日</span>
+            　
+              <input type="date" th:field="*{startDate}">
+            </label>
+            <label><span>出勤時間</span>
+              <input type="time" step="1" th:field="*{startTime}">
+            </label>
+          </div>
+
+          <br>
+
+          <div class="content_2">
+            <label><span>退勤日</span>
+              <input type="date" th:field="*{endDate}">
+            </label>
+
+            <label><span>退勤時間</span>
+              <input type="time" step="1" th:field="*{endTime}"> 
+            </label>
+
+            <label><span>休憩時間</span>
+              <input type="time" step="1" th:field="*{breakTime}">
+            </label>
+          </div>
+
+          <br>
+
+          <div class="content_3">
+            <label> <span>修正理由</span>
+            <div></div>
+              <textarea th:field="*{reasonForRevision}" th:errorclass="is-invalid"></textarea>
+              <div class="validation_error" th:errors="*{reasonForRevision}"></div>
+            </label>
+            
+          </div>
+
+        </div>
+
+        <br><br>
+
+        <div class="buttons">
+          <div class="button_box_correction">
+            <button type="submit" name="update"> 修正 </button>
+          </div>
+
+          <div class="button_box_cancel">
+            <button type="submit"><a th:href="@{'/attendance/list'}">キャンセル</a></button>
+          </div>
+        </div>
+        </form>
+    </div>
+
+  </body>
+
+</html>

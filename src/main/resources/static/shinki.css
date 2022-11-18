@@ -1,0 +1,44 @@
+body {
+
+    background: #e6e6e6;
+    font-family: "YuGthic","游ゴシック体";
+    text-align: center;
+    margin: 100px auto ;
+ }
+
+ .shinki{
+
+   margin-top: -50px;
+ }
+
+
+
+ .box {
+
+   padding-top: 80px;
+    background: #ffff;
+    width: 400px;
+    height: 300px;
+    margin: 0 auto ;
+ }
+
+
+
+input[type=submit]:hover{
+ border-bottom-width:0;
+ transform:translateY(4px)
+ }
+
+.touroku {
+    margin: 100px auto ;
+         border: none;
+    outline: none;
+    display: block;
+    line-height: 30px;
+    width: 160px;
+    text-align: center;
+    font-size: 13px;
+    color: #fff;
+     cursor:pointer; 
+  
+    } 
