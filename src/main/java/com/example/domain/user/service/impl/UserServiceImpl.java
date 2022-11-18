@@ -17,9 +17,9 @@ public class UserServiceImpl implements UserService {
 	/**ユーザー登録*/
 	@Override 
 	public void updateOne(MUser user) { 
-		System.out.println("ここまで来てる");
+		mapper.updateOne(user);
 	}
-//		
+//		user.setAttendance(50);
 //		user.setUserId(5);
 //		user.setNote("更新されました");
 
@@ -33,6 +33,7 @@ public class UserServiceImpl implements UserService {
 	//ユーザー取得(1 件）
 		@Override 
 		public MUser findOne(Integer attendanceId) { 
+			System.out.println("ここまで来ちゃった");
 			return mapper.findOne(attendanceId);
 		}
 }
