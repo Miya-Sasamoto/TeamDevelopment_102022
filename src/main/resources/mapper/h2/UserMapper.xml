@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 
-<mapper namespace= "com.example.repository.UserMapper">
+<mapper namespace= "com.example.repository.UserLoginMapper">
 <!--マッピング定義（ユーザー）-->
 <resultMap type="com.example.domain.user.model.MUser" id="user"> 
 <id column="user_id" property="userId" /> 
@@ -16,6 +16,15 @@
 <result column="attendance_id" property="attendanceId"/>
 </resultMap>
 
+<select id="findloginUser" parameterType="int"
+		resultType="com.example.form.Employeelogin">
+		select
+		user_id,
+		name,
+		name_kana,
+		password
+		from Employee
+		where user_id=#{user_id};
 
 <!--ユーザー1件登録-->
 <insert id="insertOne">
@@ -41,6 +50,18 @@
 	)
 </insert>
 
+	</select>
+
+
+<select id="findloginUser" resultType="Employeelogin">
+	select 
+		user_id,
+		password
+	from Employee
+	where user_id=#{user_id};
+	
+		
+</select>
 
 <!--ユーザー1件更新-->
 <update id="updateOne">
