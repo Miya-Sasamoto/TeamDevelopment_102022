@@ -14,8 +14,9 @@ public class  EditController{
 @Autowired
 	private EditService editService;
 
-/**ユーザー更新処理*/
-@PostMapping(value="/edit",params="update")
+
+/**編集削除画面*/
+@PostMapping(value="/user/edit",params="update")
 public String updateUser(EditForm form,Model model){
 	//ユーザーを更新
 	editService.updateOne(form.getUserId(),
