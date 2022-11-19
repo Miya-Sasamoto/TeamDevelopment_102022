@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.example.domain.user.service.impl.NewRegisterService;
+import com.example.domain.user.service.NewRegisterService;
 import com.example.form.NewRegisterForm;
 
 //import lombok.extern.slf4j.Slf4j;

@@ -1,4 +1,4 @@
-package com.example.domain.user.service.impl;
+package com.example.domain.user.service;
 
 import com.example.form.NewRegisterForm; 
 public interface NewRegisterService {
