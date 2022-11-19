@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +12,8 @@
     <div class="box">
     
     
-  <form  method="post">
+  <form  method="post" th:action="@{/edit}" th:object="${editForm}"> 
+   
     <div class="userid">  
       <label for="id"> ユーザーID：</label>
       <input type="text" id="id" name="userid">
@@ -31,13 +32,13 @@
     </div>
    
     <div class="cancel">
-      <input type="button" value="キャンセル">
+      <button th:action="@{/}" type="submit">キャンセル</button>
     </div>
     <div class="sakuzyo">
-      <input type="button" value="削除" >
+      <button th:action="@{/DeleteComplete}" type="submit">削除</button>
     </div>
     <div class="hensyu">
-      <input type="button" value="編集">
+       <button th:action="@{/EditComplete}" type="submit">編集</button>
     </div>
     
        
