@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新規登録</title>
+    <link rel="stylesheet" th:href="@{/NewRegister.css}">
+</head>
+<body>
+  
+  <div class="NewRegister"><h1>新規登録</h1></div> 
+  <div class="box">
+   
+    
+   <form  method="post" th:action="@{/user/NewRegister}" th:object="${newRegisterForm}"> 
+   
+ <!--  <form th:action="@{/user/NewRegister/CompleteNewRegister}" th:object="${NewRegisterForm}" th:method="post"> -->
+
+    <div class="name">
+      <label for="name"> 名前：</label>
+      <input id="name" type="text" name="name" th:field="*{name}">
+    </div>
+    <div class="name_kana"> 
+      <label for="name_kana"> 名前カナ：</label>
+      <input id="name_kana" type="text" name="nameKana" th:field="*{nameKana}">
+    </div>
+    <div class="mail_address"> 
+      <label for="mail_address"> E-MAIL：</label>
+      <input id="mail_address" type="text" name="mailAddress" th:field="*{mailAddress}">
+    </div>
+    <div class="password">  
+      <label for="password">PASSWORD：</label>
+      <input id="password" type="password"  name="passWord" th:field="*{passWord}">
+    </div>
+  
+    <div class="cancel"><span>
+    	<button type="submit">キャンセル</button></span>
+    </div> 
+    <div class="touroku">
+    	<button th:action="@{/CompleteNewRegister}" type="submit">登録</button>
+    	
+ </div> 
+ </form>
+ </div> 
+   
+</body>
+
+
+</html>
