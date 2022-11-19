@@ -30,6 +30,16 @@
 	</select>
 
 
+<select id="findloginUser" resultType="Employeelogin">
+	select 
+		user_id,
+		password
+	from Employee
+	where user_id=#{user_id};
+	
+		
+</select>
+
 <!--ユーザー1件登録-->
 <update id="updateOne">
   update 
