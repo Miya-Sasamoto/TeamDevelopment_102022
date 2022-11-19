@@ -1,0 +1,87 @@
+body {
+    min-height: 100%;
+    height: 100%;
+    width:100%;
+    font-family: "YuGothic","遊ゴシック";
+    font-size: 25px;
+    
+}
+.wrapper {
+    width: 900px;
+    margin: 0 auto;
+}
+.header {
+    height: 640px;
+    background-color: #e6e6e6;
+}
+.header2{
+    width: 860px;
+	height: 500px;
+    margin:50px 20px 20px 20px;
+    text-align: center;
+	background: #ffffff;
+}
+.contents {
+    height: 640px;
+}
+input[type="date"] {
+    border: 1px solid #999;
+}
+input[type="date"]:focus {
+    border: 2px solid #6495ed;
+    outline: 0;
+}
+input[type="time"] {
+    border: 1px solid #999;
+}
+input[type="time"]:focus {
+    border: 2px solid #6495ed;
+    outline: 0;
+}
+input[type="text"] {
+    border: 1px solid #999;
+}
+input[type="text"]:focus {
+    border:2px solid #6495ed; 
+    outline: 0;          
+}
+input[type="textlines"] {
+    border: 1px solid #999;
+}
+input[type="textlines"]:focus {
+    border:2px solid #6495ed; 
+    outline: 0;          
+}
+.btn--orange,
+ label1{
+    border-bottom: 2px solid #000;
+}
+label2{
+    font-size:17px;
+}
+label4{
+    font-size:17px;
+}
+h2 {
+    position: relative;
+    display: inline-block;
+    padding: 0 65px;
+    text-align: center;
+}
+.btn--orange,
+h1{
+    font-size: 40px;
+    border-bottom: 6px double #000;
+}
+button[type="submit"]:focus{
+    background-color:#504946; border-color:#504946; color:white;
+}
+button[type="button"]:focus{
+    background-color:#504946; border-color:#504946; color:white;
+}
+label {
+    display: inline-block;
+    width: 8em;
+    margin-left: 200px;
+    font-size: 30px;
+}

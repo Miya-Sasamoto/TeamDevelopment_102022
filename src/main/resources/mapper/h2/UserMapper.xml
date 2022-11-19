@@ -26,6 +26,29 @@
 		from Employee
 		where user_id=#{user_id};
 
+<!--ユーザー1件登録-->
+<insert id="insertOne">
+	insert into Attendance(
+		user_id,
+		start_date,
+		end_date,
+		status,
+		start_time,
+		end_time,
+		break_time,
+		note
+	)
+	values(
+		#{userId},
+		#{startDate},
+		#{endDate},
+		#{status},
+		#{startTime},
+		#{endTime},
+		#{breakTime},
+		#{note}
+	)
+</insert>
 
 	</select>
 
@@ -40,7 +63,7 @@
 		
 </select>
 
-<!--ユーザー1件登録-->
+<!--ユーザー1件更新-->
 <update id="updateOne">
   update 
   	Attendance 
