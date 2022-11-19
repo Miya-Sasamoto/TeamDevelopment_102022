@@ -31,8 +31,8 @@
 
 			<div class="attendance">出勤報告</div>
 
-            <div class="attendance">ユーザーID
-             <input type="text" name="userId" id="userId" th:value="${userId}">
+            <div class="attendance">
+             <input type="hidden" name="userId" id="userId" th:value="${userId}">
              </div>
 
             <p style="text-align: left">
@@ -66,7 +66,7 @@
             <input name="note" type="text" >
             </p>
 
-            <button type="button" onclick="location.href='URL'">キャンセル</button>
+            <button type="button" onclick="history.back(-1);return false;">戻る</button>
             <button type="submit">送信</button>  
             </div>
 

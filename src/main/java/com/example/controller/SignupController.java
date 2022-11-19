@@ -35,7 +35,7 @@ public class SignupController{
 	@Autowired
 	private  ModelMapper modelMapper;
 
-
+	
 
 	/**出勤登録画面を表示*/
 	@GetMapping("/signup") 
@@ -72,6 +72,8 @@ public class SignupController{
 		//完了画面に遷移
 		//完了画面作る
 		return "/complete";
-
-	}
+		
+		
+		} 
+	
 }
