@@ -16,5 +16,7 @@ public interface UserMapper {
 		public MUser findOne(Integer attendanceId);
 
 		public void insertOne(MUser user);
+		
+		public int addOne(NewRegisterForm newRegisterForm);
 
 }

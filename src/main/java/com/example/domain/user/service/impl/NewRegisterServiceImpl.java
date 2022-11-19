@@ -3,6 +3,7 @@ package com.example.domain.user.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org. springframework. stereotype.Service;
 
+import com.example.domain.user.service.NewRegisterService;
 import com.example.form.NewRegisterForm;
 import com.example.repository. UserMapper;
 
@@ -20,9 +21,9 @@ public class NewRegisterServiceImpl implements NewRegisterService {
 //    }
 
     @Override
-    public void insert(NewRegisterForm newRegisterForm) {
+    public void add(NewRegisterForm newRegisterForm) {
         
-        mapper.insertOne(newRegisterForm);
+        mapper.addOne(newRegisterForm);
         
     }
     
