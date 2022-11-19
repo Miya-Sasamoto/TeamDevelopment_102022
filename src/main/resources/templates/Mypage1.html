@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ja"  xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>mypage</title>
-    <link rel="stylesheet" th:href="@{/css/Mypage.css}"></link>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>formsample</title>
+    <link rel="stylesheet" href="/Mypage.css">
   </head>
   <body>
     <div id="form">
@@ -16,10 +16,10 @@
         </p>
        <ui>
         <p class="sub">
-          <a th:href="@{/edit}"><input type="button"  value="編集" ></input></a>
-          <a th:href="@{/attendance}"><input type="button"  value="出勤報告" ></input></a>
-          <a th:href="@{/clock_out}"><input type="button"  value="退勤報告" ></input></a>
-          <a th:href="@{/attendance/attendance_index}"><input type="button"  value="勤怠一覧"></input></a>
+        <a th:href="@{/edit}"><input type="button" value="編集"></input></a>
+        <a th:href="@{/attendance}"><input type="button" value="出勤報告"></input></a>
+        <a th:href="@{/clock_out}"><input type="button" value="退勤報告"></input></a>
+        <a th:href="@{/attendance/attendance_index}"><input type="button" value="勤怠一覧"></input></a>
         </p>
        </ui>
       </form>

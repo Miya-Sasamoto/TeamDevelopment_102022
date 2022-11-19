@@ -1,29 +1,35 @@
 package com.example.form;
 
-import java.sql.Date;
 
-import org.springframework.format.annotation.DateTimeFormat;
+import javax.validation.constraints.NotEmpty;
 
 import lombok.Data;
+
 
 @Data
 public class SignupForm {
 
-	private String userId;
 	
-	@DateTimeFormat(pattern="yyyy/MM/dd")
-	private Date start_date;
+	private int userId;
 	
-	@DateTimeFormat(pattern="yyyy/MM/dd")
-	private Date end_date;
+
+//	@DateTimeFormat(pattern="yyyy-MM-dd")
+//	@NotEmpty(message = "日付入れてね^^")
+	private String startDate;
+	
+//	@DateTimeFormat(pattern="yyyy-MM-dd")
+	@NotEmpty(message = "日付入れてね^^")
+	private String endDate;
 	
 	private String status;
 	
-	private String start_time;
+	private String startTime;
 	
-	private String end_time;
+	private String endTime;
 	
-	private String break_time;
+	private String breakTime;
 	
 	private String note;
+	
+	private int attendanceId;
 }
