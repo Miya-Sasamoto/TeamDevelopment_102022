@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class MypageController {
 	
 	
-	/*@RequestMapping(value="/searchList",method = RequestMethod.POST)
-	public String login(Model model,@ModelAttribute Employeelogin employeelogin){
-		model.addAttribute("user_id", Employeelogin.getUserId());
-		model.addAttribute("name",Employeelogin.getUserName());
-		
-	}*/
+//	@RequestMapping(value="/searchList",method = RequestMethod.POST)
+//	public String login(Model model,@ModelAttribute Employeelogin employeelogin){
+//		model.addAttribute("user_id", employeelogin.getUser_id());
+//		model.addAttribute("name",employeelogin.getName());
+//		
+//	}
 	
 	@GetMapping("/Mypage1")
 	public String Mypage() {

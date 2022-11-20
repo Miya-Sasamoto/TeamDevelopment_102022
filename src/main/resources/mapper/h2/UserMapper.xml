@@ -25,9 +25,13 @@
 		password
 		from Employee
 		where user_id=#{user_id};
+		
+		</select>
+		
+		
 
 <!--ユーザー1件登録-->
-<insert id="insertOne">
+<insert id="insertOne" resultType="com.example.form.NewRegisterForm">
 	insert into Attendance(
 		user_id,
 		start_date,
@@ -49,19 +53,6 @@
 		#{note}
 	)
 </insert>
-
-	</select>
-
-
-<select id="findloginUser" resultType="Employeelogin">
-	select 
-		user_id,
-		password
-	from Employee
-	where user_id=#{user_id};
-	
-		
-</select>
 
 <!--ユーザー1件更新-->
 <update id="updateOne">

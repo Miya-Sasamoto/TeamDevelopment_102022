@@ -17,6 +17,6 @@ public interface UserMapper {
 
 		public void insertOne(MUser user);
 		
-		public int addOne(NewRegisterForm newRegisterForm);
+		public void addOne(NewRegisterForm newRegisterForm);
 
 }

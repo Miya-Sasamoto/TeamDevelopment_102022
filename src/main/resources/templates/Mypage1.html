@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>formsample</title>
-    <link rel="stylesheet" href="/Mypage.css">
+    <link rel="stylesheet" href="/css/Mypage.css">
   </head>
   <body>
     <div id="form">
@@ -15,10 +15,10 @@
           <input type="text" disabled="disabled" autocomplete="off" class="el-input__inner" id="user_id" name="user_id" th:value="${user_id}">
         </p>
        <ui>
-        <p class="sub">
+         <p class="sub">
         <a th:href="@{/edit}"><input type="button" value="編集"></input></a>
-        <a th:href="@{/attendance}"><input type="button" value="出勤報告"></input></a>
-        <a th:href="@{/clock_out}"><input type="button" value="退勤報告"></input></a>
+        <a th:href="@{/user/signup}"><input type="button" value="出勤報告"></input></a>
+       <!--<a th:href="@{/user/detail/{attendanceId}"><input type="button" value="退勤報告"></input></a>-->
         <a th:href="@{/attendance/attendance_index}"><input type="button" value="勤怠一覧"></input></a>
         </p>
        </ui>

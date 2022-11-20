@@ -21,9 +21,9 @@ public class NewRegisterServiceImpl implements NewRegisterService {
 //    }
 
     @Override
-    public void add(NewRegisterForm newRegisterForm) {
+    public void add(NewRegisterForm form) {
         
-        mapper.addOne(newRegisterForm);
+        mapper.addOne(form);
         
     }
     
