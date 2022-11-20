@@ -2,17 +2,57 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 	<mapper namespace="com.example.repository.UserMapper">
-	<!--  <resultMap type="com.example.repository.UserMapper" id="user">
+	<!-- <resultMap type="com.example.repository.UserMapper" id="user">
 		<id column="user_id" property="userId"/>
 		<result column="name" property="name"/>
 		<result column="name_kana" property="nameKana"/>
 		<result column="mail_address" property="mailAddress"/>
 		<result column="password" property="passWord"/>
-	</resultMap>  -->
+	</resultMap> -->
+	<!-- <select id="findOne" resultType="EditForm"> -->
+	<select id="findOne" resultType="com.example.form.EditForm" >
+<!-- 	select  employee (
+	
+	user_id,
+	name,
+	name_kana,
+	mail_address,
+	password
+	)
+	
+	values(
+	'${userid}',
+	'${name}',
+	'${nameKana}',
+	'${mailAddress}',
+	'${passWord}'
+	) -->
+	
+	select
+	employee.user_id AS userId,
+	employee.name,
+	employee.name_kana AS nameKana,
+	employee.mail_address AS mailAddress,
+	employee.password
+	from
+	employee
+	where
+	user_id=#{userid}
+
+	<!-- select 
+	user_id,
+	name,
+	name_kana,
+	mail_address,
+	password
+	from
+	employee
+	where
+	user_id =${userId} -->
+	</select>
 	
 	
 	<insert id="insertOne">
-	
 	insert into employee (
 	name,
 	name_kana,
@@ -33,6 +73,7 @@
 	update
 	m_user
 	set
+	user_id=${userId}
 	name=${name}
 	,name_kana=${nameKana}
 	,mail_address=${mailAddress}

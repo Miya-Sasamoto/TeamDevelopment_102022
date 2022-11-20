@@ -11,7 +11,7 @@ body {
   padding-top: 80px;
   background: #ffff;
   width: 500px;
-  height: 250px;
+  height: 400px;
   margin: 0 auto ;
 }
 
@@ -21,21 +21,32 @@ transform:translateY(4px)
 }
 
 
-.userid{
-
-  margin-top: -30px;
-  
-}
-
-.username{
+.user_id{
 
   margin-top: 30px;
-
+  margin-bottom:30 ;
 }
 
-.email{
-  margin-top: 30px;
-  text-indent: 1.5em;
+.user_name{
+
+  margin-top:30px;
+
+}
+ .name_kana{
+   margin-top: 30px;
+   text-indent: -1em;
+
+ }
+ 
+ .email{
+   margin-top: 30px;
+   text-indent: -1em;
+
+ }
+
+.mail_address{
+  margin-top: 60px;
+  text-indent: -1em;
 
 }
 
