@@ -4,69 +4,68 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>出勤報告</title>
-<link rel="stylesheet" th:href="@{/style4.css}"></head>
+<link rel="stylesheet" th:href="@{/style4.css}">
+</head>
 <script th:src="@{/webjars/jquery/jquery.min.js}" defer></script>
-<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}" defer></script> 
+<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}" defer></script>
 <title th:text="#{user.signup.title}"></title>
 <body>
-    <div class="wrapper">
+	<div class="wrapper">
 
-        <div class="header">
-        <form th:action="@{/user/signup/complete}"  th:object="${form2}" method="post"> 
-
-
-            <p style="text-align: center">
-            <h1>出勤入力フォーム</h1>
+		<div class="header">
+			<form th:action="@{/user/signup/complete}" th:object="${form2}"
+				method="post">
 
 
-            <div class="header2">
+				<p style="text-align: center">
+				<h1>出勤入力フォーム</h1>
 
-            <p style="text-align: left">
 
-			<div class="attendance">出勤報告</div>
+				<div class="header2">
 
-            <div class="attendance">
-             <input type="hidden" name="userId" id="userId" th:value="${userId}">
-             </div>
+					<p style="text-align: left">
+					<div class="attendance">出勤報告</div>
 
-            <p style="text-align: left">
-            <label  for="name">出勤ステータス :</label>
-            <select name="status" class="textlines">
-            <option value="1">出勤</option>
-            <option value="2">遅刻</option>            
-            <option value="3">欠勤</option>
-            <option value="4">代休</option>
-            <option value="5">休日</option>
-            <option value="6">有給</option>
-            <option value="7">その他</option>
-            <option value="8">その他(休日)</option>
+					<div class="attendance">
+						<input type="hidden" name="userId" id="userId"
+							th:value="${userId}">
+					</div>
 
-            </select>
-            </p>
+					<p style="text-align: left">
+						<label for="name">出勤ステータス :</label> <select name="status"
+							class="textlines">
+							<option value="出勤">出勤</option>
+							<option value="遅刻">遅刻</option>
+							<option value="欠勤">欠勤</option>
+							<option value="有給">有給</option>
+							<option value="その他">その他</option>
 
-            <p style="text-align: left">
-            <label for="name">出勤日 :</label>
-            <input type="date" name="startDate"  th:field="*{startDate}">
-            <span style="color: red;" th:if="${#fields.hasErrors('startDate')}" th:errors="*{startDate}" ></span>
-            </p>
+						</select>
+					</p>
 
-            <p style="text-align: left">
-            <label for="name">出勤時間 :</label>
-            <input name="startTime" type="time" value="09:00:00">
-            </p>
+					<p style="text-align: left">
+						<label for="name">出勤日 :</label> <input type="date"
+							name="startDate" th:field="*{startDate}"> <span
+							style="color: red;" th:if="${#fields.hasErrors('startDate')}"
+							th:errors="*{startDate}"></span>
+					</p>
 
-            <p style="text-align: left">
-            <label for="name">備考 :</label>
-            <input name="note" type="text" >
-            </p>
+					<p style="text-align: left">
+						<label for="name">出勤時間 :</label> <input name="startTime"
+							type="time" value="09:00">
+					</p>
 
-            <button type="button" onclick="history.back(-1);">戻る</button>
-            <button type="submit">送信</button>  
-            </div>
+					<p style="text-align: left">
+						<label for="name">備考 :</label> <input name="note" type="text">
+					</p>
 
-          </form>  
-        </div>
-    </div>
+					<button type="button" onclick="history.back(-1);">戻る</button>
+					<button type="submit">送信</button>
+				</div>
+
+			</form>
+		</div>
+	</div>
 
 
 </body>

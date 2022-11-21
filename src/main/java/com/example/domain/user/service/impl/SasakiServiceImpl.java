@@ -20,17 +20,13 @@ public class SasakiServiceImpl implements SasakiService {
 		mapper.updateOne(user);
 	}
 
-
 	public void signup(MUser user) { 
-
-	mapper.insertOne(user);
-
+		mapper.insertOne(user);
 	}
 
 	//ユーザー取得(1 件）
-		@Override 
-		public MUser findOne(Integer attendanceId) { 
-			return mapper.findOne(attendanceId);
-		}
+	@Override 
+	public MUser findOne(Integer attendanceId) { 
+		return mapper.findOne(attendanceId);
+	}
 }
-

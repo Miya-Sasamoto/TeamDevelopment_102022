@@ -4,69 +4,72 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>退勤報告</title>
-<link rel="stylesheet" th:href="@{/style5.css}"></head>
+<link rel="stylesheet" th:href="@{/style5.css}">
+</head>
 <script th:src="@{/webjars/jquery/jquery.min.js}" defer></script>
-<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}" defer></script> 
+<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}" defer></script>
 <title th:text="#{user.signup.title}"></title>
 <body>
-    <div class="wrapper">
-        
-        <div class="header">
-         <form th:action="@{/user/complete}" method="post" th:object="${signupForm}"> 
-            <h1>退勤入力フォーム</h1>
-            <div class="header2">
-            
-            	<div class="clock_out">退勤報告</div>
-          
-                <input type="hidden" name="userId" value=11>
-                <input type="hidden" name="attendanceId" th:value=${attendanceId}>
+	<div class="wrapper">
 
-				<div class="status">
-                	<p style="text-align: left">
-                	<label for="name">退勤ステータス :</label>
-                	<select class="textlines" name="status">
-                		<option value="1">退勤</option>
-                		<option value="2">早退</option>
-                		<option value="3">その他</option>
-               		</select>
-                	</p>
-                </div>
-                
-				<div class="endDate">
-                	<p style="text-align: left">
-                	<label for="name">退勤日 :</label>
-                	<input type="date" name="endDate" th:object="${signupForm}">
-            		<span style="color: red" th:if="${#fields.hasErrors('endDate')}" th:errors="*{endDate}" ></span>
-                	</p>
-                </div>
-                
-                <div class="endTime">
-                	<p style="text-align: left">
-                	<label for="name">退勤時間 :</label>
-                	<input type="time" value="18:00:00" name="endTime" >
-                	</p>
-                </div>
+		<div class="header">
+			<form th:action="@{/user/complete}" method="post"
+				th:object="${signupForm}">
+				<h1>退勤入力フォーム</h1>
+				<div class="header2">
 
-                <div class="breakTime">
-                	<p style="text-align: left">
-                	<label for="name">休憩時間 :</label>
-                	<input type="time" value="01:00:00" name="breakTime" >
-                </p>
-                
-                <div class="note">
-                	<p style="text-align: left">
-               		<label for="name">備考 :</label>
-                	<input type="text" name="note">
-                	</p>
-                </div>
-                
-                <button type="button" onclick="history.back(-1);">戻る</button>
-                <button type="submit">送信</button>
-                </div>
-              </div>
-            </form>
-        </div>
-    </div>
-    
+					<div class="clock_out">退勤報告</div>
+
+					<input type="hidden" name="userId" value=11> <input
+						type="hidden" name="attendanceId" th:value=${attendanceId}>
+
+					<div class="status">
+						<p style="text-align: left">
+							<label for="name">退勤ステータス :</label> <select class="textlines"
+								name="status">
+								<option value="出勤">出勤</option>
+								<option value="遅刻">遅刻</option>
+								<option value="欠勤">欠勤</option>
+								<option value="有給">有給</option>
+								<option value="その他">その他</option>
+							</select>
+						</p>
+					</div>
+
+					<div class="endDate">
+						<p style="text-align: left">
+							<label for="name">退勤日 :</label> <input type="date" name="endDate"
+								th:object="${signupForm}"> <span style="color: red"
+								th:if="${#fields.hasErrors('endDate')}" th:errors="*{endDate}"></span>
+						</p>
+					</div>
+
+					<div class="endTime">
+						<p style="text-align: left">
+							<label for="name">退勤時間 :</label> <input type="time" value="18:00"
+								name="endTime">
+						</p>
+					</div>
+
+					<div class="breakTime">
+						<p style="text-align: left">
+							<label for="name">休憩時間 :</label> <input type="time" value="01:00"
+								name="breakTime">
+						</p>
+
+						<div class="note">
+							<p style="text-align: left">
+								<label for="name">備考 :</label> <input type="text" name="note">
+							</p>
+						</div>
+
+						<button type="button" onclick="history.back(-1);">戻る</button>
+						<button type="submit">送信</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
 </body>
 </html>
