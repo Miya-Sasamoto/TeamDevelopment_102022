@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.domain.user.model.MUser;
-import com.example.domain.user.service.UserService;
+import com.example.domain.user.service.SasakiService;
 import com.example.form.SignupForm;
 
 //import lombok.extern.slf4j.Slf4j; 
@@ -33,7 +33,7 @@ public class Clock_outController{
 	
 
 	@Autowired
-	private UserService userService;
+	private SasakiService sasakiService;
 	
 	@Autowired
 	private  ModelMapper modelMapper;
@@ -47,7 +47,7 @@ public class Clock_outController{
 		
 		model.addAttribute("attendanceId", form.getAttendanceId());
 		
-		MUser user= userService.findOne(attendanceId); 
+		MUser user= sasakiService.findOne(attendanceId); 
 		
 		//MUserをformに変換
 		form= modelMapper.map(user,SignupForm.class);
@@ -82,16 +82,16 @@ public class Clock_outController{
 		return "/clock_out";
 	}
 		
-
+		System.out.println(form.getEndTime()+":00");
+		form.setEndTime(form.getEndTime()+":00");
 		
+
 		//formをMUserクラスに変換
 		
 		MUser complete = modelMapper.map(form,MUser.class); 
-
-		
 		
 		//退勤登録
-		userService.updateOne(complete);
+		sasakiService.updateOne(complete);
 
 		//完了画面に遷移
 		return "/complete";

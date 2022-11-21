@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 
-<mapper namespace= "com.example.repository.UserLoginMapper">
+<mapper namespace= "com.example.repository.SasakiMapper">
 <!--マッピング定義（ユーザー）-->
 <resultMap type="com.example.domain.user.model.MUser" id="user"> 
 <id column="user_id" property="userId" /> 
@@ -16,22 +16,7 @@
 <result column="attendance_id" property="attendanceId"/>
 </resultMap>
 
-<select id="findloginUser" parameterType="int"
-		resultType="com.example.form.Employeelogin">
-		select
-		user_id,
-		name,
-		name_kana,
-		password
-		from Employee
-		where user_id=#{user_id};
-		
-		</select>
-		
-		
-
 <!--ユーザー1件登録-->
-<!-- <insert id="insertOne" resultType="com.example.form.NewRegisterForm"> -->
 <insert id="insertOne">
 	insert into Attendance(
 		user_id,

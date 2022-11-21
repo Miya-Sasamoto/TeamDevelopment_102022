@@ -28,6 +28,7 @@ public class SignupForm {
 	
 	private String startTime;
 	
+	@DateTimeFormat(pattern="HH:mm:ss")
 	private String endTime;
 	
 	private String breakTime;

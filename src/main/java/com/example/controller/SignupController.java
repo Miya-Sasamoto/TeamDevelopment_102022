@@ -17,20 +17,19 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.domain.user.model.MUser;
-import com.example.domain.user.service.UserService;
+import com.example.domain.user.service.SasakiService;
 import com.example.form.Form2;
-
-//import lombok.extern.slf4j.Slf4j; 
 
 
 @Controller
 @RequestMapping("/user")
-//@Slf4j
 public class SignupController{
 
 
+	
+
 	@Autowired
-	private UserService userService;
+	private SasakiService sasakiService;
 	
 	@Autowired
 	private  ModelMapper modelMapper;
@@ -60,14 +59,16 @@ public class SignupController{
 
 			return "/attendance";
 		}
-		System.out.println(form.getStartTime());
-
+		
+		System.out.println(form.getStartTime()+":00");
+		form.setStartTime(form.getStartTime()+":00");
+		
 		//formをMUserクラスに変換
 
 		MUser complete = modelMapper.map(form,MUser.class); 
-
+		
 		//出勤登録
-		userService. signup(complete);
+		sasakiService. signup(complete);
 
 		//完了画面に遷移
 		//完了画面作る

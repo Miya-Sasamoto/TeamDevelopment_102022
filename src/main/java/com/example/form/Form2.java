@@ -21,11 +21,12 @@ public class Form2 {
 	@NotEmpty(message = "日付入れてね^^")
 	private String startDate;
 	
-	@DateTimeFormat(pattern="yyyy-MM-dd")
+	//@DateTimeFormat(pattern="yyyy-MM-dd")
 	private String endDate;
 	
 	private String status;
 	
+	@DateTimeFormat(pattern="HH:mm:ss")
 	private String startTime;
 	
 	private String endTime;
