@@ -50,10 +50,12 @@ public class  EditController{
 	
 
 	/**ユーザー削除処理*/
-	@PostMapping(value="/edit/delete",params="delete")
-	public String deleteUser(EditForm form,Model model){
+	@PostMapping(value="/delete",params="delete")
+	public String deleteUser(@ModelAttribute EditForm form,Model model){
 		//ユーザーを削除
 		editService.deleteOne(form.getUserId());
+		
+		model.addAttribute("EditForm",form);
 		//ユーザー一覧画面にリダイレクト
 		return"DeleteComplete";
 	}

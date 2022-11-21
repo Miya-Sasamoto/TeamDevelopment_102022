@@ -11,6 +11,21 @@
 	</resultMap> -->
 	<!-- <select id="findOne" resultType="EditForm"> -->
 	<select id="findOne" resultType="com.example.form.EditForm" >
+	
+	select
+	employee.user_id AS userId,
+	employee.name,
+	employee.name_kana AS nameKana,
+	employee.mail_address AS mailAddress,
+	employee.password
+	from
+	employee
+	where
+	user_id=#{userid}
+
+	</select>
+	
+	
 <!-- 	select  employee (
 	
 	user_id,
@@ -27,31 +42,6 @@
 	'${mailAddress}',
 	'${passWord}'
 	) -->
-	
-	select
-	employee.user_id AS userId,
-	employee.name,
-	employee.name_kana AS nameKana,
-	employee.mail_address AS mailAddress,
-	employee.password
-	from
-	employee
-	where
-	user_id=#{userid}
-
-	<!-- select 
-	user_id,
-	name,
-	name_kana,
-	mail_address,
-	password
-	from
-	employee
-	where
-	user_id =${userId} -->
-	</select>
-	
-	
 	<insert id="insertOne">
 	insert into employee (
 	name,
@@ -68,8 +58,7 @@
 	)
 	</insert>
 	
-	
-	<update id="updateOne">
+	<update id="updateOne" resultType="com.example.form.EditForm" >
 	update
 	m_user
 	set
@@ -81,15 +70,18 @@
 	where
 	user_id=${userId}
 	</update>
+	
+	
 
 	<!-- <!ユーザー1件削除> -->
-	<delete id="deleteOne">
-	
+	<delete id="deleteOne" resultType="com.example.form.EditForm" >
 	delete
 	from
 	m_user
 	where
 	user_id=${userId}
+	
 	</delete>
+	
 	</mapper>
 

@@ -12,7 +12,6 @@ public interface EditService {
 //	
 //	ユーザー情報取得
 //	public List<EditList> getAttendanceList(Edit editList);
-	
 	public EditForm findOne(Integer userId);	
 	
 	/**ユーザー更新(1件)*/
