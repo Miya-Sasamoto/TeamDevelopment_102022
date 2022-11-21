@@ -27,24 +27,27 @@ public class  EditController{
 	public String show(@ModelAttribute EditForm form,Model model, @PathVariable("userid") Integer userid){
 
 		EditForm user = editService.findOne(userid);
-
 		form = modelMapper.map(user,EditForm.class);
-
-		model.addAttribute("editForm",form);
+        model.addAttribute("editForm",form);
 		//ユーザー一覧画面にリダイレクト
 		return"edit";
 	}
 
-
-	/**編集削除画面*/
-	@GetMapping("/edit/update")
+    /**編集処理*/
+	@PostMapping(value="/edit",params="complete")
 	public String updateUser(@ModelAttribute EditForm form,Model model){
 		//ユーザーを更新
-		editService.updateOne(form.getUserId(),form.getName(),form.getNameKana(),
-				form.getMailAddress(),form.getPassWord());
+		editService.updateOne(form.getUserId(),
+				form.getName(),
+				form.getNameKana(),
+				form.getMailAddress(),
+				form.getPassWord());
+		
+		model.addAttribute("EditForm",form);
 		//ユーザー一覧画面にリダイレクト
-		return"redirect:/user/DeleteComplete";
+		return"EditComplete";
 	}
+	
 
 	/**ユーザー削除処理*/
 	@PostMapping(value="/edit/delete",params="delete")
@@ -52,7 +55,7 @@ public class  EditController{
 		//ユーザーを削除
 		editService.deleteOne(form.getUserId());
 		//ユーザー一覧画面にリダイレクト
-		return"redirect:/user/DeleteComplete";
+		return"DeleteComplete";
 	}
 
 }

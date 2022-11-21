@@ -1,22 +1,19 @@
-<!DOCTYPEhtml>
-<html xmlns:th="http://www.thymeleaf.org">
-<head> <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>編集</title>
-    <link rel="stylesheet" th:href="@{/.css}">
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>退勤報告</title>
+<link rel="stylesheet" href="/style6.css">
 </head>
-<body/>
-
- <form  method="post" th:action="@{/EditComplete}" th:object="${editForm}">
-
-<div class=EditComplete><h1>編集完了</h1></div>
-
-</form>
-
-
-</body>
-
-
-
-</html>
+<body>
+    <div class="wrapper"></div>
+        <div class="header">
+          <h1>完了画面</h1></div>
+            <div class="header2">
+                <p style="text-align: center">
+                <label for="name">登録完了しました。</label>
+            	</p>
+                <button type="button" onclick="location.href='http://localhost:8080/Mypage1'">Mypage</button>
+            </div>
+           </body>
+		</html>
