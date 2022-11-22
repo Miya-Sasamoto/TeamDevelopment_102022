@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	<mapper namespace="com.example.repository.UserMapper">
+	
+	<resultMap type="com.example.repository.UserMapper" id="user">
+		<id column="user_id" property="userId"/>
+		<result column="name" property="name"/>
+		<result column="name_kana" property="nameKana"/>
+		<result column="mail_address" property="mailAddress"/>
+		<result column="password" property="passWord"/>
+	</resultMap>
+
+
+	<insert id="insertOne">
+	
+	insert into employee (
+	name,
+	name_kana,
+	mail_address,
+	password
+	)
+	
+	values(
+	'${name}',
+	'${nameKana}',
+	'${mailAddress}',
+	'${passWord}'
+	)
+</insert>
+
+
+	
+	<select id="lookOne" >
+	
+	select
+	employee.user_id AS userId,
+	employee.name,
+	employee.name_kana AS nameKana,
+	employee.mail_address AS mailAddress,
+	employee.password
+	from
+	employee
+	where
+	user_id=#{userid}
+
+	</select>
+	
+	
+<!-- 	select  employee (
+	
+	user_id,
+	name,
+	name_kana,
+	mail_address,
+	password
+	)
+	
+	values(
+	'${userid}',
+	'${name}',
+	'${nameKana}',
+	'${mailAddress}',
+	'${passWord}'
+	) -->
+	
+	
+	<update id="updateOne" >
+	update
+	m_user
+	set
+	user_id=${userId}
+	name=${name}
+	,name_kana=${nameKana}
+	,mail_address=${mailAddress}
+	,password=${passWord}
+	where
+	user_id=${userId}
+	</update>
+	
+	
+
+	<!-- <!ユーザー1件削除> -->
+	<delete id="deleteOne" >
+	delete
+	from
+	m_user
+	where
+	user_id=${userId}
+	
+	</delete>
+	
+	</mapper>

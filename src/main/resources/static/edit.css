@@ -20,17 +20,17 @@ border-bottom-width:0;
 transform:translateY(4px)
 }
 
-
-.userid{
-
-  margin-top: -30px;
-  
-}
-
 .username{
 
-  margin-top: 30px;
+  margin-top: -30px;
+  margin-bottom: 60px;
 
+}
+
+.name_kana{
+
+  margin-top: -30px;
+  text-indent: 1.0em;
 }
 
 .email{

@@ -12,14 +12,14 @@
     <div class="box">
     
     
-  <form  method="post">
-    <div class="userid">  
-      <label for="id"> ユーザーID：</label>
-      <input type="text" id="id" name="userid">
-    </div>
+  <form method="post" th:action="@{/edit}" th:object="${EditForm}">
     <div class="username">  
       <label for="name"> ユーザー名：</label>
       <input id="name" type="text" name="name">
+    </div>
+    <div class="name_kana">  
+      <label for="name_kana"> 名前カナ：</label>
+      <input id="name_kana" type="text" name="name_kana">
     </div>
     <div class="email"> 
       <label for="email"> E-MAIL：</label>
@@ -27,7 +27,7 @@
     </div>
     <div class="password">  
       <label for="name"> パスワード：</label> 
-      <input id="namekana" type="text" name="namekana">
+      <input id="password" type="text" name="password">
     </div>
    
     <div class="cancel">
@@ -37,7 +37,7 @@
       <input type="button" value="削除" >
     </div>
     <div class="hensyu">
-      <input type="button" value="編集">
+    <button th:action="@{/complete}" type="submit">編集</button>
     </div>
     
        

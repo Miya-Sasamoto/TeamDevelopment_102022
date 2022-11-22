@@ -16,6 +16,7 @@
 <result column="attendance_id" property="attendanceId"/>
 </resultMap>
 
+
 <select id="findloginUser" parameterType="int"
 		resultType="com.example.form.Employeelogin">
 		select
@@ -28,31 +29,6 @@
 		
 		</select>
 		
-		
-
-<!--ユーザー1件登録-->
-<insert id="insertOne" resultType="com.example.form.NewRegisterForm">
-	insert into Attendance(
-		user_id,
-		start_date,
-		end_date,
-		status,
-		start_time,
-		end_time,
-		break_time,
-		note
-	)
-	values(
-		#{userId},
-		#{startDate},
-		#{endDate},
-		#{status},
-		#{startTime},
-		#{endTime},
-		#{breakTime},
-		#{note}
-	)
-</insert>
 
 <!--ユーザー1件更新-->
 <update id="updateOne">
