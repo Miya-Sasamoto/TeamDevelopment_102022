@@ -21,9 +21,9 @@
           <div  class="content_1">
           <input type="hidden" th:field="*{attendanceId}"/>
             <label> <span>ステータス</span>
-              <select name="attendance_status" th:field="*{status}">
+              <select name="attendance_status">
                 <option th:value="出勤" th:text="出勤">出勤</option>
-                <option th:value="退勤" th:text="退勤">退勤</option>
+                <option th:value="退勤" th:text="退勤" selected>退勤</option>
                 <option th:value="遅刻" th:text="遅刻">遅刻</option>
                 <option th:value="欠席" th:text="欠席">欠席</option>
                 <option th:value="早退" th:text="早退">早退</option>
