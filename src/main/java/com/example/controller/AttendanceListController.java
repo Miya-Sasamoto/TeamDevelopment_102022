@@ -17,23 +17,23 @@ import com.example.form.AttendanceListForm;
 @Controller
 @RequestMapping("/attendance")
 public class AttendanceListController{
-	
-//	出退勤情報サービス
+
+	//	出退勤情報サービス
 	@Autowired
 	private AttendanceService attendanceService;
-	
+
 	@Autowired
 	private ModelMapper modelMapper;
-	
-///　出退勤情報一覧画面の表示
+
+	///　出退勤情報一覧画面の表示
 	@GetMapping("/list")
 	public String getAttendanceList(@ModelAttribute AttendanceListForm form, Model model){
 		MAttendanceList attendance = modelMapper.map(form, MAttendanceList.class);
-		
+
 		List<MAttendanceList> attendanceList = attendanceService.getAttendanceList(attendance);
-		
+
 		model.addAttribute("attendanceList",attendanceList);
-	
+
 		return "attendance/attendance_index";
 	}
 }
