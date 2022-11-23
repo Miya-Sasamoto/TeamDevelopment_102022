@@ -50,6 +50,9 @@ public class SignupController{
 				errorList.add(error.getDefaultMessage());
 
 			}
+//			form.getuserId()
+			model.addAttribute("userId",1);
+			model.addAttribute("form2",new Form2());
 			return "/attendance";
 		}
 

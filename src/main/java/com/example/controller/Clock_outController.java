@@ -50,6 +50,7 @@ public class Clock_outController{
 		model.addAttribute("signupForm", form);
 		return "/clock_out";
 	}
+	
 
 	/**退勤登録処理
 	 * @throws ParseException */
@@ -66,6 +67,9 @@ public class Clock_outController{
 			for (ObjectError error : bindingResult.getAllErrors()) {
 				errorList.add(error.getDefaultMessage()); 
 			}
+			
+			model.addAttribute("attendanceId", form.getAttendanceId());
+			model.addAttribute("signupForm", form);
 			return "/clock_out";
 		}
 		System.out.println(form.getEndTime()+":00");
