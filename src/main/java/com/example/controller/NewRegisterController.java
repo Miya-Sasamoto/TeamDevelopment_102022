@@ -20,7 +20,9 @@ import com.example.form.NewRegisterForm;
 
 public class NewRegisterController{
 
-    
+	
+    @Autowired
+    NewRegisterForm newRegisterForm;
     @Autowired
     private NewRegisterService service;
     
@@ -46,7 +48,7 @@ public class NewRegisterController{
         newRegisterForm .setMailAddress(form.getMailAddress());
         //newRegisterForm .setPassWord(form.getPassWord());
         newRegisterForm .setPassWord(passwordEncoder.encode(form.getPassWord()));
-        service.add(newRegisterForm);
+        service.insert(newRegisterForm);
         return "/CompleteNewRegister";
     }   
 

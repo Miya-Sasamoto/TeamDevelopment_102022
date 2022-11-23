@@ -3,15 +3,14 @@ package com.example.domain.user.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org. springframework. stereotype.Service;
 
-import com.example.domain.user.service.NewRegisterService;
 import com.example.form.NewRegisterForm;
-import com.example.repository.SugawaraMapper;
+import com.example.repository. UserMapper;
 
 @Service
 public class NewRegisterServiceImpl implements NewRegisterService {
     
     @Autowired 
-    private SugawaraMapper mapper ;
+    private UserMapper mapper;
     
     /**ユーザー登録*/
 //    @Override 
@@ -21,9 +20,9 @@ public class NewRegisterServiceImpl implements NewRegisterService {
 //    }
 
     @Override
-    public void add(NewRegisterForm newRegisterForm) {
+    public void insert(NewRegisterForm newRegisterForm) {
         
-        mapper.add_One(newRegisterForm);
+        mapper.insertOne(newRegisterForm);
         
     }
     
