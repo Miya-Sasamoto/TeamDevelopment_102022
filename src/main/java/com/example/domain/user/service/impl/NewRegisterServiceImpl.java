@@ -5,13 +5,13 @@ import org. springframework. stereotype.Service;
 
 import com.example.domain.user.service.NewRegisterService;
 import com.example.form.NewRegisterForm;
-import com.example.repository. UserMapper;
+import com.example.repository.SugawaraMapper;
 
 @Service
 public class NewRegisterServiceImpl implements NewRegisterService {
     
     @Autowired 
-    private UserMapper mapper;
+    private SugawaraMapper mapper;
     
     /**ユーザー登録*/
 //    @Override 
@@ -23,7 +23,7 @@ public class NewRegisterServiceImpl implements NewRegisterService {
     @Override
     public void add(NewRegisterForm form) {
         
-        mapper.addOne(form);
+        mapper.add(form);
         
     }
     
