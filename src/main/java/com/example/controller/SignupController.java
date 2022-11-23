@@ -1,5 +1,6 @@
 package com.example.controller;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 import java. util.Locale;
@@ -41,18 +42,21 @@ public class SignupController{
 
 	/**出勤登録処理*/
 	@PostMapping("/signup/complete") 
-	public String Signup(Model model,Locale locale,@ModelAttribute @Validated Form2 form,BindingResult result){ 
+	public String Signup(Model model,Locale locale,@ModelAttribute @Validated Form2 form,BindingResult result) throws ParseException { 
 		if(result.hasErrors()) {
 			// 入力チェックエラーの場合
 			List<String> errorList = new ArrayList<String>();
-
 			for (ObjectError error : result.getAllErrors()) {
 				errorList.add(error.getDefaultMessage());
-
 			}
 //			form.getuserId()
+//			model.addAttribute("userId",1);
+//			model.addAttribute("form2",new Form2());
+			
 			model.addAttribute("userId",1);
-			model.addAttribute("form2",new Form2());
+			model.addAttribute("Form2", form);
+			
+
 			return "/attendance";
 		}
 

@@ -16,7 +16,7 @@ public class SignupForm {
 	private String startDate;
 
 	@DateTimeFormat(pattern="yyyy-MM-dd")
-	@NotEmpty(message = "日付入れてね^^")
+	@NotEmpty(message = "日付を入力してください")
 	private String endDate;
 
 	private String status;
