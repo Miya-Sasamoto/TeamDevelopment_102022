@@ -13,8 +13,9 @@
 	<div class="wrapper">
 
 		<div class="header">
-			<form th:action="@{/user/signup/complete}" th:object="${form2}"
-				method="post">
+			<form th:action="@{/user/signup/complete}" method="post" 
+				th:object="${form2}"> 
+				
 
 
 				<p style="text-align: center">
@@ -24,9 +25,7 @@
 				<div class="header2">
 
 					<p style="text-align: left">
-					<div class="attendance">出勤報告</div>
-
-					<div class="attendance">
+					<div class="attendance">出勤報告
 						<input type="hidden" name="userId" id="userId"
 							th:value="${userId}">
 					</div>
@@ -62,7 +61,7 @@
 					<button type="button" onclick="history.back(-1);">戻る</button>
 					<button type="submit">送信</button>
 				</div>
-
+				
 			</form>
 		</div>
 	</div>
