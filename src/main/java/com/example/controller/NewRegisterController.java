@@ -1,4 +1,5 @@
 package com.example.controller;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -8,6 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.example.domain.user.model.MasterUser;
 import com.example.domain.user.service.NewRegisterService;
 import com.example.form.NewRegisterForm;
 
@@ -21,7 +23,7 @@ public class NewRegisterController{
 
 
 	@Autowired
-	NewRegisterForm newRegisterForm;
+	private ModelMapper modelMapper;
 	@Autowired
 	private NewRegisterService service;
 	@Autowired
@@ -37,15 +39,17 @@ public class NewRegisterController{
 
 	@PostMapping("/NewRegister")
 	public String postNewRegister(@ModelAttribute NewRegisterForm form,Model model){
+		MasterUser masterUser=modelMapper.map(form,MasterUser.class);
+
 		//パスワードをハッシュ化して登録する
 		//newRegisterForm.setPassWord(passwordEncoder.encode(newRegisterForm.getPassWord())); 
 		//BCryptPasswordEncoder bcpe = new BCryptPasswordEncoder();
-		newRegisterForm .setName(form.getName());
-		newRegisterForm .setNameKana(form.getNameKana());
-		newRegisterForm .setMailAddress(form.getMailAddress());
+		masterUser .setName(form.getName());
+		masterUser .setNameKana(form.getNameKana());
+		masterUser .setMailAddress(form.getMailAddress());
 		//newRegisterForm .setPassWord(form.getPassWord());
-		newRegisterForm .setPassWord(passwordEncoder.encode(form.getPassWord()));
-		service.add(newRegisterForm);
+		masterUser .setPassWord(passwordEncoder.encode(form.getPassWord()));
+		service.addOne(masterUser);
 		return "/CompleteNewRegister";
 	}   
 

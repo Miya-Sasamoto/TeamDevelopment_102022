@@ -1,6 +1,6 @@
 package com.example.domain.user.service;
 
-import com.example.form.NewRegisterForm; 
+import com.example.domain.user.model.MasterUser; 
 public interface NewRegisterService {
 //    /**ユーザー登録*/
 //    public void signup(MUser user); 
@@ -8,7 +8,7 @@ public interface NewRegisterService {
 //    private UserMapper userMapper;
   
     /**ユーザー登録*/
-    public void add(NewRegisterForm newRegisterForm); 
+    public void addOne(MasterUser masterUser); 
 //   userMapper.insertOne(newRegisterForm);
     
  }
