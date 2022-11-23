@@ -8,14 +8,14 @@ import com.example.form.NewRegisterForm;
 
 
 @Mapper
-public interface UserMapper {
+public interface SugawaraMapper {
 	
 	public int updateOne(MUser user);
 	
 	//ユーザー取得(1件)
 		public MUser findOne(Integer attendanceId);
 
-		public void insertOne(MUser user);
+		public void add_One(NewRegisterForm newRegisterForm);
 		
 		public int addOne(NewRegisterForm newRegisterForm);
 }

@@ -6,7 +6,7 @@ public interface NewRegisterService {
 //    public void signup(MUser user); 
 //    
     /**ユーザー登録*/
-    public void insert(NewRegisterForm newRegisterForm); 
+    public void add(NewRegisterForm newRegisterForm); 
 //    userMapper.insertOne(newRegisterForm);
     
  }
