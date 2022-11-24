@@ -29,11 +29,11 @@ public class LoginController {
 //		return "/Mypage1";
 //	}
 //	
-//	@GetMapping("/NewRegiser")
-//	public String NewRegiser() {
-//
-//		return "/NewRegiser";
-//	}
+	@GetMapping("/NewRegiser")
+	public String NewRegiser() {
+
+		return "/NewRegiser";
+	}
 //
 //
 //	@GetMapping("/edit")//編集
