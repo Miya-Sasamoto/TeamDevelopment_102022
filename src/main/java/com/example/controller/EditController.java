@@ -49,33 +49,26 @@ public class  EditController{
 		System.out.println(form.getMailAddress());
 		System.out.println(form.getPassWord());
 		
-		//		//ユーザーを更新
-//		editService.editUserOne(form.getUserId(),
-//				form.getName(),
-//				form.getNameKana(),
-//				form.getMailAddress(),
-//				form.getPassWord());
-
 		MasterUser complete = modelMapper.map(form,MasterUser.class);
 //		form = modelMapper.map(masterUser,EditForm.class);
 		
 		editService.updateUserOne(complete);
 		
 		//ユーザー一覧画面にリダイレクト
-		return "/complete";
+		return "/editcomplete";
 //		return"/editcomplete";
 	}
 
 
 	/**ユーザー削除処理*/
-//	@PostMapping(value="/delete",params="delete")
-//	public String deleteUser(EditForm form,Model model){
-//		//ユーザーを削除
-//		editService.deleteUserOne(form.getUserId());
-//
-//		//		model.addAttribute("EditForm",form);
-//		//ユーザー一覧画面にリダイレクト
-//		return"deletecomplete";
-//	}
+	@PostMapping("/delete")
+	public String deleteUser(@ModelAttribute EditForm form,Model model){
+		//ユーザーを削除
+		editService.deleteUserOne(form.getUserId());
+
+		//		model.addAttribute("EditForm",form);
+		//ユーザー一覧画面にリダイレクト
+		return"/deletecomplete";
+	}
 
 }

@@ -8,7 +8,8 @@
 		property="mailAddress" /> <result column="password" property="passWord" /> 
 		</resultMap> -->
 
-	<resultMap type="com.example.domain.user.model.MasterUser" id="Edit">
+	<resultMap type="com.example.domain.user.model.MasterUser"
+		id="Edit">
 		<id column="user_id" property="userId" />
 		<result column="name" property="name" />
 		<result column="name_kana" property="nameKana" />
@@ -57,6 +58,23 @@
 		user_id=#{userid}
 
 	</select>
+
+	<!-- <update id="updateUserOne"> update employee name, name_kana, mail_address, 
+		password ) 　 values( '${name}', '${nameKana}', '${mailAddress}', '${passWord}' 
+		) </update> -->
+
+	<update id="updateUserOne">		
+		update
+	  	Employee
+	 set
+	 	name     = #{name},
+	  	name_kana = #{nameKana},
+	  	mail_address = #{mailAddress},
+	  	password = #{passWord}
+	  	
+	  	where
+	 	 user_id = #{userId}
+	</update>
 
 	<!-- <select id="lookOne"> select Employee.user_id, name, name_kana,mail_address,password 
 		from Employee where user_id=#{userid} </select> -->

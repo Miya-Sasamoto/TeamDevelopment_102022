@@ -55,8 +55,8 @@ public class EditServiceImpl implements EditService{
 	}
 
 	@Override
-	public void updateUserOne(MasterUser complete) {
-		mapper.updateUserOne(userId);
+	public void updateUserOne(MasterUser masterUser) {
+		mapper.updateUserOne(masterUser);
 		
 	}
 

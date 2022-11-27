@@ -29,6 +29,6 @@ public interface SugawaraMapper {
 	/**ユーザー削除(1件)*/
 	public int deleteOne(@Param("userId")String userId);
 
-	public int updateUserOne(Integer userId);
-	
+//	public int updateUserOne(Integer userId);
+	public int updateUserOne(@Param("userId")MasterUser masterUser);
 }

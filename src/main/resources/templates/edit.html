@@ -9,7 +9,7 @@
 </head>
 <body>
 	<h1>編集</h1>
-	
+
 	<div class="box">
 		<form th:action="@{/edit/{userId}}" th:object="${editForm}"
 			method="post">
@@ -34,12 +34,14 @@
 				<label for="name"> ID：</label> <input id="userId" type="text"
 					name="userId" th:field="*{userId}">
 			</div>
-					
+
 			<div class="cancel">
-				<input type="button" value="キャンセル">
+			<!-- <input type="button" href="@{/Mypage1}" value="キャンセル"> -->
+			<button th:action="@{/Mypage1}" type="submit">キャンセル</button>
+				<!-- <button th:href="@{/Mypage1}" name="cancel" type="submit">キャンセル</button> -->
 			</div>
 			<div class="sakuzyo">
-				<input type="button" value="削除">
+				<button th:action="@{/delete}" name="editcomplete" type="submit">削除</button>
 			</div>
 			<div class="hensyu">
 				<button th:action="@{/edit/complete}" name="editcomplete"

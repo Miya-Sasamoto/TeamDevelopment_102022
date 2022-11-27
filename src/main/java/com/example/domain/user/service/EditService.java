@@ -28,5 +28,5 @@ public interface EditService {
 //	
 //	/**ユーザー更新(1件)*/
 //	public MasterUser updateUserOne(Integer userId, String name, String nameKana,String mailAddress, String password);
-	public void updateUserOne(MasterUser complete);
+	public void updateUserOne(MasterUser masterUser);
 }
