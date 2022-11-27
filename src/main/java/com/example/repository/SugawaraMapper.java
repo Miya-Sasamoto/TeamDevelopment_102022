@@ -1,5 +1,7 @@
 package com.example.repository;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.data.repository.query.Param;
 
@@ -9,29 +11,25 @@ import com.example.domain.user.model.MasterUser;
 
 @Mapper
 public interface SugawaraMapper {
-	
 
-	
-	//ユーザー追加(1件)
-	public void addOne(MasterUser MasterUser);
 
-	
-	/**ユーザー取得(1件)
-	 * @param mailAddress 
-	 * @param passWord 
-	 * @param nameKana 
-	 * @param name */
-	public void lookOne(@Param("user")String user_id);
 
-	
-//    public int insertOne(MUser user);
-//    
-//  public int insertOne(NewRegisterForm newRegisterForm);
-//   /**ユーザー登録(1件)*/
-  public void updateOne(@Param("user")String user_id,@Param("user")String name,@Param("user")String name_kana,
-		  @Param("user")String password,@Param("mail_address")String mail_address);
- 
-  /**ユーザー削除(1件)*/
-  public int deleteOne(@Param("user")String user_id);
-   
+	//ユーザー登録(1件)
+	public int addOne(MasterUser masterUser);
+
+	/**ユーザー取得*/
+	public List<MasterUser>lookMany();
+
+	//    /**ユーザー取得(1件)
+
+	public MasterUser lookOne(String userId);
+
+
+	//   /**ユーザー編集(1件)*/
+	public void editOne(@Param("userId")String UserId,@Param("name")String name,@Param("NameKana")String NameKana,
+			@Param("passWord")String passWord,@Param("mailAddress")String mailAddress);
+
+	/**ユーザー削除(1件)*/
+	public int deleteOne(@Param("userId")String userId);
+
 }
