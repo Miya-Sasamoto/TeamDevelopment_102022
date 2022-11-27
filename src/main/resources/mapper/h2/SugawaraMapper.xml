@@ -2,15 +2,19 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.repository.SugawaraMapper">
-	<!-- <resultMap
-		type="com.example.domain.user.model.SugawaraMapper" id="user">
+	<!-- <resultMap type="com.example.domain.user.model.SugawaraMapper" id="user"> 
+		<id column="user_id" property="userId" /> <result column="name" property="name" 
+		/> <result column="name_kana" property="nameKana" /> <result column="mail_address" 
+		property="mailAddress" /> <result column="password" property="passWord" /> 
+		</resultMap> -->
+
+	<resultMap type="com.example.domain.user.model.MasterUser" id="Edit">
 		<id column="user_id" property="userId" />
 		<result column="name" property="name" />
 		<result column="name_kana" property="nameKana" />
 		<result column="mail_address" property="mailAddress" />
 		<result column="password" property="passWord" />
-	</resultMap> -->
-
+	</resultMap>
 
 	<insert id="addOne">
 		insert into employee (
@@ -19,7 +23,7 @@
 		mail_address,
 		password
 		)
-　
+		　
 		values(
 		'${name}',
 		'${nameKana}',
@@ -39,7 +43,7 @@
 	</select>
 
 
-	<select id="lookOne">
+	<select id="getUserOne" resultMap="Edit">
 
 		select
 		user_id,
@@ -53,13 +57,9 @@
 		user_id=#{userid}
 
 	</select>
-	
-	<!-- <select id="lookOne">
-		select Employee.user_id, name, name_kana,mail_address,password
-		from Employee
-		where
-		user_id=#{userid}
-	</select> -->
+
+	<!-- <select id="lookOne"> select Employee.user_id, name, name_kana,mail_address,password 
+		from Employee where user_id=#{userid} </select> -->
 
 	<update id="editOne">
 		update

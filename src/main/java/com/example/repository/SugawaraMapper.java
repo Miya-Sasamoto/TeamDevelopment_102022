@@ -12,8 +12,6 @@ import com.example.domain.user.model.MasterUser;
 @Mapper
 public interface SugawaraMapper {
 
-
-
 	//ユーザー登録(1件)
 	public int addOne(MasterUser masterUser);
 
@@ -22,11 +20,10 @@ public interface SugawaraMapper {
 
 	//    /**ユーザー取得(1件)
 
-	public MasterUser lookOne(String userId);
-
+	public MasterUser getUserOne(Integer userId);
 
 	//   /**ユーザー編集(1件)*/
-	public void editOne(@Param("userId")String UserId,@Param("name")String name,@Param("NameKana")String NameKana,
+	public void editOne(@Param("userId")Integer UserId,@Param("name")String name,@Param("NameKana")String NameKana,
 			@Param("passWord")String passWord,@Param("mailAddress")String mailAddress);
 
 	/**ユーザー削除(1件)*/

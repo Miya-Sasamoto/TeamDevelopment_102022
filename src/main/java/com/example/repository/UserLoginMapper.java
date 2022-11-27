@@ -10,5 +10,4 @@ public interface UserLoginMapper {
 	public int insertOne(MUser user);
 
 	public Employeelogin findloginUser(int user_id);
-
 }

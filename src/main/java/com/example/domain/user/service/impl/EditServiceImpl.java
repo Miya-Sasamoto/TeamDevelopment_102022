@@ -24,13 +24,13 @@ public class EditServiceImpl implements EditService{
 
 	/**ユーザー取得(1件)*/
 	@Override
-	public MasterUser getUserOne(String userId){
-		return mapper.lookOne(userId);
+	public MasterUser getUserOne(Integer userId){
+		return mapper.getUserOne(userId);
 	}
 
 	/**ユーザー(編集1件)*/
 	@Override
-	public void editUserOne(String userId,String name,String nameKana,String passWord,String mailAddress){
+	public void editUserOne(Integer userId,String name,String nameKana,String passWord,String mailAddress){
 		 mapper.editOne(userId,name,nameKana,passWord,mailAddress);
 		}
 	

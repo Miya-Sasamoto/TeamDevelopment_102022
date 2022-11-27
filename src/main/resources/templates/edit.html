@@ -1,50 +1,46 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>編集</title>
-   <link rel="stylesheet" th:href="@{/edit.css}">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>編集</title>
+<link rel="stylesheet" th:href="@{/edit.css}">
 </head>
 <body>
-    <h1>編集</h1>
-    <div class="box">
-    
-    
-  <form  th:action="@{/edit/{userId:.+}}" th:object="${EditForm}" method="post">
-    <div class="username">  
-      <label for="name"> ユーザー名：</label>
-      <input id="name" type="text" name="name" th:field="*{name}">
-    </div>
-    <div class="name_kana">  
-      <label for="name_kana"> 名前カナ：</label>
-      <input id="name_kana" type="text" name="name_kana" th:field="*{nameKana}">
-    </div>
-    <div class="email"> 
-      <label for="email"> E-MAIL：</label>
-      <input id="email" type="email" name="email"  th:field="*{mailAddress}">
-    </div>
-    <div class="password">  
-      <label for="name"> パスワード：</label> 
-      <input id="password" type="text" name="password" th:field="*{passWord}">
-    </div>
-   
-    <div class="cancel">
-      <input type="button" value="キャンセル">
-    </div>
-    <div class="sakuzyo">
-      <input type="button" value="削除" >
-    </div>
-    <div class="hensyu">
-    <button th:action="@{/edit/complete}" name="editcomplete" type="submit">編集</button>
-    </div>
-    
-       
-    </form>
-      
-   </div>     
+	<h1>編集</h1>
+	<div class="box">
+		<form th:action="@{/edit/{userId:.+}}" th:object="${editForm}"
+			method="post">
+
+			<div class="username">
+				<label for="name"> ユーザー名：</label> <input id="name" type="text"
+					name="name" th:field="*{name}">
+			</div>
+			<div class="name_kana">
+				<label for="name_kana"> 名前カナ：</label> <input id="name_kana"
+					type="text" name="name_kana" th:field="*{nameKana}">
+			</div>
+			<div class="email">
+				<label for="email"> E-MAIL：</label> <input id="email" type="email"
+					name="email" th:field="*{mailAddress}">
+			</div>
+			<div class="password">
+				<label for="name"> パスワード：</label> <input id="password" type="text"
+					name="password" th:field="*{passWord}">
+			</div>
+
+			<div class="cancel">
+				<input type="button" value="キャンセル">
+			</div>
+			<div class="sakuzyo">
+				<input type="button" value="削除">
+			</div>
+			<div class="hensyu">
+				<button th:action="@{/edit/complete}" name="editcomplete"
+					type="submit">編集</button>
+			</div>
+		</form>
+	</div>
 </body>
-
-
 </html>

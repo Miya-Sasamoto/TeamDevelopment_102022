@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class EditForm{
-    private String userId;
+    private Integer userId;
     private String name;
     private String nameKana;
     private String mailAddress;
