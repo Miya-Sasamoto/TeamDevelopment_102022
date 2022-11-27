@@ -9,8 +9,9 @@
 </head>
 <body>
 	<h1>編集</h1>
+	
 	<div class="box">
-		<form th:action="@{/edit/{userId:.+}}" th:object="${editForm}"
+		<form th:action="@{/edit/{userId}}" th:object="${editForm}"
 			method="post">
 
 			<div class="username">
@@ -29,7 +30,11 @@
 				<label for="name"> パスワード：</label> <input id="password" type="text"
 					name="password" th:field="*{passWord}">
 			</div>
-
+			<div class="password">
+				<label for="name"> ID：</label> <input id="userId" type="text"
+					name="userId" th:field="*{userId}">
+			</div>
+					
 			<div class="cancel">
 				<input type="button" value="キャンセル">
 			</div>

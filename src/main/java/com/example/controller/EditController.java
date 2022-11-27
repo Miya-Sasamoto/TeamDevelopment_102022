@@ -22,7 +22,7 @@ public class  EditController{
 	private ModelMapper modelMapper;
 
 	/**編集削除画面*/
-	@GetMapping("/edit/{userId:.+}")
+	@GetMapping("/edit/{userId}")
 	public String show(@ModelAttribute EditForm form,Model model,
 			@PathVariable("userId") Integer userId){
 		
@@ -40,7 +40,7 @@ public class  EditController{
 	}
 
 	/**編集処理*/
-	@PostMapping("/edit/complete")
+	@PostMapping("/edit/{userId}")
 	public String editUserOne(@ModelAttribute EditForm form,Model model){
 		
 		System.out.println(form.getUserId());
@@ -58,9 +58,8 @@ public class  EditController{
 
 		MasterUser complete = modelMapper.map(form,MasterUser.class);
 //		form = modelMapper.map(masterUser,EditForm.class);
-		model.addAttribute("editForm",form);
 		
-//		editService.editUserOne(complete);
+		editService.updateUserOne(complete);
 		
 		//ユーザー一覧画面にリダイレクト
 		return "/complete";

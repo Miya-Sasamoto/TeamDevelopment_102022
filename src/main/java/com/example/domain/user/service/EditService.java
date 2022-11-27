@@ -23,10 +23,10 @@ public interface EditService {
 //	public void deleteOne(@Param("userId")String userId);
 	
 	/**ユーザー削除(1件)*/
-	public void deleteUserOne(String userId);
+	public void deleteUserOne(Integer userId);
 //
 //	
 //	/**ユーザー更新(1件)*/
-//	public MasterUser updateUserOne(String userId, String name, String nameKana,String mailAddress, String password);
-	
+//	public MasterUser updateUserOne(Integer userId, String name, String nameKana,String mailAddress, String password);
+	public void updateUserOne(MasterUser complete);
 }

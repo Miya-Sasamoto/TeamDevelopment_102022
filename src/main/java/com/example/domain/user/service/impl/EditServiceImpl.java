@@ -36,18 +36,40 @@ public class EditServiceImpl implements EditService{
 	
 	/**ユーザー削除(1件)
 	 * @return */
-	@Override 
-	public void deleteUserOne(String userId){
-		int count = mapper.deleteOne(userId);
-	
-	}
+//	@Override 
+//	public void deleteUserOne(String userId){
+//		int count = mapper.deleteOne(userId);
+//	
+//	}
 
 	@Override
 	public MasterUser lookOne(String userId) {
 		// TODO 自動生成されたメソッド・スタブ
 		return null;
 	}
-	
 
+	@Override
+	public void deleteUserOne(Integer userId) {
+		// TODO 自動生成されたメソッド・スタブ
 		
 	}
+
+	@Override
+	public void updateUserOne(MasterUser complete) {
+		mapper.updateUserOne(userId);
+		
+	}
+
+//	@Override
+//	public void updateUserOne(Integer userId) {
+//		mapper.updateUserOne(userId);
+//	}
+	
+//	@Override
+//	public void updateUserOne(Integer userId,String name,String nameKana,String mailAddress,String passWord
+//) {
+//		SugawaraMapper.updateUserOne(userId,name,nameKana,mailAddress,passWord);
+//	}
+	
+	
+}
