@@ -22,7 +22,7 @@ transform:translateY(4px)
 
 .username{
 
-  margin-top: -30px;
+  margin-top: -60px;
   margin-bottom: 60px;
 
 }
@@ -32,6 +32,7 @@ transform:translateY(4px)
   margin-top: -30px;
   text-indent: 1.0em;
 }
+
 
 .email{
   margin-top: 30px;
@@ -43,7 +44,10 @@ transform:translateY(4px)
 
   margin-top: 30px;
 }
+.userId{
 
+ margin: 30px 30px 30px 90px;
+}
 
 
 

@@ -30,21 +30,18 @@
 				<label for="name"> パスワード：</label> <input id="password" type="text"
 					name="password" th:field="*{passWord}">
 			</div>
-			<div class="password">
+			<div class="userId">
 				<label for="name"> ID：</label> <input id="userId" type="text"
 					name="userId" th:field="*{userId}">
 			</div>
 
 			
 			
-			<div class="hensyu">
-				<button th:action="@{/edit/complete}" name="editcomplete"
-					type="submit">編集</button>
-			</div>
+			
 		</form>
 		<div class="cancel">
-			
-			<button th:action="@{/Mypage1}" type="submit">キャンセル</button>
+			<button type="button" onclick="location.href='http://localhost:8080/Mypage1'">キャンセル</button>
+			<!-- <button th:action="@{/Mypage1}" type="submit">キャンセル</button> -->
 				<!-- <button th:href="@{/Mypage1}" name="cancel" type="submit">キャンセル</button> -->
 			</div>
 			<form th:action="@{/edit/delete}" th:object="${editForm}"
@@ -53,6 +50,11 @@
 					name="userId" th:value="*{userId}">
 			<div class="sakuzyo">
 				<button type="submit">削除</button>
+			</div>
+			
+			<div class="hensyu">
+				<button th:action="@{/edit/complete}" name="editcomplete"
+					type="submit">編集</button>
 			</div>
 			</form>
 	</div>
