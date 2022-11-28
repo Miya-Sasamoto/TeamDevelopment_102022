@@ -49,8 +49,9 @@ public class EditServiceImpl implements EditService{
 	}
 
 	@Override
-	public void deleteUserOne(Integer userId) {
-		// TODO 自動生成されたメソッド・スタブ
+	public void deleteUserOne(Integer userId){
+		 mapper.deleteOne(userId);
+		
 		
 	}
 

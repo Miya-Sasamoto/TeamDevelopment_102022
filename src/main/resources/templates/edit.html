@@ -35,19 +35,26 @@
 					name="userId" th:field="*{userId}">
 			</div>
 
-			<div class="cancel">
-			<!-- <input type="button" href="@{/Mypage1}" value="キャンセル"> -->
-			<button th:action="@{/Mypage1}" type="submit">キャンセル</button>
-				<!-- <button th:href="@{/Mypage1}" name="cancel" type="submit">キャンセル</button> -->
-			</div>
-			<div class="sakuzyo">
-				<button th:action="@{/delete}" name="editcomplete" type="submit">削除</button>
-			</div>
+			
+			
 			<div class="hensyu">
 				<button th:action="@{/edit/complete}" name="editcomplete"
 					type="submit">編集</button>
 			</div>
 		</form>
+		<div class="cancel">
+			
+			<button th:action="@{/Mypage1}" type="submit">キャンセル</button>
+				<!-- <button th:href="@{/Mypage1}" name="cancel" type="submit">キャンセル</button> -->
+			</div>
+			<form th:action="@{/edit/delete}" th:object="${editForm}"
+			method="post">
+				<input Type= "hidden" id="userId" 
+					name="userId" th:value="*{userId}">
+			<div class="sakuzyo">
+				<button type="submit">削除</button>
+			</div>
+			</form>
 	</div>
 </body>
 </html>

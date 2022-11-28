@@ -91,16 +91,12 @@
 		user_id=${userId}
 	</update>
 
-
-
 	<!-- <!ユーザー1件削除> -->
 	<delete id="deleteOne">
-		delete
-		from
-		employee
-		where
-		user_id=${userId}
-
+	delete
+	from
+	employee
+	where user_id = #{id}
 	</delete>
 
 </mapper>
