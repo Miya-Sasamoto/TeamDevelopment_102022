@@ -73,7 +73,7 @@ public class  EditController{
 
 		//		model.addAttribute("EditForm",form);
 		//ユーザー一覧画面にリダイレクト
-		return"/editcomplete";
+		return"/editdelete";
 	}
 
 }

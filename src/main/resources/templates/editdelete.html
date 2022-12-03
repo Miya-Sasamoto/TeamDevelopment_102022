@@ -3,17 +3,20 @@
 <head>
 <meta charset="utf-8">
 <title>削除</title>
-<link rel="stylesheet" href="/EditDelete.css">
+<link rel="stylesheet" th:href="@{/editdelete.css}">
 </head>
 <body>
-    <div class="wrapper"></div>
+<form style="text-align: center" method="post" th:action="@{/editdelete}" name="editdelete" th:object="${EditForm}">
+<div class="wrapper"></div>
         <div class="header">
           <h1>削除画面</h1></div>
-            <div class="header2">
+            <div class="header2"> </div>
+            
                 <p style="text-align: center">
-                <label for="name">削除しました。</label>
+                <label for="name">削除完了しました。</label>
             	</p>
-                <button type="button" onclick="location.href='http://localhost:8080/Mypage1'">Mypage</button>
-            </div>
+                <button style="text-align: center" type="button" onclick="location.href='http://localhost:8080/Mypage1'">Mypage</button>
+                 </form>
+           
            </body>
-		</html>
+</html>
