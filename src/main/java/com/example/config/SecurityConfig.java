@@ -69,7 +69,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http
 				.authorizeRequests()
 				.antMatchers("/login1").permitAll()//直リンクOK
-				.antMatchers("/shinki").permitAll()//直リンクOK
+				.antMatchers("/user/NewRegister").permitAll()//直リンクOK
 				.anyRequest().authenticated();//それ以外は直リンクNG
 
 		//ログイン処理
