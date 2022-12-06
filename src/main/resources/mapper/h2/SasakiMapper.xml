@@ -43,7 +43,7 @@
 <!--ユーザー1件更新-->
 <update id="updateOne">
   update 
-  	Attendance 
+  	Attendance
   set
     end_date = #{endDate},
     status = #{status},

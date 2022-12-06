@@ -47,8 +47,7 @@ public class NewRegisterController{
 		masterUser .setName(form.getName());
 		masterUser .setNameKana(form.getNameKana());
 		masterUser .setMailAddress(form.getMailAddress());
-		//newRegisterForm .setPassWord(form.getPassWord());
-		masterUser .setPassWord(passwordEncoder.encode(form.getPassWord()));
+		masterUser .setPassWord(form.getPassWord());
 		service.addOne(masterUser);
 		return "/CompleteNewRegister";
 	}   
