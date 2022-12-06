@@ -67,7 +67,7 @@
 		update
 	  	Employee
 	 set
-	 	name     = #{name},
+	 	name = #{name},
 	  	name_kana = #{nameKana},
 	  	mail_address = #{mailAddress},
 	  	password = #{passWord}

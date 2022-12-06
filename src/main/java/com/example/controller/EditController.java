@@ -1,6 +1,7 @@
 package com.example.controller;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,11 +22,14 @@ public class  EditController{
 	@Autowired
 	private ModelMapper modelMapper;
 
+	@Autowired
+	PasswordEncoder passwordEncoder;
+
 	/**編集削除画面*/
 	@GetMapping("/edit/{userId}")
 	public String show(@ModelAttribute EditForm form,Model model,
 			@PathVariable("userId") Integer userId){
-		
+
 		//ユーザーを一件取得
 		MasterUser masterUser = editService.getUserOne(userId);
 		masterUser.setPassWord(null);
@@ -33,7 +37,7 @@ public class  EditController{
 		//MasterUserをformに変換
 		form = modelMapper.map(masterUser,EditForm.class);
 		model.addAttribute("editForm",form);
- 
+
 		System.out.println(form);
 		//編集削除画面にリダイレクト
 		return"/edit";
@@ -42,34 +46,34 @@ public class  EditController{
 	/**編集処理*/
 	@PostMapping("/edit/{userId}")
 	public String editUserOne(@ModelAttribute EditForm form,Model model){
-		
+
 		System.out.println(form.getUserId());
 		System.out.println(form.getName());
 		System.out.println(form.getNameKana());
 		System.out.println(form.getMailAddress());
 		System.out.println(form.getPassWord());
-		
+
 		MasterUser complete = modelMapper.map(form,MasterUser.class);
-//		form = modelMapper.map(masterUser,EditForm.class);
-		
+		//		form = modelMapper.map(masterUser,EditForm.class);
+		complete .setPassWord(passwordEncoder.encode(form.getPassWord()));
 		editService.updateUserOne(complete);
-		
+
 		//ユーザー一覧画面にリダイレクト
 		return "/editcomplete";
-//		return"/editcomplete";
+		//		return"/editcomplete";
 	}
 
 
 	/**ユーザー削除処理*/
 	@PostMapping("/edit/delete")
 	public String deleteUser(@ModelAttribute EditForm form,Model model) {
-		
-//		MasterUser masterUser = editService.getUserOne(userId);
-//		form.setUserId(5);
-//		MasterUser delete = modelMapper.map(form,MasterUser.class);
+
+		//		MasterUser masterUser = editService.getUserOne(userId);
+		//		form.setUserId(5);
+		//		MasterUser delete = modelMapper.map(form,MasterUser.class);
 		//ユーザーを削除
 		editService.deleteUserOne(form.getUserId());
-		
+
 
 		//		model.addAttribute("EditForm",form);
 		//ユーザー一覧画面にリダイレクト
