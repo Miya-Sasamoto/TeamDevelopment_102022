@@ -2,101 +2,105 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.repository.SugawaraMapper">
-	<!-- <resultMap type="com.example.domain.user.model.SugawaraMapper" id="user"> 
-		<id column="user_id" property="userId" /> <result column="name" property="name" 
-		/> <result column="name_kana" property="nameKana" /> <result column="mail_address" 
-		property="mailAddress" /> <result column="password" property="passWord" /> 
-		</resultMap> -->
 
-	<resultMap type="com.example.domain.user.model.MasterUser"
-		id="Edit">
-		<id column="user_id" property="userId" />
-		<result column="name" property="name" />
-		<result column="name_kana" property="nameKana" />
-		<result column="mail_address" property="mailAddress" />
-		<result column="password" property="passWord" />
-	</resultMap>
+ <resultMap type="com.example.domain.user.model.MasterUser"
+  id="Edit">
+  <id column="user_id" property="userId" />
+  <result column="name" property="name" />
+  <result column="name_kana" property="nameKana" />
+  <result column="mail_address" property="mailAddress" />
+  <result column="password" property="passWord" />
+ </resultMap>
 
-	<insert id="addOne">
-		insert into employee (
-		name,
-		name_kana,
-		mail_address,
-		password
-		)
-		　
-		values(
-		'${name}',
-		'${nameKana}',
-		'${mailAddress}',
-		'${passWord}'
-		)
+  <insert id="addOne">
+ insert into employee (
+  name,
+  name_kana,
+  mail_address,
+  password
+ )
+ values(
+  #{name},
+  #{nameKana},
+  #{mailAddress},
+  #{passWord}
+ )
+</insert>
+ <!-- <!ユーザー複数件取得> -->
 
-	</insert>
-
-	<!-- <!ユーザー複数件取得> -->
-
-	<select id="lookMany">
-		select
-		*
-		from
-		employee
-	</select>
+ <select id="lookMany">
+  select
+  *
+  from
+  employee
+ </select>
 
 
-	<select id="getUserOne" resultMap="Edit">
+ <select id="getUserOne" resultMap="Edit">
 
-		select
-		user_id,
-		name,
-		name_kana,
-		mail_address,
-		password
-		from
-		employee
-		where
-		user_id=#{userid}
+  select
+  user_id,
+  name,
+  name_kana,
+  mail_address,
+  password
+  from
+  employee
+  where
+  user_id=#{userid}
 
-	</select>
+ </select>
 
-	<!-- <update id="updateUserOne"> update employee name, name_kana, mail_address, 
-		password ) 　 values( '${name}', '${nameKana}', '${mailAddress}', '${passWord}' 
-		) </update> -->
+ <!-- <update id="updateUserOne"> update employee name, name_kana, mail_address, 
+  password ) 　 values( '${name}', '${nameKana}', '${mailAddress}', '${passWord}' 
+  ) </update> -->
 
-	<update id="updateUserOne">		
-		update
-	  	Employee
-	 set
-	 	name = #{name},
-	  	name_kana = #{nameKana},
-	  	mail_address = #{mailAddress},
-	  	password = #{passWord}
-	  	
-	  	where
-	 	 user_id = #{userId}
-	</update>
+ <update id="updateUserOne">  
+  update
+    Employee
+  set
+    name = #{name},
+    name_kana = #{nameKana},
+    mail_address = #{mailAddress},
+    password = #{passWord}
+    
+    where
+    user_id = #{userId}
+ </update>
 
-	<!-- <select id="lookOne"> select Employee.user_id, name, name_kana,mail_address,password 
-		from Employee where user_id=#{userid} </select> -->
+<select id="lookOne" >
+ 
+ select
+ employee.user_id AS userId,
+ employee.name,
+ employee.name_kana AS nameKana,
+ employee.mail_address AS mailAddress,
+ employee.password
+ from
+ employee
+ where
+ user_id=#{userid}
 
-	<update id="editOne">
-		update
-		employee
-		set
-		name=${name}
-		,name_kana=${nameKana}
-		,mail_address=${mailAddress}
-		,password=${passWord}
-		where
-		user_id=${userId}
-	</update>
+ </select>
+ 
+ <update id="editOne">
+  update
+  employee
+  set
+  name=${name}
+  ,name_kana=${nameKana}
+  ,mail_address=${mailAddress}
+  ,password=${passWord}
+  where
+  user_id=${userId}
+ </update>
 
-	<!-- <!ユーザー1件削除> -->
-	<delete id="deleteOne">
-	delete
-	from
-	employee
-	where user_id = #{id}
-	</delete>
+ <!-- <!ユーザー1件削除> -->
+ <delete id="deleteOne">
+ delete
+ from
+ employee
+ where user_id = #{id}
+ </delete>
 
 </mapper>
